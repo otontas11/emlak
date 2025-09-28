@@ -54,22 +54,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMzc0MTUxIi8+CjxyZWN0IHg9IjAiIHk9IjQwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjNDc1NTY5Ii8+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iNDAiIGZpbGw9IiM2NDY2ODAiLz4KPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTIwIiByPSIzMCIgZmlsbD0iIzY0NjY4MCIvPgo8Y2lyY2xlIGN4PSI4MDAiIGN5PSIxODAiIHI9IjUwIiBmaWxsPSIjNjQ2NjgwIi8+CjxjaXJjbGUgY3g9IjEwMDAiIGN5PSIxNDAiIHI9IjM1IiBmaWxsPSIjNjQ2NjgwIi8+Cjwvc3ZnPgo=');"></div>
-      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
       
-      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
             Türkiye'nin #1 Emlak Platformu
           </h1>
-          <p class="max-w-3xl mx-auto mb-12 text-xl md:text-2xl text-slate-200 leading-relaxed">
+          <p class="max-w-3xl mx-auto mb-8 text-lg md:text-xl text-slate-200 leading-relaxed">
             Profesyonel emlak danışmanları güveniyor. Doğru evi, doğru fiyata bulun.
           </p>
           
           <!-- Search Bar -->
-          <div class="max-w-4xl mx-auto mb-8">
+          <div class="max-w-4xl mx-auto mb-6">
             <div class="bg-white rounded-2xl p-2 shadow-2xl">
               <div class="flex flex-col md:flex-row">
                 <div class="flex-1 relative">
@@ -90,7 +92,7 @@
           </div>
           
           <!-- Filter Buttons -->
-          <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <div class="flex flex-wrap justify-center gap-3 mb-6">
             <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Satın Al
             </button>
@@ -111,19 +113,30 @@
             </button>
           </div>
           
-          <!-- Promotional Banner -->
-          <div class="bg-red-600 text-white px-8 py-4 rounded-xl inline-flex items-center mb-8">
-            <span class="font-bold mr-2">Günlük Fırsatlar</span>
-            <span class="mr-4">Sınırlı süreli tasarruf fırsatları</span>
-            <button class="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Fırsatları İncele
-            </button>
+          <!-- Trust Indicators -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 inline-flex items-center mb-6 border border-white/20">
+            <div class="flex items-center space-x-6">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-400">500+</div>
+                <div class="text-sm text-blue-200">Başarılı Satış</div>
+              </div>
+              <div class="w-px h-12 bg-white/30"></div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-400">7 Gün</div>
+                <div class="text-sm text-blue-200">Ortalama Süre</div>
+              </div>
+              <div class="w-px h-12 bg-white/30"></div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-400">%100</div>
+                <div class="text-sm text-blue-200">Güvenilir</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
       <!-- Decorative Banner -->
-      <div class="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-r from-red-500 via-white to-red-500"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 via-green-500 to-indigo-500"></div>
     </section>
 
     <!-- Property Categories Section -->
