@@ -954,7 +954,5 @@
 </template>
 
 <style>
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* Tailwind CSS is imported via @nuxtjs/tailwindcss module */
 </style>
