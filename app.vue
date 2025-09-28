@@ -59,7 +59,7 @@
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMzc0MTUxIi8+CjxyZWN0IHg9IjAiIHk9IjQwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjNDc1NTY5Ii8+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iNDAiIGZpbGw9IiM2NDY2ODAiLz4KPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTIwIiByPSIzMCIgZmlsbD0iIzY0NjY4MCIvPgo8Y2lyY2xlIGN4PSI4MDAiIGN5PSIxODAiIHI9IjUwIiBmaWxsPSIjNjQ2NjgwIi8+CjxjaXJjbGUgY3g9IjEwMDAiIGN5PSIxNDAiIHI9IjM1IiBmaWxsPSIjNjQ2NjgwIi8+Cjwvc3ZnPgo=');"></div>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="text-center">
           <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Türkiye'nin #1 Emlak Platformu
@@ -90,23 +90,23 @@
           </div>
           
           <!-- Filter Buttons -->
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+          <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Satın Al
             </button>
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Kirala
             </button>
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Sat
             </button>
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Ön Onay
             </button>
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Günlük Fırsatlar
             </button>
-            <button class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-30 transition-all">
+            <button class="bg-white bg-opacity-90 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg">
               Ev Değeri
             </button>
           </div>
@@ -128,7 +128,7 @@
 
     <!-- Property Categories Section -->
     <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
           İstanbul'da Evleri Keşfedin
         </h2>
@@ -217,7 +217,7 @@
 
     <!-- Featured Properties Section -->
     <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-3xl font-bold text-gray-900">Öne Çıkan Fırsatlar</h2>
           <button class="text-blue-600 font-semibold hover:text-blue-700">Tümünü Gör</button>
@@ -345,7 +345,7 @@
 
     <!-- Tools Section -->
     <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
           Size Nasıl Yardımcı Olabiliriz?
         </h2>
@@ -431,6 +431,71 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-6">
+            Nasıl Çalışır?
+          </h2>
+          <p class="text-xl text-green-700 max-w-3xl mx-auto">
+            Ev satış sürecimizde tamamen şeffafız. İşte nasıl çalıştığımız:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-green-800 mb-2">Adım 1</h3>
+            <h4 class="text-lg font-semibold text-green-600 mb-4">Online Formu Doldurun</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Bizi 0800 123 45 67 numaralı telefondan arayın veya Değerleme Formumuz aracılığıyla detaylarınızı online olarak doldurun.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-green-800 mb-2">Adım 2</h3>
+            <h4 class="text-lg font-semibold text-green-600 mb-4">Teklif Alın</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Mülkünüzün detaylarını aldıktan sonra, 24 saat içinde size bir teklif sunacağız.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-green-800 mb-2">Adım 3</h3>
+            <h4 class="text-lg font-semibold text-green-600 mb-4">Satış Anlaşması</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Satış anlaşması yapılır! Arkanıza yaslanın, rahatlayın ve tüm işleri bizim halletmemize izin verin.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+          <button class="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl">
+            Hemen Başlayın
+          </button>
         </div>
       </div>
     </section>
