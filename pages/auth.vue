@@ -239,6 +239,21 @@
             </div>
           </div>
 
+          <!-- Consultant Option -->
+          <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+            <div class="flex items-start">
+              <input
+                id="isConsultant"
+                v-model="registerForm.isConsultant"
+                type="checkbox"
+                class="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+              />
+              <label for="isConsultant" class="ml-3 block">
+                <span class="text-lg font-bold text-green-700">DANIŞMAN OLARAK KAYIT OL</span>
+                <span class="block text-sm text-green-600 mt-1">Emlak danışmanı olarak platforma katılın ve müşterilere hizmet verin. Danışman olarak daha fazla özellik ve gelir fırsatı elde edin.</span>
+              </label>
+            </div>
+          </div>
 
           <!-- Checkboxes -->
           <div class="space-y-4">
@@ -253,6 +268,7 @@
                 YENİLİKLERDEN HABERDAR OLMAK İSTİYORUM
               </label>
             </div>
+            
             <div class="flex items-start">
               <input
                 id="agreement"
@@ -329,7 +345,8 @@ const registerForm = ref({
   phone: '',
   birthDate: '',
   newsletter: false,
-  agreement: false
+  agreement: false,
+  isConsultant: false
 })
 
 // Form handlers

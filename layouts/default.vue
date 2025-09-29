@@ -45,10 +45,19 @@
             <template v-else>
               <div class="relative group">
                 <button @click="toggleProfileMenu" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                  <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                  <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-sm font-semibold relative">
                     {{ authStore.userInitials }}
+                    <!-- Consultant Badge -->
+                    <div v-if="authStore.user?.isConsultant" class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                      <svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
                   </div>
-                  <span>{{ authStore.fullName }}</span>
+                  <div class="flex flex-col">
+                    <span>{{ authStore.fullName }}</span>
+                    <span v-if="authStore.user?.isConsultant" class="text-xs text-green-600 font-medium">Danışman</span>
+                  </div>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
@@ -58,6 +67,20 @@
                 <div v-if="showProfileMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profilim</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">İlanlarım</a>
+                  
+                  <!-- Consultant specific options -->
+                  <template v-if="authStore.user?.isConsultant">
+                    <hr class="my-2">
+                    <a href="#" class="block px-4 py-2 text-sm text-green-600 hover:bg-green-50 font-medium">
+                      <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                      </svg>
+                      Danışman Paneli
+                    </a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Müşterilerim</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Randevularım</a>
+                  </template>
+                  
                   <hr class="my-2">
                   <button @click="logout" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
                     Çıkış Yap

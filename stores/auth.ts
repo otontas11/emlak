@@ -8,6 +8,7 @@ export const useAuthStore = defineStore('auth', {
       firstName: string
       lastName: string
       email: string
+      isConsultant: boolean
     } | null
   }),
 
@@ -35,7 +36,8 @@ export const useAuthStore = defineStore('auth', {
               id: '1',
               firstName: 'Oktay',
               lastName: 'tnts',
-              email: email
+              email: email,
+              isConsultant: false
             }
             resolve({ success: true })
           } else {
@@ -54,6 +56,7 @@ export const useAuthStore = defineStore('auth', {
       birthDate?: string
       newsletter: boolean
       agreement: boolean
+      isConsultant: boolean
     }) {
       // Simulate API call
       return new Promise((resolve, reject) => {
@@ -65,7 +68,8 @@ export const useAuthStore = defineStore('auth', {
               id: '1',
               firstName: userData.firstName,
               lastName: userData.lastName,
-              email: userData.email
+              email: userData.email,
+              isConsultant: userData.isConsultant
             }
             resolve({ success: true })
           } else {
