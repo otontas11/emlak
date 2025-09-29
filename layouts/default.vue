@@ -65,7 +65,7 @@
                 
                 <!-- Profile Dropdown -->
                 <div v-if="showProfileMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profilim</a>
+                  <NuxtLink to="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profilim</NuxtLink>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">İlanlarım</a>
                   
                   <!-- Consultant specific options -->
