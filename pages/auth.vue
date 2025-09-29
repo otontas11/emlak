@@ -118,15 +118,7 @@
             </button>
           </div>
 
-          <!-- Phone Login Button -->
-          <div>
-            <button
-              type="button"
-              class="w-full flex justify-center py-3 px-4 border border-orange-600 rounded-lg text-sm font-medium text-orange-600 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors"
-            >
-              TELEFON NUMARASI İLE GİRİŞ
-            </button>
-          </div>
+
         </form>
       </div>
 
@@ -241,29 +233,6 @@
             </div>
           </div>
 
-          <!-- Gender Field -->
-          <div>
-            <label for="gender" class="block text-sm font-medium text-gray-700 mb-2">
-              CİNSİYET
-            </label>
-            <div class="relative">
-              <select
-                id="gender"
-                v-model="registerForm.gender"
-                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none"
-              >
-                <option value="">Cinsiyet seçin</option>
-                <option value="male">Erkek</option>
-                <option value="female">Kadın</option>
-                <option value="other">Diğer</option>
-              </select>
-              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
 
           <!-- Checkboxes -->
           <div class="space-y-4">
