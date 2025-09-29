@@ -33,10 +33,39 @@
           
           <!-- User Actions -->
           <div class="flex items-center space-x-4">
-            <NuxtLink to="/auth" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Giriş Yap</NuxtLink>
-            <NuxtLink to="/auth" class="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-200 font-semibold shadow-md hover:shadow-lg">
-              Kayıt Ol
-            </NuxtLink>
+            <!-- Not Logged In -->
+            <template v-if="!authStore.isLoggedIn">
+              <NuxtLink to="/auth" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Giriş Yap</NuxtLink>
+              <NuxtLink to="/auth" class="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-200 font-semibold shadow-md hover:shadow-lg">
+                Kayıt Ol
+              </NuxtLink>
+            </template>
+            
+            <!-- Logged In -->
+            <template v-else>
+              <div class="relative group">
+                <button @click="toggleProfileMenu" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                  <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                    {{ authStore.userInitials }}
+                  </div>
+                  <span>{{ authStore.fullName }}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                
+                <!-- Profile Dropdown -->
+                <div v-if="showProfileMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profilim</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ayarlar</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Favorilerim</a>
+                  <hr class="my-2">
+                  <button @click="logout" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
+                    Çıkış Yap
+                  </button>
+                </div>
+              </div>
+            </template>
           </div>
           
           <!-- Mobile Menu Button -->
@@ -125,3 +154,29 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+import { useAuthStore } from '~/stores/auth'
+
+const authStore = useAuthStore()
+const showProfileMenu = ref(false)
+
+const toggleProfileMenu = () => {
+  showProfileMenu.value = !showProfileMenu.value
+}
+
+const logout = () => {
+  authStore.logout()
+  showProfileMenu.value = false
+  navigateTo('/')
+}
+
+// Close profile menu when clicking outside
+onMounted(() => {
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.group')) {
+      showProfileMenu.value = false
+    }
+  })
+})
+</script>

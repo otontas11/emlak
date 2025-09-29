@@ -30,6 +30,11 @@
 
       <!-- Login Form -->
       <div v-if="activeTab === 'login'" class="mt-8 space-y-6">
+        <!-- Error Message -->
+        <div v-if="loginError" class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+          {{ loginError }}
+        </div>
+        
         <form @submit.prevent="handleLogin" class="space-y-6">
           <!-- Email Field -->
           <div>
@@ -100,9 +105,17 @@
           <div>
             <button
               type="submit"
-              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors"
+              :disabled="isLoggingIn"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              GİRİŞ YAP
+              <span v-if="isLoggingIn" class="flex items-center">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Giriş yapılıyor...
+              </span>
+              <span v-else>GİRİŞ YAP</span>
             </button>
           </div>
 
@@ -112,6 +125,11 @@
 
       <!-- Register Form -->
       <div v-if="activeTab === 'register'" class="mt-8 space-y-6">
+        <!-- Error Message -->
+        <div v-if="registerError" class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+          {{ registerError }}
+        </div>
+        
         <form @submit.prevent="handleRegister" class="space-y-6">
           <!-- Name Fields -->
           <div class="grid grid-cols-2 gap-4">
@@ -253,9 +271,17 @@
           <div>
             <button
               type="submit"
-              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors"
+              :disabled="isRegistering"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              ÜYE OL
+              <span v-if="isRegistering" class="flex items-center">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Kayıt olunuyor...
+              </span>
+              <span v-else>ÜYE OL</span>
             </button>
           </div>
         </form>
@@ -267,6 +293,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useAuthStore } from '~/stores/auth'
+
+const authStore = useAuthStore()
+const router = useRouter()
 
 // Tab management
 const activeTab = ref('login')
@@ -274,6 +304,14 @@ const activeTab = ref('login')
 // Password visibility
 const showLoginPassword = ref(false)
 const showRegisterPassword = ref(false)
+
+// Loading states
+const isLoggingIn = ref(false)
+const isRegistering = ref(false)
+
+// Error messages
+const loginError = ref('')
+const registerError = ref('')
 
 // Login form
 const loginForm = ref({
@@ -290,19 +328,51 @@ const registerForm = ref({
   password: '',
   phone: '',
   birthDate: '',
-  gender: '',
   newsletter: false,
   agreement: false
 })
 
 // Form handlers
-const handleLogin = () => {
-  console.log('Login form submitted:', loginForm.value)
-  // Add login logic here
+const handleLogin = async () => {
+  if (!loginForm.value.email || !loginForm.value.password) {
+    loginError.value = 'E-posta ve şifre gereklidir'
+    return
+  }
+
+  isLoggingIn.value = true
+  loginError.value = ''
+
+  try {
+    await authStore.login(loginForm.value.email, loginForm.value.password)
+    router.push('/')
+  } catch (error) {
+    loginError.value = error.message || 'Giriş yapılırken bir hata oluştu'
+  } finally {
+    isLoggingIn.value = false
+  }
 }
 
-const handleRegister = () => {
-  console.log('Register form submitted:', registerForm.value)
-  // Add registration logic here
+const handleRegister = async () => {
+  if (!registerForm.value.firstName || !registerForm.value.lastName || !registerForm.value.email || !registerForm.value.password) {
+    registerError.value = 'Tüm zorunlu alanları doldurun'
+    return
+  }
+
+  if (!registerForm.value.agreement) {
+    registerError.value = 'Mesafeli satış sözleşmesini onaylamalısınız'
+    return
+  }
+
+  isRegistering.value = true
+  registerError.value = ''
+
+  try {
+    await authStore.register(registerForm.value)
+    router.push('/')
+  } catch (error) {
+    registerError.value = error.message || 'Kayıt olurken bir hata oluştu'
+  } finally {
+    isRegistering.value = false
+  }
 }
 </script>
