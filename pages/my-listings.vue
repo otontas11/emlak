@@ -62,7 +62,7 @@
               <div class="p-6 border-b border-gray-200">
                 <div class="flex justify-between items-center">
                   <h2 class="text-xl font-bold text-gray-900">İşlemdeki Gayrimenkuller</h2>
-                  <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <button @click="addNewProperty" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                     + Yeni İlan Ekle
                   </button>
                 </div>
@@ -314,5 +314,10 @@ const viewConsultant = (consultantSlug) => {
 const viewProperty = (propertyId) => {
   // Navigate to property detail page
   navigateTo(`/property/${propertyId}`)
+}
+
+const addNewProperty = () => {
+  // Navigate to add property page
+  navigateTo('/add-property')
 }
 </script>
