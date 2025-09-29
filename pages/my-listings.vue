@@ -70,7 +70,7 @@
 
               <div class="divide-y divide-gray-200">
                 <!-- Property 1 -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
+                <div class="p-6 hover:bg-gray-50 transition-colors cursor-pointer" @click="viewProperty('1')">
                   <div class="flex items-start space-x-4">
                     <div class="w-24 h-24 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@
                 </div>
 
                 <!-- Property 2 -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
+                <div class="p-6 hover:bg-gray-50 transition-colors cursor-pointer" @click="viewProperty('2')">
                   <div class="flex items-start space-x-4">
                     <div class="w-24 h-24 bg-gradient-to-br from-green-200 to-green-300 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@
                 </div>
 
                 <!-- Property 3 -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
+                <div class="p-6 hover:bg-gray-50 transition-colors cursor-pointer" @click="viewProperty('3')">
                   <div class="flex items-start space-x-4">
                     <div class="w-24 h-24 bg-gradient-to-br from-purple-200 to-purple-300 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,5 +309,10 @@
 const viewConsultant = (consultantSlug) => {
   // Navigate to consultant profile page
   navigateTo(`/consultant/${consultantSlug}`)
+}
+
+const viewProperty = (propertyId) => {
+  // Navigate to property detail page
+  navigateTo(`/property/${propertyId}`)
 }
 </script>
