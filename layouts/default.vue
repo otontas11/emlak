@@ -7,31 +7,31 @@
       <!-- Top Border Line -->
       <div class="w-full h-1 bg-gradient-to-r from-blue-600 to-green-600"></div>
       
-      <!-- Main Header Content -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
+          <!-- Main Header Content -->
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+              <!-- Logo -->
               <div class="flex items-center">
-                <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center mr-3">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                  </svg>
+                <div class="flex-shrink-0">
+                  <NuxtLink to="/" class="flex items-center hover:opacity-80 transition-opacity">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center mr-3">
+                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                      </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900">Emlak Danışmanınız</span>
+                  </NuxtLink>
                 </div>
-                <span class="text-2xl font-bold text-gray-900">Emlak Danışmanınız</span>
               </div>
-            </div>
-          </div>
-          
-          <!-- Navigation Links -->
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Satın Al</a>
-            <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1 font-semibold">Sat</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Kirala</a>
-          </nav>
-          
-          <!-- User Actions -->
+              
+              <!-- Navigation Links -->
+              <nav class="hidden md:flex items-center space-x-8">
+                <NuxtLink to="/buy" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Satın Al</NuxtLink>
+                <NuxtLink to="/add-property" class="text-blue-600 border-b-2 border-blue-600 pb-1 font-semibold hover:text-blue-700 transition-colors">Sat</NuxtLink>
+                <NuxtLink to="/add-property" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Kirala</NuxtLink>
+              </nav>
+              
+              <!-- User Actions -->
           <div class="flex items-center space-x-4">
             <!-- Not Logged In -->
             <template v-if="!authStore.isLoggedIn">
