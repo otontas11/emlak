@@ -346,8 +346,8 @@ const registerError = ref('')
 
 // Login form
 const loginForm = ref({
-  email: '',
-  password: '',
+  email: 'turkcodestek@gmail.com',
+  password: '1234567',
   rememberMe: false
 })
 
