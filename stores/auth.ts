@@ -25,7 +25,7 @@ export const useAuthStore = defineStore('auth', {
   },
 
   actions: {
-    login(email: string, password: string) {
+    login(email: string, password: string, asConsultant: boolean = false) {
       // Simulate API call
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -35,9 +35,9 @@ export const useAuthStore = defineStore('auth', {
             this.user = {
               id: '1',
               firstName: 'Oktay',
-              lastName: 'tnts',
+              lastName: 'Tontaş',
               email: email,
-              isConsultant: false
+              isConsultant: asConsultant
             }
             resolve({ success: true })
           } else {
