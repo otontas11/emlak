@@ -206,8 +206,8 @@ const propertyData = {
     bathrooms: 1,
     area: 95,
     location: 'Beşiktaş, İstanbul',
-    consultant: 'Fatma Demir',
-    consultantSlug: 'fatma-demir',
+    consultant: 'Ayşe Demir',
+    consultantSlug: 'Ayşe-demir',
     description: 'Beşiktaş\'ın kalbinde, Boğaz manzaralı, şık ve modern 2+1 daire. Deniz manzarası ve şehir manzarası bir arada. Metro ve otobüs hatlarına yakın, ulaşım kolaylığı. Alışveriş, eğlence ve iş merkezlerine yürüme mesafesinde.',
     features: [
       'Balkon',

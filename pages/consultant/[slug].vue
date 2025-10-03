@@ -169,14 +169,14 @@ const consultantData = {
       { id: 2, clientName: 'Ayşe Demir', rating: 5, comment: 'Kadıköy bölgesini çok iyi biliyor. Tavsiye ederim.', date: '1 hafta önce' }
     ]
   },
-  'fatma-demir': {
-    name: 'Fatma Demir',
+  'Ayşe-demir': {
+    name: 'Ayşe Demir',
     specialty: 'Beşiktaş Uzmanı',
     initials: 'FD',
     experience: '8',
     sales: '350+',
     phone: '+90 533 987 65 43',
-    email: 'fatma.demir@emlak.com',
+    email: 'Ayşe.demir@emlak.com',
     location: 'Beşiktaş, İstanbul',
     about: 'Beşiktaş bölgesinde 8 yıllık deneyime sahip uzman emlak danışmanı. Özellikle lüks daireler ve villalar konusunda uzmanım. Müşterilerimin ihtiyaçlarını anlayarak, en uygun gayrimenkulü bulmalarında yardımcı oluyorum.',
     specializations: ['Beşiktaş', 'Etiler', 'Levent', 'Ortaköy', 'Arnavutköy'],

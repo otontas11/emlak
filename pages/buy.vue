@@ -182,9 +182,9 @@ const properties = ref([
     status: 'Satılık',
     statusClass: 'bg-green-100 text-green-800',
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
-    consultant: 'Fatma Demir',
+    consultant: 'Ayşe Demir',
     consultantTitle: 'Beşiktaş Uzmanı',
-    consultantSlug: 'fatma-demir'
+    consultantSlug: 'Ayşe-demir'
   },
   {
     id: 3,
@@ -227,9 +227,9 @@ const properties = ref([
     status: 'Satılık',
     statusClass: 'bg-green-100 text-green-800',
     image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop',
-    consultant: 'Fatma Demir',
+    consultant: 'Ayşe Demir',
     consultantTitle: 'Beşiktaş Uzmanı',
-    consultantSlug: 'fatma-demir'
+    consultantSlug: 'Ayşe-demir'
   },
   {
     id: 6,
