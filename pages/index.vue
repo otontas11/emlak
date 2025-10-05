@@ -281,10 +281,10 @@
         
         <div class="grid md:grid-cols-3 gap-12 relative">
           <!-- Connecting Lines -->
-          <div class="hidden md:block absolute top-10 left-1/6 right-1/6 h-1 bg-gradient-to-r from-corporate-blue via-corporate-gold to-corporate-navy"></div>
+          <div class="hidden md:block absolute top-10 left-1/6 right-1/6 h-1 bg-gradient-to-r from-corporate-blue via-corporate-light-blue to-corporate-blue"></div>
           
           <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">1</span>
             </div>
             <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">İlan Girin veya Arayın</h3>
@@ -292,7 +292,7 @@
           </div>
           
           <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-gold to-corporate-dark-gold rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">2</span>
             </div>
             <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Danışmanla Eşleşin</h3>
@@ -300,7 +300,7 @@
           </div>
           
           <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-light-blue to-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">3</span>
             </div>
             <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Anlaşmayı Tamamlayın</h3>
@@ -320,7 +320,7 @@
         
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-blue group">
-            <div class="w-24 h-24 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
+            <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
               <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
@@ -328,7 +328,7 @@
             <h3 class="text-2xl font-bold text-corporate-navy mb-2 text-center font-heading">Ahmet Yılmaz</h3>
             <p class="text-corporate-blue font-semibold mb-4 text-center">Kadıköy Bölge Uzmanı</p>
             <div class="flex justify-center space-x-1 mb-5">
-              <span class="text-corporate-gold text-2xl">★★★★★</span>
+              <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
               <p class="text-sm text-corporate-navy font-medium text-center"><strong>5 yıl</strong> deneyim</p>
@@ -336,16 +336,16 @@
             </div>
           </div>
           
-          <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-gold group">
-            <div class="w-24 h-24 bg-gradient-to-br from-corporate-gold to-corporate-dark-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
+          <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-blue group">
+            <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
               <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-corporate-navy mb-2 text-center font-heading">Ayşe Demir</h3>
-            <p class="text-corporate-gold font-semibold mb-4 text-center">Beşiktaş Bölge Uzmanı</p>
+            <p class="text-corporate-blue font-semibold mb-4 text-center">Beşiktaş Bölge Uzmanı</p>
             <div class="flex justify-center space-x-1 mb-5">
-              <span class="text-corporate-gold text-2xl">★★★★★</span>
+              <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
               <p class="text-sm text-corporate-navy font-medium text-center"><strong>8 yıl</strong> deneyim</p>
@@ -353,16 +353,16 @@
             </div>
           </div>
           
-          <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-light-blue group">
-            <div class="w-24 h-24 bg-gradient-to-br from-corporate-light-blue to-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
+          <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-blue group">
+            <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-corporate">
               <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-corporate-navy mb-2 text-center font-heading">Mehmet Kaya</h3>
-            <p class="text-corporate-light-blue font-semibold mb-4 text-center">Şişli Bölge Uzmanı</p>
+            <p class="text-corporate-blue font-semibold mb-4 text-center">Şişli Bölge Uzmanı</p>
             <div class="flex justify-center space-x-1 mb-5">
-              <span class="text-corporate-gold text-2xl">★★★★★</span>
+              <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
               <p class="text-sm text-corporate-navy font-medium text-center"><strong>6 yıl</strong> deneyim</p>
