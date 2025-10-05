@@ -19,7 +19,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                       </svg>
                     </div>
-                    <span class="text-2xl font-bold text-corporate-navy font-heading">Emlak <span class="text-corporate-blue">Danışmanınız</span></span>
+                    <span class="text-2xl font-bold text-corporate-navy font-heading">Estate<span class="text-corporate-blue">90</span></span>
                   </NuxtLink>
                 </div>
               </div>
@@ -141,7 +141,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
               </div>
-              <span class="text-2xl font-bold text-white font-heading">Emlak <span class="text-corporate-light-blue">Danışmanınız</span></span>
+              <span class="text-2xl font-bold text-white font-heading">Estate<span class="text-corporate-light-blue">90</span></span>
             </div>
             <p class="text-white/80 mb-6 max-w-md text-base leading-relaxed font-body">
               Türkiye'nin en güvenilir ve profesyonel emlak platformu. Uzman danışmanlarımızla doğru evi, doğru fiyata, güvenli bir şekilde bulun.
@@ -191,7 +191,7 @@
         </div>
         
         <div class="border-t border-white/20 mt-12 pt-8 text-center">
-          <p class="text-white/70 font-body">&copy; 2025 <span class="text-white font-semibold">Emlak Danışmanınız</span>. Tüm hakları saklıdır.</p>
+          <p class="text-white/70 font-body">&copy; 2025 <span class="text-white font-semibold">Estate90</span>. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
