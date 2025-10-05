@@ -272,45 +272,39 @@
 
           <!-- Right Column - Activity Feed -->
           <div class="lg:col-span-1">
-            <div class="bg-white rounded-xl shadow-lg">
+            <div class="bg-white rounded-xl shadow-corporate-lg border border-corporate-gray">
               <div class="p-6 border-b border-gray-200">
-                <h2 class="text-xl font-bold text-gray-900">Gayrimenkul Hareketleri</h2>
-                <p class="text-sm text-gray-600 mt-1">Son aktiviteler ve teklifler</p>
+                <h2 class="text-2xl font-bold text-corporate-navy font-heading">Son Hareketler</h2>
+                <p class="text-sm text-gray-600 mt-1 font-body">Aktiviteler ve bildirimler</p>
               </div>
 
               <div class="p-6">
                 <div class="space-y-4">
                   <!-- Activity 1 -->
-                  <div class="flex items-start space-x-3">
-                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <div class="flex items-start space-x-3 p-3 bg-corporate-blue/5 rounded-lg">
+                    <div class="w-8 h-8 bg-corporate-blue rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
                     </div>
                     <div class="flex-1 min-w-0">
-                      <p class="text-sm text-gray-900">
-                        <span class="font-medium">Ahmet Yılmaz</span> 3+1 Daire, Kadıköy için atandı
+                      <p class="text-sm text-corporate-navy font-body">
+                        <span class="font-bold">Ahmet Yılmaz</span> 3+1 Daire için atandı
                       </p>
                       <p class="text-xs text-gray-500 mt-1">2 saat önce</p>
                     </div>
                   </div>
 
                   <!-- Activity 2 -->
-
-                  <!-- Activity 3 -->
-
-                  <!-- Activity 4 -->
-
-                  <!-- Activity 5 -->
-                  <div class="flex items-start space-x-3">
-                    <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                  <div class="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
+                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                     </div>
                     <div class="flex-1 min-w-0">
-                      <p class="text-sm text-gray-900">
-                        <span class="font-medium">Sistem</span> Villa, Şişli başarıyla satıldı
+                      <p class="text-sm text-corporate-navy font-body">
+                        <span class="font-bold">Villa, Şişli</span> başarıyla satıldı
                       </p>
                       <p class="text-xs text-gray-500 mt-1">3 gün önce</p>
                     </div>
@@ -319,13 +313,110 @@
 
                 <!-- Load More Button -->
                 <div class="mt-6 text-center">
-                  <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">
                     Daha Fazla Göster
                   </button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consultant Change Request Modal -->
+    <div v-if="showChangeModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-2xl shadow-corporate-xl max-w-md w-full p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-2xl font-bold text-corporate-navy font-heading">Danışman Değiştirme Talebi</h3>
+          <button @click="closeChangeModal" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="mb-4 p-4 bg-orange-50 rounded-lg border border-orange-200">
+          <p class="text-sm text-orange-800 font-body">
+            <span class="font-bold">{{ selectedConsultantName }}</span> danışmanınızı değiştirmek istiyorsunuz.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-sm font-bold text-corporate-navy mb-2">Değiştirme Sebebiniz</label>
+          <textarea 
+            v-model="changeReason" 
+            rows="4" 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-corporate-blue focus:outline-none font-body"
+            placeholder="Lütfen danışman değiştirmek isteme sebebinizi açıklayın..."
+          ></textarea>
+        </div>
+
+        <div class="flex space-x-3">
+          <button @click="closeChangeModal" class="flex-1 px-4 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all">
+            İptal
+          </button>
+          <button @click="submitChangeRequest" class="flex-1 px-4 py-3 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue font-bold transition-all shadow-corporate">
+            Talep Gönder
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consultant Rating Modal -->
+    <div v-if="showRatingModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-2xl shadow-corporate-xl max-w-md w-full p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-2xl font-bold text-corporate-navy font-heading">Danışman Değerlendirme</h3>
+          <button @click="closeRatingModal" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="mb-6 text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mx-auto mb-3 shadow-corporate">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </div>
+          <p class="text-lg font-bold text-corporate-navy">{{ selectedConsultantName }}</p>
+          <p class="text-sm text-gray-600">Danışmanınızı değerlendirin</p>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-sm font-bold text-corporate-navy mb-3 text-center">Puan Verin</label>
+          <div class="flex justify-center space-x-2">
+            <button 
+              v-for="star in 5" 
+              :key="star"
+              @click="rating = star"
+              class="text-4xl transition-all hover:scale-110"
+              :class="star <= rating ? 'text-corporate-blue' : 'text-gray-300'"
+            >
+              ★
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-sm font-bold text-corporate-navy mb-2">Yorumunuz</label>
+          <textarea 
+            v-model="ratingComment" 
+            rows="4" 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-corporate-blue focus:outline-none font-body"
+            placeholder="Danışmanınız hakkındaki görüşlerinizi paylaşın..."
+          ></textarea>
+        </div>
+
+        <div class="flex space-x-3">
+          <button @click="closeRatingModal" class="flex-1 px-4 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all">
+            İptal
+          </button>
+          <button @click="submitRating" class="flex-1 px-4 py-3 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue font-bold transition-all shadow-corporate">
+            Gönder
+          </button>
         </div>
       </div>
     </div>
@@ -336,18 +427,88 @@
 // This page is for normal users to manage their property listings
 // and view activity related to their properties
 
+// Modal states
+const showChangeModal = ref(false)
+const showRatingModal = ref(false)
+const selectedPropertyId = ref(null)
+const selectedConsultantName = ref('')
+const changeReason = ref('')
+const rating = ref(0)
+const ratingComment = ref('')
+
 const viewConsultant = (consultantSlug) => {
-  // Navigate to consultant profile page
   navigateTo(`/consultant/${consultantSlug}`)
 }
 
 const viewProperty = (propertyId) => {
-  // Navigate to property detail page
   navigateTo(`/property/${propertyId}`)
 }
 
 const addNewProperty = () => {
-  // Navigate to add property page
   navigateTo('/add-property')
+}
+
+// Request consultant change
+const requestConsultantChange = (propertyId, consultantName) => {
+  selectedPropertyId.value = propertyId
+  selectedConsultantName.value = consultantName
+  showChangeModal.value = true
+}
+
+const closeChangeModal = () => {
+  showChangeModal.value = false
+  changeReason.value = ''
+  selectedPropertyId.value = null
+  selectedConsultantName.value = ''
+}
+
+const submitChangeRequest = () => {
+  if (!changeReason.value.trim()) {
+    alert('Lütfen değiştirme sebebinizi belirtin.')
+    return
+  }
+  
+  // Here you would send the request to the server
+  console.log('Danışman değiştirme talebi:', {
+    propertyId: selectedPropertyId.value,
+    currentConsultant: selectedConsultantName.value,
+    reason: changeReason.value
+  })
+  
+  alert('Danışman değiştirme talebiniz sistem yöneticilerine iletildi. En kısa sürede size geri dönüş yapılacaktır.')
+  closeChangeModal()
+}
+
+// Rate consultant (for sold properties)
+const rateConsultant = (propertyId, consultantName) => {
+  selectedPropertyId.value = propertyId
+  selectedConsultantName.value = consultantName
+  showRatingModal.value = true
+}
+
+const closeRatingModal = () => {
+  showRatingModal.value = false
+  rating.value = 0
+  ratingComment.value = ''
+  selectedPropertyId.value = null
+  selectedConsultantName.value = ''
+}
+
+const submitRating = () => {
+  if (rating.value === 0) {
+    alert('Lütfen bir puan seçin.')
+    return
+  }
+  
+  // Here you would send the rating to the server
+  console.log('Danışman değerlendirmesi:', {
+    propertyId: selectedPropertyId.value,
+    consultant: selectedConsultantName.value,
+    rating: rating.value,
+    comment: ratingComment.value
+  })
+  
+  alert(`${selectedConsultantName.value} için ${rating.value} yıldız değerlendirmeniz kaydedildi. Teşekkür ederiz!`)
+  closeRatingModal()
 }
 </script>
