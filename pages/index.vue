@@ -5,20 +5,20 @@
     <section class="relative bg-gradient-to-br from-corporate-navy via-corporate-blue to-corporate-light-blue text-white overflow-hidden">
       <!-- Background Pattern -->
       <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 20%, rgba(0, 116, 183, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 59, 115, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(255, 184, 28, 0.1) 0%, transparent 50%);"></div>
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 20%, rgba(0, 116, 183, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 59, 115, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(0, 153, 216, 0.15) 0%, transparent 50%);"></div>
       </div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
       
       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="text-center">
           <div class="inline-block mb-4">
-            <span class="bg-corporate-gold/20 text-corporate-gold px-4 py-2 rounded-full text-sm font-semibold border border-corporate-gold/30">
+            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
               Türkiye'nin Güvenilir Emlak Platformu
             </span>
           </div>
           <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight font-heading">
             Hayalinizdeki Evi<br />
-            <span class="text-corporate-gold">Bulmak Artık Çok Kolay</span>
+            <span class="text-white">Bulmak Artık Çok Kolay</span>
           </h1>
           <p class="max-w-3xl mx-auto mb-10 text-lg md:text-xl text-white/90 leading-relaxed font-body">
             Profesyonel emlak danışmanlarımız ile güvenli ve hızlı emlak deneyimi. <br class="hidden md:block"/>
@@ -28,16 +28,16 @@
 
           <!-- Filter Buttons -->
           <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button class="bg-white text-corporate-navy px-8 py-4 rounded-xl font-bold hover:bg-corporate-gold hover:text-white transition-all shadow-corporate-xl hover:scale-105 transform">
+            <button class="bg-white text-corporate-navy px-8 py-4 rounded-xl font-bold hover:bg-corporate-light-blue hover:text-white transition-all shadow-corporate-xl hover:scale-105 transform">
               Satın Al
             </button>
             <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
               Kirala
             </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-corporate-gold hover:border-corporate-gold transition-all">
+            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
               Sat
             </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-corporate-gold hover:border-corporate-gold transition-all">
+            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
               Ev Değerleme
             </button>
           </div>
@@ -46,17 +46,17 @@
           <div class="bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 inline-flex items-center mb-6 border border-white/20 shadow-corporate-xl">
             <div class="flex items-center space-x-8">
               <div class="text-center">
-                <div class="text-3xl font-bold text-corporate-gold">2,500+</div>
+                <div class="text-3xl font-bold text-white">2,500+</div>
                 <div class="text-sm text-white/80 font-medium">Başarılı Satış</div>
               </div>
               <div class="w-px h-14 bg-white/30"></div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-corporate-gold">5 Gün</div>
+                <div class="text-3xl font-bold text-white">5 Gün</div>
                 <div class="text-sm text-white/80 font-medium">Ortalama Süre</div>
               </div>
               <div class="w-px h-14 bg-white/30"></div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-corporate-gold">%98</div>
+                <div class="text-3xl font-bold text-white">%98</div>
                 <div class="text-sm text-white/80 font-medium">Müşteri Memnuniyeti</div>
               </div>
             </div>
@@ -65,7 +65,7 @@
       </div>
       
       <!-- Decorative Banner -->
-      <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-corporate-gold via-corporate-light-blue to-corporate-gold"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-corporate-blue via-white to-corporate-light-blue"></div>
     </section>
 
     <!-- Property Categories Section -->
