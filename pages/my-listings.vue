@@ -19,7 +19,7 @@
               </div>
               <div class="ml-4">
                 <p class="text-sm font-medium text-gray-600 font-body">Toplam İlan</p>
-                <p class="text-2xl font-bold text-corporate-navy">3</p>
+                <p class="text-2xl font-bold text-corporate-navy">6</p>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@
               </div>
               <div class="ml-4">
                 <p class="text-sm font-medium text-gray-600 font-body">Aktif İlan</p>
-                <p class="text-2xl font-bold text-corporate-navy">2</p>
+                <p class="text-2xl font-bold text-corporate-navy">5</p>
               </div>
             </div>
           </div>
@@ -90,35 +90,27 @@
                         <span>Kadıköy, İstanbul</span>
                       </div>
                       
-                      <!-- Consultant Assignment -->
+                      <!-- Realtor Applicants -->
                       <div class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20">
                         <div class="flex items-center justify-between mb-3">
                           <div class="flex items-center">
                             <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mr-3 shadow-corporate">
                               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                               </svg>
                             </div>
                             <div>
-                              <p class="text-xs font-medium text-gray-600 font-body">Atanan Danışman</p>
-                              <p class="text-sm font-bold text-corporate-navy">Ahmet Yılmaz</p>
+                              <p class="text-xs font-medium text-corporate-navy font-body">Talip Olan Emlakçılar</p>
+                              <p class="text-sm font-bold text-corporate-navy">3 Emlakçı talip oldu</p>
+                              <p class="text-xs text-corporate-blue mt-0.5">Aralarından birini seçebilirsiniz</p>
                             </div>
                           </div>
-                          <div class="flex space-x-2">
-                            <button @click.stop="viewConsultant('ahmet-yilmaz')" class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold flex items-center">
-                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                              </svg>
-                              Görüntüle
-                            </button>
-                            <button @click.stop="requestConsultantChange('1', 'Ahmet Yılmaz')" class="text-orange-600 hover:text-orange-700 text-sm font-semibold flex items-center">
-                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                              </svg>
-                              Değiştirme Talebi
-                            </button>
-                          </div>
+                          <button @click.stop="showApplicants('1')" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                            Talip Olanları Gör
+                          </button>
                         </div>
                       </div>
 
@@ -155,35 +147,27 @@
                         <span>Beşiktaş, İstanbul</span>
                       </div>
                       
-                      <!-- Consultant Assignment -->
-                      <div class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20">
-                        <div class="flex items-center justify-between mb-3">
+                      <!-- No Realtor Yet -->
+                      <div class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200">
+                        <div class="flex items-center justify-between">
                           <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            <div class="w-10 h-10 bg-yellow-200 rounded-full flex items-center justify-center mr-3">
+                              <svg class="w-5 h-5 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                               </svg>
                             </div>
                             <div>
-                              <p class="text-xs font-medium text-gray-600 font-body">Atanan Danışman</p>
-                              <p class="text-sm font-bold text-corporate-navy">Ayşe Demir</p>
+                              <p class="text-xs font-medium text-yellow-700 font-body">Emlakçı Bekleniyor</p>
+                              <p class="text-sm font-bold text-yellow-900">Henüz talip olan emlakçı yok</p>
+                              <p class="text-xs text-yellow-600 mt-0.5">İlanınız emlakçılar tarafından görüntülenebilir</p>
                             </div>
                           </div>
-                          <div class="flex space-x-2">
-                            <button @click.stop="viewConsultant('ayse-demir')" class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold flex items-center">
-                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                              </svg>
-                              Görüntüle
-                            </button>
-                            <button @click.stop="requestConsultantChange('2', 'Ayşe Demir')" class="text-orange-600 hover:text-orange-700 text-sm font-semibold flex items-center">
-                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                              </svg>
-                              Değiştir
-                            </button>
-                          </div>
+                          <button class="text-yellow-700 hover:text-yellow-800 text-sm font-semibold flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Detay
+                          </button>
                         </div>
                       </div>
 
@@ -220,18 +204,19 @@
                         <span>Şişli, İstanbul</span>
                       </div>
                       
-                      <!-- Consultant Info - Sold -->
+                      <!-- Realtor Info - Sold -->
                       <div class="mt-4 p-4 bg-green-100 rounded-xl border-2 border-green-300">
                         <div class="flex items-center justify-between">
                           <div class="flex items-center">
                             <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
                               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                               </svg>
                             </div>
                             <div>
-                              <p class="text-xs font-medium text-green-800 font-body">Satışı Gerçekleştiren</p>
+                              <p class="text-xs font-medium text-green-800 font-body">Satışı Gerçekleştiren Emlakçı</p>
                               <p class="text-sm font-bold text-green-900">Mehmet Kaya</p>
+                              <p class="text-xs text-green-700 mt-0.5">İlanınızı başarıyla sattı</p>
                             </div>
                           </div>
                           <button @click.stop="viewConsultant('mehmet-kaya')" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
@@ -244,23 +229,194 @@
                         </div>
                       </div>
 
-                      <!-- Rating Section for Sold Property -->
-                      <div class="mt-4 p-4 bg-white rounded-xl border-2 border-green-200">
+
+                      <div class="flex items-center justify-between mt-4">
+                        <div class="flex space-x-3">
+                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Düzenle</button>
+                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Property 4 - Active with Selected Realtor -->
+                <div class="p-6 hover:bg-gray-50 transition-colors">
+                  <div class="flex items-start space-x-4">
+                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('4')">
+                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('4')">
+                        <h3 class="text-xl font-bold text-corporate-navy font-heading">1+1 Stüdyo Daire, Üsküdar</h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
+                          Aktif
+                        </span>
+                      </div>
+                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺1,650,000</p>
+                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
+                        <span class="mr-4">1 Yatak</span>
+                        <span class="mr-4">1 Banyo</span>
+                        <span class="mr-4">55 m²</span>
+                        <span>Üsküdar, İstanbul</span>
+                      </div>
+                      
+                      <!-- Selected Realtor -->
+                      <div class="mt-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border-2 border-green-300">
                         <div class="flex items-center justify-between">
-                          <div>
-                            <p class="text-sm font-bold text-corporate-navy mb-1">Danışmanı Değerlendirin</p>
-                            <p class="text-xs text-gray-600">Deneyiminizi paylaşın</p>
+                          <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
+                              <span class="text-white text-xs font-bold">AD</span>
+                            </div>
+                            <div>
+                              <p class="text-xs font-medium text-green-800 font-body flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                Seçilen Emlakçı
+                              </p>
+                              <p class="text-sm font-bold text-green-900">Ayşe Demir</p>
+                              <p class="text-xs text-green-700 mt-0.5">İlanınızı yönetiyor</p>
+                            </div>
                           </div>
-                          <button @click.stop="rateConsultant('3', 'Mehmet Kaya')" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate">
-                            Değerlendir
+                          <div class="flex space-x-2">
+                            <button @click.stop="viewConsultant('ayse-demir')" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
+                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                              </svg>
+                              Profil
+                            </button>
+                            <button @click.stop="contactRealtor('ayse-demir')" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg text-sm font-semibold flex items-center transition-all">
+                              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                              </svg>
+                              İletişim
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center justify-between mt-4">
+                        <div class="flex space-x-3">
+                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
+                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Property 5 - Active with Multiple Applicants -->
+                <div class="p-6 hover:bg-gray-50 transition-colors">
+                  <div class="flex items-start space-x-4">
+                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('5')">
+                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('5')">
+                        <h3 class="text-xl font-bold text-corporate-navy font-heading">3+1 Daire, Maltepe</h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
+                          Aktif
+                        </span>
+                      </div>
+                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺3,200,000</p>
+                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
+                        <span class="mr-4">3 Yatak</span>
+                        <span class="mr-4">2 Banyo</span>
+                        <span class="mr-4">135 m²</span>
+                        <span>Maltepe, İstanbul</span>
+                      </div>
+                      
+                      <!-- Realtor Applicants -->
+                      <div class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20">
+                        <div class="flex items-center justify-between mb-3">
+                          <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mr-3 shadow-corporate">
+                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                              </svg>
+                            </div>
+                            <div>
+                              <p class="text-xs font-medium text-corporate-navy font-body">Talip Olan Emlakçılar</p>
+                              <p class="text-sm font-bold text-corporate-navy">2 Emlakçı talip oldu</p>
+                              <p class="text-xs text-corporate-blue mt-0.5">Aralarından birini seçebilirsiniz</p>
+                            </div>
+                          </div>
+                          <button @click.stop="showApplicants('5')" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                            Talip Olanları Gör
                           </button>
                         </div>
                       </div>
 
                       <div class="flex items-center justify-between mt-4">
                         <div class="flex space-x-3">
-                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Düzenle</button>
-                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Sil</button>
+                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
+                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Property 6 - Active with No Applicants -->
+                <div class="p-6 hover:bg-gray-50 transition-colors">
+                  <div class="flex items-start space-x-4">
+                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('6')">
+                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('6')">
+                        <h3 class="text-xl font-bold text-corporate-navy font-heading">2+1 Daire, Ataşehir</h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
+                          Aktif
+                        </span>
+                      </div>
+                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺2,100,000</p>
+                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
+                        <span class="mr-4">2 Yatak</span>
+                        <span class="mr-4">1 Banyo</span>
+                        <span class="mr-4">90 m²</span>
+                        <span>Ataşehir, İstanbul</span>
+                      </div>
+                      
+                      <!-- No Realtor Yet -->
+                      <div class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200">
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-200 rounded-full flex items-center justify-center mr-3">
+                              <svg class="w-5 h-5 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                            </div>
+                            <div>
+                              <p class="text-xs font-medium text-yellow-700 font-body">Emlakçı Bekleniyor</p>
+                              <p class="text-sm font-bold text-yellow-900">Henüz talip olan emlakçı yok</p>
+                              <p class="text-xs text-yellow-600 mt-0.5">İlanınız emlakçılar tarafından görüntülenebilir</p>
+                            </div>
+                          </div>
+                          <button class="text-yellow-700 hover:text-yellow-800 text-sm font-semibold flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Detay
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center justify-between mt-4">
+                        <div class="flex space-x-3">
+                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
+                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
                         </div>
                       </div>
                     </div>
@@ -420,6 +576,69 @@
         </div>
       </div>
     </div>
+
+    <!-- Applicants Modal -->
+    <div v-if="showApplicantsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" @click.self="closeApplicantsModal">
+      <div class="bg-white rounded-2xl shadow-corporate-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b border-gray-200 px-8 py-6 flex justify-between items-center rounded-t-2xl">
+          <div>
+            <h3 class="text-2xl font-bold text-corporate-navy font-heading">Talip Olan Emlakçılar</h3>
+            <p class="text-sm text-gray-600 mt-1">{{ applicants.length }} emlakçı ilanınıza talip oldu</p>
+          </div>
+          <button @click="closeApplicantsModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="p-8 space-y-6">
+          <!-- Applicant Card -->
+          <div v-for="applicant in applicants" :key="applicant.id" class="bg-gradient-to-br from-corporate-gray-light to-white rounded-xl p-6 border-2 border-corporate-gray hover:border-corporate-blue transition-all shadow-corporate">
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-16 h-16 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center shadow-corporate flex-shrink-0">
+                  <span class="text-white text-lg font-bold">{{ applicant.avatar }}</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="text-xl font-bold text-corporate-navy font-heading">{{ applicant.name }}</h4>
+                  <p class="text-sm text-corporate-blue font-semibold">{{ applicant.speciality }}</p>
+                  <div class="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                    <div class="flex items-center gap-1">
+                      <svg class="w-4 h-4 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                      </svg>
+                      <span class="font-semibold">{{ applicant.rating }}</span>
+                    </div>
+                    <span>{{ applicant.experience }} deneyim</span>
+                    <span>{{ applicant.sales }} satış</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 mb-4 border border-gray-200">
+              <p class="text-sm text-gray-700 leading-relaxed font-body">{{ applicant.message }}</p>
+            </div>
+            
+            <div class="flex gap-3">
+              <button @click="navigateTo(`/consultant/${applicant.slug}`)" class="flex-1 px-4 py-3 border-2 border-corporate-blue text-corporate-blue rounded-lg hover:bg-corporate-blue/5 font-semibold transition-all flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                Profili Görüntüle
+              </button>
+              <button @click="selectRealtor(applicant)" class="flex-1 px-4 py-3 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue font-bold transition-all shadow-corporate flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Bu Emlakçıyı Seç
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </NuxtLayout>
 </template>
 
@@ -430,11 +649,49 @@
 // Modal states
 const showChangeModal = ref(false)
 const showRatingModal = ref(false)
+const showApplicantsModal = ref(false)
 const selectedPropertyId = ref(null)
 const selectedConsultantName = ref('')
 const changeReason = ref('')
 const rating = ref(0)
 const ratingComment = ref('')
+
+// Mock applicants data
+const applicants = ref([
+  {
+    id: 1,
+    name: 'Ahmet Yılmaz',
+    slug: 'ahmet-yilmaz',
+    experience: '5 yıl',
+    sales: '200+',
+    rating: 4.8,
+    avatar: 'AY',
+    speciality: 'Kadıköy Bölge Uzmanı',
+    message: 'İlanınızla ilgileniyorum. Bölgede 5 yıllık deneyimim var ve bu tür gayrimenkullerde uzmanım.'
+  },
+  {
+    id: 2,
+    name: 'Ayşe Demir',
+    slug: 'ayse-demir',
+    experience: '8 yıl',
+    sales: '350+',
+    rating: 4.9,
+    avatar: 'AD',
+    speciality: 'Beşiktaş Bölge Uzmanı',
+    message: 'Merhaba, ilanınızı inceledim. Benzer gayrimenkullerde çok başarılı satışlarım var. Sizinle çalışmak isterim.'
+  },
+  {
+    id: 3,
+    name: 'Mehmet Kaya',
+    slug: 'mehmet-kaya',
+    experience: '6 yıl',
+    sales: '280+',
+    rating: 4.7,
+    avatar: 'MK',
+    speciality: 'Şişli Bölge Uzmanı',
+    message: 'İlanınız çok güzel. Geniş müşteri ağım sayesinde hızlı satış yapabilirim.'
+  }
+])
 
 const viewConsultant = (consultantSlug) => {
   navigateTo(`/consultant/${consultantSlug}`)
@@ -510,5 +767,33 @@ const submitRating = () => {
   
   alert(`${selectedConsultantName.value} için ${rating.value} yıldız değerlendirmeniz kaydedildi. Teşekkür ederiz!`)
   closeRatingModal()
+}
+
+// Show applicants modal
+const showApplicants = (propertyId) => {
+  selectedPropertyId.value = propertyId
+  showApplicantsModal.value = true
+}
+
+const closeApplicantsModal = () => {
+  showApplicantsModal.value = false
+  selectedPropertyId.value = null
+}
+
+const selectRealtor = (realtor) => {
+  if (confirm(`${realtor.name} emlakçısını seçmek istediğinize emin misiniz?`)) {
+    console.log('Seçilen emlakçı:', {
+      propertyId: selectedPropertyId.value,
+      realtor: realtor
+    })
+    alert(`${realtor.name} başarıyla ilanınıza atandı! Sizinle iletişime geçecektir.`)
+    closeApplicantsModal()
+  }
+}
+
+const contactRealtor = (realtorSlug) => {
+  // Navigate to chat or open contact modal
+  console.log('İletişim:', realtorSlug)
+  alert('İletişim özelliği yakında eklenecek!')
 }
 </script>

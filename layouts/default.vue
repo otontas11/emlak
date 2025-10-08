@@ -9,9 +9,10 @@
       
           <!-- Main Header Content -->
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-              <!-- Logo -->
-              <div class="flex items-center">
+            <div class="flex items-center justify-between h-16">
+              <!-- Left Side: Logo + Navigation -->
+              <div class="flex items-center space-x-8">
+                <!-- Logo -->
                 <div class="flex-shrink-0">
                   <NuxtLink to="/" class="flex items-center hover:opacity-80 transition-opacity">
                     <div class="w-12 h-12 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-lg flex items-center justify-center mr-3 shadow-corporate">
@@ -22,16 +23,37 @@
                     <span class="text-2xl font-bold text-corporate-navy font-heading">Estate<span class="text-corporate-blue">90</span></span>
                   </NuxtLink>
                 </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6">
+                  <NuxtLink 
+                    to="/buy" 
+                    class="transition-colors font-semibold font-body"
+                    :class="$route.path === '/buy' ? 'text-corporate-blue border-b-2 border-corporate-blue pb-1' : 'text-corporate-navy hover:text-corporate-blue'"
+                  >
+                    Satın Al
+                  </NuxtLink>
+                  <NuxtLink 
+                    to="/portfolios" 
+                    class="transition-colors font-semibold font-body flex items-center gap-1"
+                    :class="$route.path === '/portfolios' ? 'text-corporate-blue border-b-2 border-corporate-blue pb-1' : 'text-corporate-navy hover:text-corporate-blue'"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    Portföy Paylaşımı
+                  </NuxtLink>
+                  <NuxtLink 
+                    to="/add-property" 
+                    class="transition-colors font-bold font-body"
+                    :class="$route.path === '/add-property' ? 'text-corporate-blue border-b-2 border-corporate-blue pb-1' : 'text-corporate-navy hover:text-corporate-blue'"
+                  >
+                    İlan Ver
+                  </NuxtLink>
+                </nav>
               </div>
               
-              <!-- Navigation Links -->
-              <nav class="hidden md:flex items-center space-x-8">
-                <NuxtLink to="/buy" class="text-corporate-navy hover:text-corporate-blue transition-colors font-semibold font-body">Satın Al</NuxtLink>
-                <NuxtLink to="/add-property" class="text-corporate-blue border-b-2 border-corporate-blue pb-1 font-bold hover:text-corporate-light-blue transition-colors font-body">İlan Ver</NuxtLink>
-                <NuxtLink to="/add-property" class="text-corporate-navy hover:text-corporate-blue transition-colors font-semibold font-body">Kirala</NuxtLink>
-              </nav>
-              
-              <!-- User Actions -->
+              <!-- Right Side: User Actions -->
           <div class="flex items-center space-x-4">
             <!-- Not Logged In -->
             <template v-if="!authStore.isLoggedIn">
