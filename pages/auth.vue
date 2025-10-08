@@ -1,16 +1,27 @@
 <template>
   <NuxtLayout name="default">
-    <div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
+    <div class="min-h-screen bg-gradient-to-br from-gray-50 to-corporate-gray-light flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+      <!-- Logo & Header -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-corporate-navy to-corporate-blue shadow-corporate-xl mb-4">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+        </div>
+        <h1 class="text-3xl font-heading font-bold text-corporate-navy mb-2">Estate90</h1>
+        <p class="text-sm text-gray-600">Profesyonel Emlak Platformu</p>
+      </div>
+
       <!-- Tab Navigation -->
-      <div class="flex border-b border-gray-200">
+      <div class="flex border-b border-gray-200 bg-white rounded-t-lg overflow-hidden shadow-corporate">
         <button
           @click="activeTab = 'login'"
           :class="[
-            'flex-1 py-4 px-1 text-center text-sm font-medium border-b-2 transition-colors',
+            'flex-1 py-4 px-1 text-center text-sm font-semibold border-b-2 transition-all duration-300',
             activeTab === 'login'
-              ? 'border-gray-900 text-gray-900'
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-corporate-blue text-corporate-navy bg-corporate-blue/5'
+              : 'border-transparent text-gray-500 hover:text-corporate-blue hover:bg-gray-50'
           ]"
         >
           GİRİŞ YAP
@@ -18,10 +29,10 @@
         <button
           @click="activeTab = 'register'"
           :class="[
-            'flex-1 py-4 px-1 text-center text-sm font-medium border-b-2 transition-colors',
+            'flex-1 py-4 px-1 text-center text-sm font-semibold border-b-2 transition-all duration-300',
             activeTab === 'register'
-              ? 'border-gray-900 text-gray-900'
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-corporate-blue text-corporate-navy bg-corporate-blue/5'
+              : 'border-transparent text-gray-500 hover:text-corporate-blue hover:bg-gray-50'
           ]"
         >
           ÜYE OL
@@ -29,7 +40,7 @@
       </div>
 
       <!-- Login Form -->
-      <div v-if="activeTab === 'login'" class="mt-8 space-y-6">
+      <div v-if="activeTab === 'login'" class="bg-white rounded-b-lg shadow-corporate-lg p-8 space-y-6">
         <!-- Error Message -->
         <div v-if="loginError" class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
           {{ loginError }}
@@ -46,7 +57,7 @@
               v-model="loginForm.email"
               type="email"
               required
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
               placeholder="E-posta adresinizi girin"
             />
           </div>
@@ -62,7 +73,7 @@
                 v-model="loginForm.password"
                 :type="showLoginPassword ? 'text' : 'password'"
                 required
-                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
                 placeholder="Şifrenizi girin"
               />
               <button
@@ -85,14 +96,14 @@
                 id="remember-me"
                 v-model="loginForm.rememberMe"
                 type="checkbox"
-                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                class="h-4 w-4 text-corporate-blue focus:ring-corporate-blue border-gray-300 rounded"
               />
               <label for="remember-me" class="ml-2 block text-sm text-gray-700">
                 BENİ HATIRLA
               </label>
             </div>
             <div class="text-sm">
-              <a href="#" class="font-medium text-blue-600 hover:text-blue-500 flex items-center">
+              <a href="#" class="font-medium text-corporate-blue hover:text-corporate-navy flex items-center transition-colors">
                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                 </svg>
@@ -106,7 +117,7 @@
             <button
               type="submit"
               :disabled="isLoggingIn"
-              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-corporate-lg text-sm font-medium text-white bg-gradient-to-r from-corporate-navy to-corporate-blue hover:from-corporate-blue hover:to-corporate-light-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-corporate-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span v-if="isLoggingIn" class="flex items-center">
                 <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -125,12 +136,12 @@
               type="button"
               @click="loginAsConsultant"
               :disabled="isLoggingIn"
-              class="w-full flex justify-center items-center py-3 px-4 border border-green-600 rounded-lg text-sm font-medium text-green-600 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full flex justify-center items-center py-3 px-4 border-2 border-corporate-blue rounded-lg text-sm font-medium text-corporate-blue hover:bg-gradient-to-r hover:from-corporate-navy hover:to-corporate-blue hover:text-white hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-corporate-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-corporate"
             >
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
-              DANIŞMAN OLARAK GİRİŞ YAP
+              EMLAKÇI OLARAK GİRİŞ YAP
             </button>
           </div>
 
@@ -139,7 +150,7 @@
       </div>
 
       <!-- Register Form -->
-      <div v-if="activeTab === 'register'" class="mt-8 space-y-6">
+      <div v-if="activeTab === 'register'" class="bg-white rounded-b-lg shadow-corporate-lg p-8 space-y-6">
         <!-- Error Message -->
         <div v-if="registerError" class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
           {{ registerError }}
@@ -157,7 +168,7 @@
                 v-model="registerForm.firstName"
                 type="text"
                 required
-                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
                 placeholder="Adınız"
               />
             </div>
@@ -170,7 +181,7 @@
                 v-model="registerForm.lastName"
                 type="text"
                 required
-                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
                 placeholder="Soyadınız"
               />
             </div>
@@ -186,7 +197,7 @@
               v-model="registerForm.email"
               type="email"
               required
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
               placeholder="E-posta adresinizi girin"
             />
           </div>
@@ -202,7 +213,7 @@
                 v-model="registerForm.password"
                 :type="showRegisterPassword ? 'text' : 'password'"
                 required
-                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
                 placeholder="Şifrenizi girin"
               />
               <button
@@ -228,8 +239,8 @@
               v-model="registerForm.phone"
               type="tel"
               required
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="0(5"
+              class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
+              placeholder="0(5XX) XXX XX XX"
             />
           </div>
 
@@ -243,7 +254,7 @@
                 id="birth-date"
                 v-model="registerForm.birthDate"
                 type="text"
-                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent transition-all"
                 placeholder="gg.aa.yyyy"
               />
               <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -255,17 +266,54 @@
           </div>
 
           <!-- Consultant Option -->
-          <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-            <div class="flex items-start">
+          <div class="relative overflow-hidden bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-xl p-6 shadow-corporate-lg">
+            <!-- Decorative background -->
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-corporate-light-blue/20 rounded-full blur-2xl"></div>
+            
+            <div class="relative flex items-start space-x-4">
               <input
                 id="isConsultant"
                 v-model="registerForm.isConsultant"
                 type="checkbox"
-                class="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+                class="h-6 w-6 text-corporate-light-blue focus:ring-white focus:ring-offset-2 focus:ring-offset-corporate-navy border-white/30 rounded mt-1 cursor-pointer transition-all"
               />
-              <label for="isConsultant" class="ml-3 block">
-                <span class="text-lg font-bold text-green-700">DANIŞMAN OLARAK KAYIT OL</span>
-                <span class="block text-sm text-green-600 mt-1">Emlak danışmanı olarak platforma katılın ve müşterilere hizmet verin. Danışman olarak daha fazla özellik ve gelir fırsatı elde edin.</span>
+              <label for="isConsultant" class="block cursor-pointer flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <span class="text-xl font-bold text-white font-heading">EMLAKÇI OLARAK KAYIT OL</span>
+                </div>
+                <p class="text-sm text-white/90 leading-relaxed mb-3">
+                  Profesyonel emlak danışmanı olarak platforma katılın ve yeni imkanların kapısını aralayın.
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-corporate-light-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm text-white/90">Kendi portföyünüzü paylaşın ve müşteri bulun</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-corporate-light-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm text-white/90">Diğer emlakçıların portföylerine talip olun</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-corporate-light-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm text-white/90">Müşteri ilanlarını yönetin ve komisyon kazanın</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-corporate-light-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm text-white/90">Ajanda sistemi ile randevularınızı organize edin</span>
+                  </div>
+                </div>
               </label>
             </div>
           </div>
@@ -277,7 +325,7 @@
                 id="newsletter"
                 v-model="registerForm.newsletter"
                 type="checkbox"
-                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                class="h-4 w-4 text-corporate-blue focus:ring-corporate-blue border-gray-300 rounded mt-1"
               />
               <label for="newsletter" class="ml-2 block text-sm text-gray-700">
                 YENİLİKLERDEN HABERDAR OLMAK İSTİYORUM
@@ -290,7 +338,7 @@
                 v-model="registerForm.agreement"
                 type="checkbox"
                 required
-                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                class="h-4 w-4 text-corporate-blue focus:ring-corporate-blue border-gray-300 rounded mt-1"
               />
               <label for="agreement" class="ml-2 block text-sm text-gray-700">
                 MESAFELİ SATIŞ SÖZLEŞMESİ'Nİ OKUDUM, ONAYLIYORUM.
@@ -303,7 +351,7 @@
             <button
               type="submit"
               :disabled="isRegistering"
-              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-corporate-lg text-sm font-medium text-white bg-gradient-to-r from-corporate-navy to-corporate-blue hover:from-corporate-blue hover:to-corporate-light-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-corporate-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span v-if="isRegistering" class="flex items-center">
                 <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
