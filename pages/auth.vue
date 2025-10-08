@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <div class="min-h-screen bg-gradient-to-br from-gray-50 to-corporate-gray-light flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full">
+    <div class="max-w-xl w-full">
       <!-- Logo & Header -->
       <div class="text-center mb-8">
         <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-corporate-navy to-corporate-blue shadow-corporate-xl mb-4">

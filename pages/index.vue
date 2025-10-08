@@ -13,32 +13,38 @@
         <div class="text-center">
           <div class="inline-block mb-4">
             <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-              Türkiye'nin Güvenilir Emlak Platformu
+              Emlakçılar ve Ev Sahipleri İçin Profesyonel Platform
             </span>
           </div>
           <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight font-heading">
-            Hayalinizdeki Evi<br />
-            <span class="text-white">Bulmak Artık Çok Kolay</span>
+            Emlak Dünyasında<br />
+            <span class="text-white">Yeni Bir Dönem</span>
           </h1>
           <p class="max-w-3xl mx-auto mb-10 text-lg md:text-xl text-white/90 leading-relaxed font-body">
-            Profesyonel emlak danışmanlarımız ile güvenli ve hızlı emlak deneyimi. <br class="hidden md:block"/>
-            Doğru evi, doğru fiyata, doğru danışmanla bulun.
+            Emlakçılar portföylerini paylaşır, diğer emlakçılarla işbirliği yapar. <br class="hidden md:block"/>
+            Ev sahipleri ilanlarını ekler, profesyonel emlakçılarla buluşur.
           </p>
           
 
-          <!-- Filter Buttons -->
+          <!-- Action Buttons -->
           <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button class="bg-white text-corporate-navy px-8 py-4 rounded-xl font-bold hover:bg-corporate-light-blue hover:text-white transition-all shadow-corporate-xl hover:scale-105 transform">
-              Satın Al
+            <button class="bg-white text-corporate-navy px-8 py-4 rounded-xl font-bold hover:bg-corporate-light-blue hover:text-white transition-all shadow-corporate-xl hover:scale-105 transform flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              Emlakçı Olarak Katıl
             </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
-              Kirala
+            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              İlan Ekle
             </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
-              Sat
-            </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all">
-              Ev Değerleme
+            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Portföy Ara
             </button>
           </div>
           
@@ -46,18 +52,18 @@
           <div class="bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 inline-flex items-center mb-6 border border-white/20 shadow-corporate-xl">
             <div class="flex items-center space-x-8">
               <div class="text-center">
-                <div class="text-3xl font-bold text-white">2,500+</div>
-                <div class="text-sm text-white/80 font-medium">Başarılı Satış</div>
+                <div class="text-3xl font-bold text-white">1,200+</div>
+                <div class="text-sm text-white/80 font-medium">Aktif Emlakçı</div>
               </div>
               <div class="w-px h-14 bg-white/30"></div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-white">5 Gün</div>
-                <div class="text-sm text-white/80 font-medium">Ortalama Süre</div>
+                <div class="text-3xl font-bold text-white">5,800+</div>
+                <div class="text-sm text-white/80 font-medium">Paylaşılan Portföy</div>
               </div>
               <div class="w-px h-14 bg-white/30"></div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-white">%98</div>
-                <div class="text-sm text-white/80 font-medium">Müşteri Memnuniyeti</div>
+                <div class="text-3xl font-bold text-white">%95</div>
+                <div class="text-sm text-white/80 font-medium">İşbirliği Başarısı</div>
               </div>
             </div>
           </div>
@@ -72,9 +78,9 @@
     <section class="py-20 bg-corporate-gray-light">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
-          İstanbul'da Evleri Keşfedin
+          Platformda Neler Var?
         </h2>
-        <p class="text-center text-gray-600 mb-12 text-lg font-body">Sizin için özenle seçilmiş emlak kategorileri</p>
+        <p class="text-center text-gray-600 mb-12 text-lg font-body">Emlakçı portföyleri ve kullanıcı ilanları</p>
         
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
           <!-- New Listings -->
@@ -161,63 +167,62 @@
     <section class="py-20 bg-white">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
-          Alıcı ve Satıcılar İçin Araçlar
+          Emlakçılar ve Ev Sahipleri İçin Özellikler
         </h2>
-        <p class="text-center text-gray-600 mb-12 text-lg font-body">Emlak işlemlerinizi kolaylaştıran profesyonel araçlarımız</p>
+        <p class="text-center text-gray-600 mb-12 text-lg font-body">Her iki kullanıcı grubu için güçlü araçlar</p>
         
         <div class="grid md:grid-cols-2 gap-8">
-          <!-- For Buyers -->
+          <!-- For Realtors -->
           <div class="bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-2xl p-8 shadow-corporate-lg text-white">
             <div class="flex items-center mb-6">
               <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold font-heading">Alıcılar İçin</h3>
+              <h3 class="text-2xl font-bold font-heading">Emlakçılar İçin</h3>
             </div>
             
             <div class="space-y-5">
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Ev Değerleme</h4>
-                  <p class="text-white/80 text-sm font-body">Evinizin güncel piyasa değerini profesyonel danışmanlarımızla öğrenin</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Portföy Paylaşımı</h4>
+                  <p class="text-white/80 text-sm font-body">Kendi portföyünüzü platformda paylaşın ve geniş kitleye ulaşın</p>
                 </div>
               </div>
               
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Kredi Hesaplayıcı</h4>
-                  <p class="text-white/80 text-sm font-body">Aylık ödeme tutarınızı ve kredi seçeneklerinizi hesaplayın</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Emlakçı İşbirliği</h4>
+                  <p class="text-white/80 text-sm font-body">Diğer emlakçıların portföylerine talip olun, komisyon kazanın</p>
                 </div>
               </div>
               
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Konum Analizi</h4>
-                  <p class="text-white/80 text-sm font-body">Bölge hakkında ulaşım, okul ve yaşam kalitesi bilgilerini inceleyin</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Ajanda Yönetimi</h4>
+                  <p class="text-white/80 text-sm font-body">Randevularınızı ve müsaitlik durumunuzu kolayca yönetin</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- For Sellers -->
+          <!-- For Home Owners -->
           <div class="bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-2xl p-8 shadow-corporate-lg text-white">
             <div class="flex items-center mb-6">
               <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
@@ -225,44 +230,43 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold font-heading">Satıcılar İçin</h3>
+              <h3 class="text-2xl font-bold font-heading">Ev Sahipleri İçin</h3>
             </div>
             
             <div class="space-y-5">
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Hızlı Satış</h4>
-                  <p class="text-white/80 text-sm font-body">Profesyonel danışmanlarımızla evinizi ortalama 5 günde satın</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Kolay İlan Ekleme</h4>
+                  <p class="text-white/80 text-sm font-body">Evinizi kolayca platforma ekleyin, profesyonel emlakçılara ulaştırın</p>
                 </div>
               </div>
               
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Pazar Analizi</h4>
-                  <p class="text-white/80 text-sm font-body">Bölgenizdeki fiyat trendlerini ve rekabetçi fiyatları görün</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Emlakçı Eşleştirme</h4>
+                  <p class="text-white/80 text-sm font-body">Bölgenizdeki en uygun emlakçılarla otomatik eşleşin</p>
                 </div>
               </div>
               
               <div class="flex items-start space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
                 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1 font-heading">Profesyonel Çekim</h4>
-                  <p class="text-white/80 text-sm font-body">Evinizi en iyi şekilde tanıtmak için ücretsiz fotoğraf çekimi</p>
+                  <h4 class="font-semibold text-white mb-1 font-heading">Güvenli İşlem</h4>
+                  <p class="text-white/80 text-sm font-body">Tüm süreç boyunca güvenli ve şeffaf işlem garantisi</p>
                 </div>
               </div>
             </div>
@@ -277,7 +281,7 @@
         <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
           Nasıl Çalışır?
         </h2>
-        <p class="text-center text-gray-600 mb-16 text-lg font-body">Sadece 3 basit adımda hayalinizdeki eve kavuşun</p>
+        <p class="text-center text-gray-600 mb-16 text-lg font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
         
         <div class="grid md:grid-cols-3 gap-12 relative">
           <!-- Connecting Lines -->
@@ -287,24 +291,24 @@
             <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">1</span>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">İlan Girin veya Arayın</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Satmak istediğiniz evi ilan olarak girin veya almak istediğiniz özelliklerde ev arayın</p>
+            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Kayıt Olun</h3>
+            <p class="text-gray-600 font-body leading-relaxed">Emlakçı veya ev sahibi olarak platforma ücretsiz kayıt olun</p>
           </div>
           
           <div class="text-center relative">
             <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">2</span>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Danışmanla Eşleşin</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Profesyonel emlak danışmanımız sizinle iletişime geçer ve süreci yönetir</p>
+            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Portföy/İlan Ekleyin</h3>
+            <p class="text-gray-600 font-body leading-relaxed">Emlakçılar portföy paylaşır, ev sahipleri ilan ekler</p>
           </div>
           
           <div class="text-center relative">
             <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
               <span class="text-3xl font-bold text-white">3</span>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Anlaşmayı Tamamlayın</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Güvenli ve hızlı şekilde emlak işleminizi tamamlayın, yeni evinize taşının</p>
+            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">İşbirliği Yapın</h3>
+            <p class="text-gray-600 font-body leading-relaxed">Emlakçılar birbirleriyle işbirliği yapar, ev sahipleri emlakçılarla buluşur</p>
           </div>
         </div>
       </div>
@@ -314,9 +318,9 @@
     <section class="py-20 bg-white">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
-          Uzman Emlak Danışmanlarımız
+          Platformdaki Başarılı Emlakçılar
         </h2>
-        <p class="text-center text-gray-600 mb-16 text-lg font-body">Bölgelerinin en iyi emlak uzmanlarıyla tanışın</p>
+        <p class="text-center text-gray-600 mb-16 text-lg font-body">Portföy paylaşan ve işbirliği yapan profesyonel emlakçılarımız</p>
         
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all border-2 border-corporate-gray hover:border-corporate-blue group">
@@ -331,8 +335,8 @@
               <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
-              <p class="text-sm text-corporate-navy font-medium text-center"><strong>5 yıl</strong> deneyim</p>
-              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>200+</strong> başarılı satış</p>
+              <p class="text-sm text-corporate-navy font-medium text-center"><strong>85</strong> portföy</p>
+              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>42</strong> işbirliği</p>
             </div>
           </div>
           
@@ -348,8 +352,8 @@
               <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
-              <p class="text-sm text-corporate-navy font-medium text-center"><strong>8 yıl</strong> deneyim</p>
-              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>350+</strong> başarılı satış</p>
+              <p class="text-sm text-corporate-navy font-medium text-center"><strong>120</strong> portföy</p>
+              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>68</strong> işbirliği</p>
             </div>
           </div>
           
@@ -365,8 +369,8 @@
               <span class="text-corporate-blue text-2xl">★★★★★</span>
             </div>
             <div class="bg-corporate-gray-light rounded-lg p-4">
-              <p class="text-sm text-corporate-navy font-medium text-center"><strong>6 yıl</strong> deneyim</p>
-              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>280+</strong> başarılı satış</p>
+              <p class="text-sm text-corporate-navy font-medium text-center"><strong>95</strong> portföy</p>
+              <p class="text-sm text-corporate-navy font-medium text-center mt-1"><strong>54</strong> işbirliği</p>
             </div>
           </div>
         </div>
