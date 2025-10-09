@@ -49,10 +49,10 @@
 
             <!-- Property Info -->
             <div class="lg:w-1/2">
-              <div class="mb-6">
-                <h1 class="text-4xl font-bold text-corporate-navy mb-3 font-heading">{{ property.title }}</h1>
-                <div class="flex items-center gap-2 text-gray-600 font-body">
-                  <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="mb-4">
+                <h1 class="text-2xl font-bold text-corporate-navy mb-2 font-heading">{{ property.title }}</h1>
+                <div class="flex items-center gap-1 text-gray-600 font-body text-sm">
+                  <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   </svg>
@@ -60,51 +60,51 @@
                 </div>
               </div>
               
-              <div class="bg-gradient-to-r from-corporate-navy to-corporate-blue p-6 rounded-xl mb-6 shadow-corporate">
-                <p class="text-sm text-white/80 mb-1 font-body">Fiyat</p>
-                <p class="text-4xl font-bold text-white">{{ property.price }}</p>
+              <div class="bg-gradient-to-r from-corporate-navy to-corporate-blue p-4 rounded-xl mb-4 shadow-corporate">
+                <p class="text-xs text-white/80 mb-1 font-body">Fiyat</p>
+                <p class="text-2xl font-bold text-white">{{ property.price }}</p>
               </div>
               
               <!-- Property Stats -->
-              <div class="grid grid-cols-2 gap-4 mb-6">
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                  <div class="flex items-center text-corporate-blue mb-2">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <div class="flex items-center text-corporate-blue mb-1">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
                     </svg>
                     <span class="text-xs font-bold text-gray-500 uppercase">Alan</span>
                   </div>
-                  <p class="text-2xl font-bold text-corporate-navy">{{ property.area }} m²</p>
+                  <p class="text-lg font-bold text-corporate-navy">{{ property.area }} m²</p>
                 </div>
                 
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                  <div class="flex items-center text-corporate-blue mb-2">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <div class="flex items-center text-corporate-blue mb-1">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
                     <span class="text-xs font-bold text-gray-500 uppercase">Oda Sayısı</span>
                   </div>
-                  <p class="text-2xl font-bold text-corporate-navy">{{ property.bedrooms }}+{{ property.bathrooms }}</p>
+                  <p class="text-lg font-bold text-corporate-navy">{{ property.bedrooms }}+{{ property.bathrooms }}</p>
                 </div>
                 
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                  <div class="flex items-center text-corporate-blue mb-2">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <div class="flex items-center text-corporate-blue mb-1">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                     </svg>
                     <span class="text-xs font-bold text-gray-500 uppercase">Bina Yaşı</span>
                   </div>
-                  <p class="text-2xl font-bold text-corporate-navy">{{ property.buildingAge || '5' }} Yıl</p>
+                  <p class="text-lg font-bold text-corporate-navy">{{ property.buildingAge || '5' }} Yıl</p>
                 </div>
                 
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                  <div class="flex items-center text-corporate-blue mb-2">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <div class="flex items-center text-corporate-blue mb-1">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                     </svg>
                     <span class="text-xs font-bold text-gray-500 uppercase">Kat</span>
                   </div>
-                  <p class="text-2xl font-bold text-corporate-navy">{{ property.floor || '3' }}/{{ property.totalFloors || '8' }}</p>
+                  <p class="text-lg font-bold text-corporate-navy">{{ property.floor || '3' }}/{{ property.totalFloors || '8' }}</p>
                 </div>
               </div>
 
@@ -372,23 +372,8 @@
           <div class="lg:col-span-1 space-y-6">
             <!-- Property Stats -->
             <div class="bg-white rounded-xl shadow-corporate-lg border border-corporate-gray p-6">
-              <h2 class="text-2xl font-bold text-corporate-navy mb-6 font-heading">İstatistikler</h2>
               <div class="space-y-4">
-                <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs text-gray-500 font-body">Görüntülenme</p>
-                      <p class="text-2xl font-bold text-corporate-navy">{{ property.views || 245 }}</p>
-                    </div>
-                  </div>
-                </div>
-                
+
                 <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
                   <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
@@ -418,42 +403,7 @@
                 </div>
               </div>
             </div>
-            
-            <!-- Activity Feed -->
-            <div class="bg-white rounded-xl shadow-corporate-lg border border-corporate-gray">
-              <div class="p-6 border-b border-gray-200">
-                <h2 class="text-2xl font-bold text-corporate-navy font-heading">Son Hareketler</h2>
-                <p class="text-sm text-gray-600 mt-1 font-body">İlan aktiviteleri</p>
-              </div>
 
-              <div class="p-6">
-                <div class="space-y-4">
-                  <div v-for="activity in propertyActivities" :key="activity.id" class="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-corporate" :class="activity.iconBg">
-                      <svg class="w-5 h-5" :class="activity.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="activity.iconPath"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="text-sm text-gray-900 font-semibold">
-                        {{ activity.userName }}
-                      </p>
-                      <p class="text-sm text-gray-600 font-body">
-                        {{ activity.action }}
-                      </p>
-                      <p class="text-xs text-gray-500 mt-1">{{ activity.time }}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Load More Button -->
-                <div class="mt-6 text-center">
-                  <button class="text-corporate-blue hover:text-corporate-navy text-sm font-bold transition-colors">
-                    Tüm Hareketleri Gör
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
