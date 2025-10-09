@@ -136,99 +136,45 @@
                 </div>
               </div>
               
-              <!-- User Listing - Applicants Section -->
-              <div 
-                v-else-if="property.source === 'user'"
-                class="mb-6"
-              >
-                <!-- Selected Realtor -->
-                <div 
-                  v-if="property.selectedRealtor"
-                  class="p-5 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 mb-4"
-                >
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                      <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <p class="text-xs font-bold text-green-600 uppercase mb-1">Seçilen Emlakçı</p>
-                        <p class="text-lg font-bold text-corporate-navy">{{ property.selectedRealtor.name }}</p>
-                        <p class="text-xs text-gray-600">İlanınızı yönetiyor</p>
-                      </div>
-                    </div>
-                    <div class="flex gap-2">
-                      <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm font-bold shadow-corporate">
-                        Profil
-                      </button>
-                      <button class="bg-corporate-blue text-white px-4 py-2 rounded-lg hover:bg-corporate-navy transition-colors text-sm font-bold shadow-corporate">
-                        İletişim
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Applicants -->
-                <div 
-                  v-else-if="property.applicants && property.applicants.length > 0"
-                  class="p-5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200"
-                >
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                      <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                        <span class="text-white text-lg font-bold">{{ property.applicants.length }}</span>
-                      </div>
-                      <div>
-                        <p class="text-xs font-bold text-blue-600 uppercase mb-1">Talip Olan Emlakçılar</p>
-                        <p class="text-lg font-bold text-corporate-navy">{{ property.applicants.length }} emlakçı ilgilenmiş</p>
-                        <p class="text-xs text-gray-600">Birini seçerek ilanınızı yönetmesini sağlayabilirsiniz</p>
-                      </div>
-                    </div>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm font-bold shadow-corporate flex items-center gap-2">
-                      Talipleri Gör
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                
-                <!-- No Applicants Yet -->
-                <div 
-                  v-else
-                  class="p-5 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl border-2 border-yellow-200"
-                >
-                  <div class="flex items-center">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-400 rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs font-bold text-yellow-600 uppercase mb-1">Emlakçı Bekleniyor</p>
-                      <p class="text-lg font-bold text-corporate-navy">Henüz talip olan emlakçı yok</p>
-                      <p class="text-xs text-gray-600">İlanınız yayında, emlakçılar başvurabilir</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <!-- Action Buttons -->
-              <div class="flex flex-wrap gap-3">
-                <button class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 py-3 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold flex items-center gap-2 shadow-corporate">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                  </svg>
-                  İlanı Düzenle
-                </button>
-                <button class="bg-white text-corporate-navy border-2 border-corporate-navy px-6 py-3 rounded-lg hover:bg-corporate-navy hover:text-white transition-all font-bold flex items-center gap-2">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
-                  </svg>
-                  Paylaş
-                </button>
+              <div class="space-y-3">
+                <!-- Realtor/Visitor Buttons (Always show for now) -->
+                <div class="space-y-3">
+                  <!-- Apply for Portfolio Button -->
+                  <button 
+                    v-if="!hasApplied"
+                    @click="applyForProperty"
+                    class="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-4 rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all font-bold flex items-center justify-center gap-2 shadow-corporate-lg"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                    </svg>
+                    Portföye Talip Ol
+                  </button>
+                  
+                  <button 
+                    v-else
+                    disabled
+                    class="w-full bg-gray-300 text-gray-600 px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 cursor-not-allowed"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Başvuru Yapıldı
+                  </button>
+                  
+                  <!-- Message Owner Button (Always show) -->
+                  <button 
+                    @click="openMessageModal"
+                    class="w-full bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 py-4 rounded-xl hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold flex items-center justify-center gap-2 shadow-corporate-lg"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    İlan Sahibine Mesaj Gönder
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -333,12 +279,84 @@
         </div>
       </div>
     </div>
+
+    <!-- Message Modal -->
+    <div v-if="showMessageModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-2xl shadow-corporate-xl max-w-lg w-full p-6">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-2xl font-bold text-corporate-navy font-heading">İlan Sahibine Mesaj</h3>
+          <button @click="closeMessageModal" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <form @submit.prevent="sendMessage" class="space-y-4">
+          <div>
+            <label class="block text-sm font-bold text-corporate-navy mb-2 font-body">Konu</label>
+            <input 
+              type="text" 
+              v-model="messageForm.subject" 
+              required 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body"
+              placeholder="Örn: İlan hakkında bilgi almak istiyorum"
+            >
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-corporate-navy mb-2 font-body">Mesajınız</label>
+            <textarea 
+              v-model="messageForm.message" 
+              required 
+              rows="6" 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body"
+              placeholder="Mesajınızı buraya yazın..."
+            ></textarea>
+          </div>
+
+          <div class="flex space-x-3 pt-4">
+            <button 
+              type="button" 
+              @click="closeMessageModal" 
+              class="flex-1 px-4 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-bold transition-all font-body"
+            >
+              İptal
+            </button>
+            <button 
+              type="submit" 
+              :disabled="isSending"
+              class="flex-1 px-4 py-3 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue font-bold transition-all shadow-corporate font-body disabled:opacity-50"
+            >
+              <span v-if="isSending">Gönderiliyor...</span>
+              <span v-else>Gönder</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </NuxtLayout>
 </template>
 
 <script setup>
+import { useAuthStore } from '~/stores/auth'
+
 const route = useRoute()
 const propertyId = route.params.id
+const authStore = useAuthStore()
+
+// User type checks
+const isOwner = ref(false) // Set to true if current user owns this property
+const isRealtor = ref(true) // Set to true if current user is a realtor
+const hasApplied = ref(false) // Set to true if realtor has already applied
+
+// Message modal
+const showMessageModal = ref(false)
+const isSending = ref(false)
+const messageForm = ref({
+  subject: '',
+  message: ''
+})
 
 // Property data based on ID
 const propertyData = {
@@ -506,5 +524,49 @@ const propertyActivities = [
 
 const viewConsultant = (consultantSlug) => {
   navigateTo(`/consultant/${consultantSlug}`)
+}
+
+// Realtor actions
+const applyForProperty = async () => {
+  if (confirm('Bu ilana portföy için talip olmak istediğinize emin misiniz?')) {
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      hasApplied.value = true
+      alert('Başvurunuz başarıyla gönderildi! İlan sahibi başvurunuzu değerlendirecektir.')
+    } catch (error) {
+      alert('Başvuru gönderilirken bir hata oluştu')
+    }
+  }
+}
+
+const openMessageModal = () => {
+  showMessageModal.value = true
+  messageForm.value = {
+    subject: `${property.title} hakkında`,
+    message: ''
+  }
+}
+
+const closeMessageModal = () => {
+  showMessageModal.value = false
+  messageForm.value = {
+    subject: '',
+    message: ''
+  }
+}
+
+const sendMessage = async () => {
+  isSending.value = true
+  try {
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    alert('Mesajınız başarıyla gönderildi! İlan sahibi en kısa sürede size dönüş yapacaktır.')
+    closeMessageModal()
+  } catch (error) {
+    alert('Mesaj gönderilirken bir hata oluştu')
+  } finally {
+    isSending.value = false
+  }
 }
 </script>
