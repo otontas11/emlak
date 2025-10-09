@@ -4,8 +4,8 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Page Header -->
         <div class="mb-8">
-          <h1 class="text-4xl font-bold text-corporate-navy font-heading">Danışman Profilim</h1>
-          <p class="text-gray-600 mt-2 text-lg font-body">Danışman hesap bilgilerinizi ve ajandanızı yönetin</p>
+          <h1 class="text-4xl font-bold text-corporate-navy font-heading">Emlakçı Profilim</h1>
+          <p class="text-gray-600 mt-2 text-lg font-body">Emlakçı hesap bilgilerinizi, portföyünüzü ve ajandanızı yönetin</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -25,27 +25,30 @@
                     </svg>
                   </div>
                 </div>
-                <h2 class="text-xl font-bold text-corporate-navy mt-4 font-heading">{{ authStore.fullName }}</h2>
-                <p class="text-corporate-blue text-sm font-bold">Emlak Danışmanı</p>
-                <p class="text-gray-600 text-sm mt-1 font-body">{{ authStore.user?.email }}</p>
+                <h2 class="text-xl font-bold text-corporate-navy mt-4 font-heading">{{ companyName }}</h2>
+                <p class="text-corporate-blue text-sm font-bold">Emlak Ofisi</p>
+                <div class="mt-2 pt-2 border-t border-gray-200">
+                  <p class="text-xs text-gray-500">Yetkili Kişi</p>
+                  <p class="text-sm text-gray-700 font-semibold">{{ authStore.fullName }}</p>
+                </div>
               </div>
 
               <!-- Stats -->
               <div class="grid grid-cols-2 gap-4 mb-6">
                 <div class="bg-corporate-blue/5 rounded-lg p-4 text-center border border-corporate-blue/20">
-                  <div class="text-2xl font-bold text-corporate-blue">12</div>
-                  <div class="text-sm text-gray-600 font-body">Aktif İlan</div>
+                  <div class="text-2xl font-bold text-corporate-blue">18</div>
+                  <div class="text-sm text-gray-600 font-body">Portföy İlanı</div>
                 </div>
                 <div class="bg-green-50 rounded-lg p-4 text-center border border-green-200">
-                  <div class="text-2xl font-bold text-green-600">24</div>
+                  <div class="text-2xl font-bold text-green-600">32</div>
                   <div class="text-sm text-gray-600 font-body">Başarılı Satış</div>
                 </div>
-                <div class="bg-yellow-50 rounded-lg p-4 text-center border border-yellow-200">
-                  <div class="text-2xl font-bold text-yellow-600">8</div>
-                  <div class="text-sm text-gray-600 font-body">Bekleyen</div>
+                <div class="bg-purple-50 rounded-lg p-4 text-center border border-purple-200">
+                  <div class="text-2xl font-bold text-purple-600">5</div>
+                  <div class="text-sm text-gray-600 font-body">Talip Olduğum</div>
                 </div>
-                <div class="bg-corporate-navy/5 rounded-lg p-4 text-center border border-corporate-navy/20">
-                  <div class="text-2xl font-bold text-corporate-navy">15</div>
+                <div class="bg-yellow-50 rounded-lg p-4 text-center border border-yellow-200">
+                  <div class="text-2xl font-bold text-yellow-600">12</div>
                   <div class="text-sm text-gray-600 font-body">Randevular</div>
                 </div>
               </div>
@@ -77,8 +80,15 @@
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                   </svg>
-                  <span>Atanan İlanlarım</span>
+                  <span>Portföy İlanlarım</span>
                 </NuxtLink>
+                
+                <button @click="activeTab = 'applications'" :class="activeTab === 'applications' ? 'bg-corporate-blue text-white' : 'text-corporate-navy hover:bg-corporate-blue/10'" class="w-full flex items-center space-x-3 p-3 rounded-lg transition-all font-semibold font-body">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                  </svg>
+                  <span>Talip Olduklarım</span>
+                </button>
               </div>
             </div>
           </div>
@@ -87,43 +97,81 @@
           <div class="lg:col-span-2">
             <!-- Profile Tab -->
             <div v-if="activeTab === 'profile'" class="bg-white rounded-xl shadow-corporate-lg p-8 border border-corporate-gray">
-              <h3 class="text-2xl font-bold text-corporate-navy mb-6 font-heading">Danışman Bilgileri</h3>
+              <h3 class="text-2xl font-bold text-corporate-navy mb-6 font-heading">Şirket Bilgileri</h3>
               
               <form @submit.prevent="updateProfile" class="space-y-6">
-                <!-- Name Fields -->
+                <!-- Company Name -->
+                <div>
+                  <label for="companyName" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Şirket Adı *</label>
+                  <input type="text" id="companyName" v-model="profileForm.companyName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Örn: Yılmaz Emlak">
+                </div>
+
+                <!-- Company Info Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label for="firstName" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Ad *</label>
-                    <input type="text" id="firstName" v-model="profileForm.firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body">
+                    <label for="taxNumber" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Vergi Numarası</label>
+                    <input type="text" id="taxNumber" v-model="profileForm.taxNumber" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="1234567890">
                   </div>
                   <div>
-                    <label for="lastName" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Soyad *</label>
-                    <input type="text" id="lastName" v-model="profileForm.lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body">
+                    <label for="taxOffice" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Vergi Dairesi</label>
+                    <input type="text" id="taxOffice" v-model="profileForm.taxOffice" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Kadıköy">
                   </div>
                 </div>
 
-                <!-- Email -->
-                <div>
-                  <label for="email" class="block text-sm font-bold text-corporate-navy mb-2 font-body">E-posta</label>
-                  <input type="email" id="email" v-model="profileForm.email" disabled class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500 cursor-not-allowed font-body">
+                <!-- Contact Info -->
+                <div class="border-t pt-6 mt-6">
+                  <h4 class="text-lg font-bold text-corporate-navy mb-4 font-heading">İletişim Bilgileri</h4>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label for="phone" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Telefon *</label>
+                      <input type="tel" id="phone" v-model="profileForm.phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="+90 532 123 45 67">
+                    </div>
+                    <div>
+                      <label for="email" class="block text-sm font-bold text-corporate-navy mb-2 font-body">E-posta</label>
+                      <input type="email" id="email" v-model="profileForm.email" disabled class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500 cursor-not-allowed font-body">
+                    </div>
+                  </div>
+
+                  <!-- Address -->
+                  <div>
+                    <label for="address" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Adres</label>
+                    <textarea id="address" v-model="profileForm.address" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Şirket adresi..."></textarea>
+                  </div>
                 </div>
 
-                <!-- Phone -->
-                <div>
-                  <label for="phone" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Telefon</label>
-                  <input type="tel" id="phone" v-model="profileForm.phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="+90 532 123 45 67">
+                <!-- Authorized Person (Private) -->
+                <div class="border-t pt-6 mt-6 bg-gray-50 -mx-8 px-8 py-6">
+                  <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <h4 class="text-lg font-bold text-corporate-navy font-heading">Yetkili Kişi Bilgileri (Gizli)</h4>
+                  </div>
+                  <p class="text-xs text-gray-500 mb-4">Bu bilgiler sadece sizin görebilirsiniz, müşterilere gösterilmez.</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="firstName" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Ad *</label>
+                      <input type="text" id="firstName" v-model="profileForm.firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body bg-white">
+                    </div>
+                    <div>
+                      <label for="lastName" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Soyad *</label>
+                      <input type="text" id="lastName" v-model="profileForm.lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body bg-white">
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Specialty Area -->
                 <div>
-                  <label for="specialty" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Uzmanlık Alanı</label>
-                  <input type="text" id="specialty" v-model="profileForm.specialty" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Kadıköy Uzmanı">
+                  <label for="specialty" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Uzmanlık Bölgesi</label>
+                  <input type="text" id="specialty" v-model="profileForm.specialty" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Kadıköy, Beşiktaş">
                 </div>
 
-                <!-- About -->
+                <!-- About Company -->
                 <div>
-                  <label for="about" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Hakkımda</label>
-                  <textarea id="about" v-model="profileForm.about" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Kendiniz hakkında kısa bir açıklama..."></textarea>
+                  <label for="about" class="block text-sm font-bold text-corporate-navy mb-2 font-body">Şirket Hakkında</label>
+                  <textarea id="about" v-model="profileForm.about" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-blue focus:border-transparent font-body" placeholder="Şirketiniz hakkında kısa bir açıklama..."></textarea>
                 </div>
 
                 <!-- Save Button -->
@@ -135,6 +183,59 @@
                   </button>
                 </div>
               </form>
+            </div>
+
+            <!-- Applications Tab -->
+            <div v-if="activeTab === 'applications'" class="bg-white rounded-xl shadow-corporate-lg p-8 border border-corporate-gray">
+              <h3 class="text-2xl font-bold text-corporate-navy mb-6 font-heading">Talip Olduğum İlanlar</h3>
+              
+              <div class="space-y-4">
+                <div v-for="application in applications" :key="application.id" class="border-2 rounded-xl p-6 hover:shadow-corporate transition-all" :class="application.status === 'accepted' ? 'border-green-200 bg-green-50' : application.status === 'pending' ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-white'">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="flex-1">
+                      <h4 class="text-lg font-bold text-corporate-navy mb-1">{{ application.propertyTitle }}</h4>
+                      <p class="text-sm text-gray-600 mb-2">{{ application.location }}</p>
+                      <p class="text-xl font-bold text-corporate-blue">{{ application.price }}</p>
+                    </div>
+                    <div class="ml-4">
+                      <span v-if="application.status === 'accepted'" class="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Kabul Edildi
+                      </span>
+                      <span v-else-if="application.status === 'pending'" class="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
+                        Beklemede
+                      </span>
+                      <span v-else class="px-3 py-1 bg-gray-500 text-white text-xs font-bold rounded-full">
+                        Reddedildi
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div class="text-sm text-gray-600">
+                      <span class="font-semibold">Başvuru Tarihi:</span> {{ application.appliedDate }}
+                    </div>
+                    <div class="flex gap-2">
+                      <button v-if="application.status === 'accepted'" @click="viewProperty(application.propertyId)" class="px-4 py-2 bg-corporate-blue text-white rounded-lg hover:bg-corporate-navy transition-colors text-sm font-bold">
+                        İlanı Görüntüle
+                      </button>
+                      <button v-else-if="application.status === 'pending'" class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg text-sm font-bold cursor-not-allowed">
+                        Yanıt Bekleniyor
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div v-if="applications.length === 0" class="text-center py-12 text-gray-500">
+                  <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                  </svg>
+                  <p class="font-semibold">Henüz talip olduğunuz ilan yok</p>
+                  <p class="text-sm mt-2">Kullanıcı ilanlarına talip olarak portföyünüzü genişletebilirsiniz</p>
+                </div>
+              </div>
             </div>
 
             <!-- Agenda Tab -->
@@ -271,14 +372,77 @@ const isUpdating = ref(false)
 const activeTab = ref('profile')
 const showAddSlotModal = ref(false)
 
+// Company name for display
+const companyName = ref('Yılmaz Emlak')
+
 const profileForm = ref({
-  firstName: authStore.user?.firstName || '',
-  lastName: authStore.user?.lastName || '',
-  email: authStore.user?.email || '',
+  // Company Info (Public)
+  companyName: 'Yılmaz Emlak',
+  taxNumber: '1234567890',
+  taxOffice: 'Kadıköy',
   phone: '+90 532 123 45 67',
-  specialty: 'Kadıköy Uzmanı',
-  about: ''
+  email: authStore.user?.email || '',
+  address: 'Caferağa Mahallesi, Moda Caddesi No: 123/A, Kadıköy, İstanbul',
+  specialty: 'Kadıköy, Beşiktaş, Üsküdar',
+  about: '2010 yılından beri Kadıköy ve çevresinde hizmet veren güvenilir emlak ofisidir.',
+  
+  // Authorized Person (Private)
+  firstName: authStore.user?.firstName || '',
+  lastName: authStore.user?.lastName || ''
 })
+
+// Applications data
+const applications = ref([
+  {
+    id: 1,
+    propertyId: 2,
+    propertyTitle: '2+1 Modern Daire, Etiler',
+    location: 'Etiler, Beşiktaş, İstanbul',
+    price: '₺3,200,000',
+    status: 'pending', // 'pending' | 'accepted' | 'rejected'
+    appliedDate: '10 Ekim 2024'
+  },
+  {
+    id: 2,
+    propertyId: 4,
+    propertyTitle: '3+1 Daire, Fenerbahçe',
+    location: 'Fenerbahçe, Kadıköy, İstanbul',
+    price: '₺2,800,000',
+    status: 'accepted',
+    appliedDate: '8 Ekim 2024'
+  },
+  {
+    id: 3,
+    propertyId: 6,
+    propertyTitle: '3+1 Daire, Mecidiyeköy',
+    location: 'Mecidiyeköy, Şişli, İstanbul',
+    price: '₺2,300,000',
+    status: 'pending',
+    appliedDate: '12 Ekim 2024'
+  },
+  {
+    id: 4,
+    propertyId: 8,
+    propertyTitle: '2+1 Daire, Ataşehir',
+    location: 'Ataşehir, İstanbul',
+    price: '₺2,100,000',
+    status: 'rejected',
+    appliedDate: '5 Ekim 2024'
+  },
+  {
+    id: 5,
+    propertyId: 10,
+    propertyTitle: '4+2 Villa, Göktürk',
+    location: 'Göktürk, İstanbul',
+    price: '₺8,500,000',
+    status: 'pending',
+    appliedDate: '14 Ekim 2024'
+  }
+])
+
+const viewProperty = (propertyId) => {
+  navigateTo(`/property/${propertyId}`)
+}
 
 // Agenda functionality
 const currentDate = ref(new Date())
@@ -400,13 +564,19 @@ const updateProfile = async () => {
   isUpdating.value = true
   try {
     await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    // Update company name
+    companyName.value = profileForm.value.companyName
+    
+    // Update authorized person (private)
     if (authStore.user) {
       authStore.user.firstName = profileForm.value.firstName
       authStore.user.lastName = profileForm.value.lastName
     }
-    alert('Profil başarıyla güncellendi!')
+    
+    alert('Şirket bilgileri başarıyla güncellendi!')
   } catch (error) {
-    alert('Profil güncellenirken bir hata oluştu')
+    alert('Bilgiler güncellenirken bir hata oluştu')
   } finally {
     isUpdating.value = false
   }
