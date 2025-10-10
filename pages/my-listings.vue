@@ -45,6 +45,12 @@
                     </svg>
                     Beklemede ({{ properties.filter(p => p.status === 'pending').length }})
                   </v-tab>
+                  <v-tab value="self-managed" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    Kendim Yönetiyorum ({{ properties.filter(p => p.selfManaged).length }})
+                  </v-tab>
                   <v-tab value="sold" class="font-semibold">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -91,7 +97,18 @@
                     </div>
                     <div class="flex-1 min-w-0">
                       <div class="flex items-center justify-between cursor-pointer" @click="viewProperty(property.id)">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">{{ property.title }}</h3>
+                        <div class="flex items-center gap-2">
+                          <h3 class="text-xl font-bold text-corporate-navy font-heading">{{ property.title }}</h3>
+                          <span 
+                            v-if="property.selfManaged"
+                            class="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800 border border-purple-300"
+                          >
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Kendim
+                          </span>
+                        </div>
                         <span 
                           class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold"
                           :class="{
@@ -118,9 +135,41 @@
                         <span>{{ property.location }}</span>
                       </div>
                       
+                      <!-- Self Managed Badge -->
+                      <div 
+                        v-if="property.selfManaged"
+                        class="mt-4 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl border-2 border-purple-300"
+                      >
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                              </svg>
+                            </div>
+                            <div>
+                              <p class="text-xs font-medium text-purple-800 font-body flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                Kendi İlanım
+                              </p>
+                              <p class="text-sm font-bold text-purple-900">Bu ilanı kendiniz yönetiyorsunuz</p>
+                              <p class="text-xs text-purple-700 mt-0.5">Emlakçı desteği almadan direkt satış yapıyorsunuz</p>
+                            </div>
+                          </div>
+                          <button @click.stop="toggleSelfManagement(property.id)" class="text-purple-700 hover:text-purple-800 text-sm font-semibold flex items-center whitespace-nowrap">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                            </svg>
+                            Emlakçıya Aç
+                          </button>
+                        </div>
+                      </div>
+                      
                       <!-- Realtor Applicants -->
                       <div 
-                        v-if="property.hasApplicants && !property.selectedRealtor"
+                        v-else-if="property.hasApplicants && !property.selectedRealtor && !property.selfManaged"
                         class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20"
                       >
                         <div class="flex items-center justify-between mb-3">
@@ -147,7 +196,7 @@
 
                       <!-- No Realtor Yet -->
                       <div 
-                        v-else-if="!property.hasApplicants && !property.selectedRealtor && property.status !== 'sold'"
+                        v-else-if="!property.hasApplicants && !property.selectedRealtor && property.status !== 'sold' && !property.selfManaged"
                         class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200"
                       >
                         <div class="flex items-center justify-between">
@@ -163,11 +212,11 @@
                               <p class="text-xs text-yellow-600 mt-0.5">İlanınız emlakçılar tarafından görüntülenebilir</p>
                             </div>
                           </div>
-                          <button class="text-yellow-700 hover:text-yellow-800 text-sm font-semibold flex items-center">
+                          <button @click.stop="toggleSelfManagement(property.id)" class="text-yellow-700 hover:text-yellow-800 text-sm font-semibold flex items-center whitespace-nowrap">
                             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                             </svg>
-                            Detay
+                            Kendim Satacağım
                           </button>
                         </div>
                       </div>
@@ -468,21 +517,23 @@ const properties = ref([
     location: 'Kadıköy, İstanbul',
     applicantsCount: 3,
     hasApplicants: true,
-    selectedRealtor: null
+    selectedRealtor: null,
+    selfManaged: false // Emlakçı ile çalışılıyor
   },
   {
     id: '2',
     title: '2+1 Daire, Beşiktaş',
     price: 1850000,
     type: 'sale',
-    status: 'pending',
+    status: 'active',
     bedrooms: 2,
     bathrooms: 1,
     area: 95,
     location: 'Beşiktaş, İstanbul',
     applicantsCount: 0,
     hasApplicants: false,
-    selectedRealtor: null
+    selectedRealtor: null,
+    selfManaged: true // Kullanıcı kendisi yönetiyor
   },
   {
     id: '3',
@@ -496,7 +547,8 @@ const properties = ref([
     location: 'Şişli, İstanbul',
     applicantsCount: 0,
     hasApplicants: false,
-    selectedRealtor: { name: 'Mehmet Kaya', slug: 'mehmet-kaya' }
+    selectedRealtor: { name: 'Mehmet Kaya', slug: 'mehmet-kaya' },
+    selfManaged: false
   },
   {
     id: '4',
@@ -510,7 +562,8 @@ const properties = ref([
     location: 'Üsküdar, İstanbul',
     applicantsCount: 0,
     hasApplicants: false,
-    selectedRealtor: { name: 'Ayşe Demir', slug: 'ayse-demir' }
+    selectedRealtor: { name: 'Ayşe Demir', slug: 'ayse-demir' },
+    selfManaged: false
   },
   {
     id: '5',
@@ -524,7 +577,8 @@ const properties = ref([
     location: 'Maltepe, İstanbul',
     applicantsCount: 2,
     hasApplicants: true,
-    selectedRealtor: null
+    selectedRealtor: null,
+    selfManaged: false
   },
   {
     id: '6',
@@ -538,7 +592,23 @@ const properties = ref([
     location: 'Ataşehir, İstanbul',
     applicantsCount: 0,
     hasApplicants: false,
-    selectedRealtor: null
+    selectedRealtor: null,
+    selfManaged: true // Kullanıcı kendisi yönetiyor
+  },
+  {
+    id: '7',
+    title: '4+1 Dubleks, Sarıyer',
+    price: 5800000,
+    type: 'sale',
+    status: 'pending',
+    bedrooms: 4,
+    bathrooms: 2,
+    area: 185,
+    location: 'Sarıyer, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: null,
+    selfManaged: false
   }
 ])
 
@@ -552,6 +622,8 @@ const filteredProperties = computed(() => {
     return properties.value.filter(p => p.status === 'pending')
   } else if (activeTab.value === 'sold') {
     return properties.value.filter(p => p.status === 'sold')
+  } else if (activeTab.value === 'self-managed') {
+    return properties.value.filter(p => p.selfManaged === true)
   }
   return properties.value
 })
@@ -705,6 +777,28 @@ const contactRealtor = (realtorSlug) => {
   // Navigate to chat or open contact modal
   console.log('İletişim:', realtorSlug)
   alert('İletişim özelliği yakında eklenecek!')
+}
+
+// Toggle self management
+const toggleSelfManagement = (propertyId) => {
+  const property = properties.value.find(p => p.id === propertyId)
+  if (!property) return
+  
+  if (property.selfManaged) {
+    // İlanı emlakçılara açma
+    if (confirm('Bu ilanı emlakçıların görmesine izin vermek istiyor musunuz?')) {
+      property.selfManaged = false
+      alert('İlanınız artık emlakçılar tarafından görülebilir ve başvuru alabilirsiniz.')
+    }
+  } else {
+    // İlanı kendisi yönetmeye başlama
+    if (confirm('Bu ilanı emlakçı desteği olmadan kendiniz mi yönetmek istiyorsunuz?')) {
+      property.selfManaged = true
+      property.hasApplicants = false
+      property.applicantsCount = 0
+      alert('İlanınız artık sadece sizin tarafınızdan yönetiliyor. Emlakçılar bu ilanı göremeyecek.')
+    }
+  }
 }
 </script>
 
