@@ -189,11 +189,38 @@
             <div v-if="activeTab === 'applications'" class="bg-white rounded-xl shadow-corporate-lg p-8 border border-corporate-gray">
               <h3 class="text-2xl font-bold text-corporate-navy mb-6 font-heading">Talip Olduğum İlanlar</h3>
               
+              <!-- Application Status Tabs -->
+              <v-tabs 
+                v-model="applicationFilter" 
+                color="corporate-blue"
+                align-tabs="start"
+                class="mb-6"
+              >
+                <v-tab value="accepted" class="font-semibold">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Kabul Edildi ({{ applications.filter(a => a.status === 'accepted').length }})
+                </v-tab>
+                <v-tab value="pending" class="font-semibold">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Beklemede ({{ applications.filter(a => a.status === 'pending').length }})
+                </v-tab>
+                <v-tab value="rejected" class="font-semibold">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  Reddedildi ({{ applications.filter(a => a.status === 'rejected').length }})
+                </v-tab>
+              </v-tabs>
+              
               <div class="space-y-4">
-                <div v-for="application in applications" :key="application.id" class="border-2 rounded-xl p-6 hover:shadow-corporate transition-all" :class="application.status === 'accepted' ? 'border-green-200 bg-green-50' : application.status === 'pending' ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-white'">
+                <div v-for="application in filteredApplications" :key="application.id" class="border-2 rounded-xl p-6 hover:shadow-corporate transition-all cursor-pointer" :class="application.status === 'accepted' ? 'border-green-200 bg-green-50' : application.status === 'pending' ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-white'" @click="viewProperty(application.propertyId)">
                   <div class="flex items-start justify-between mb-4">
                     <div class="flex-1">
-                      <h4 class="text-lg font-bold text-corporate-navy mb-1">{{ application.propertyTitle }}</h4>
+                      <h4 class="text-lg font-bold text-corporate-navy mb-1 hover:text-corporate-blue transition-colors">{{ application.propertyTitle }}</h4>
                       <p class="text-sm text-gray-600 mb-2">{{ application.location }}</p>
                       <p class="text-xl font-bold text-corporate-blue">{{ application.price }}</p>
                     </div>
@@ -213,27 +240,50 @@
                     </div>
                   </div>
                   
+                  <!-- Owner Info -->
+                  <div class="mb-4 p-3 bg-white/50 rounded-lg border border-gray-200">
+                    <div class="flex items-center gap-2">
+                      <div class="w-8 h-8 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-xs text-gray-500 font-medium">İlan Sahibi</p>
+                        <p class="text-sm font-bold text-corporate-navy">{{ application.ownerName }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <div class="flex items-center justify-between pt-4 border-t border-gray-200">
                     <div class="text-sm text-gray-600">
                       <span class="font-semibold">Başvuru Tarihi:</span> {{ application.appliedDate }}
                     </div>
                     <div class="flex gap-2">
-                      <button v-if="application.status === 'accepted'" @click="viewProperty(application.propertyId)" class="px-4 py-2 bg-corporate-blue text-white rounded-lg hover:bg-corporate-navy transition-colors text-sm font-bold">
-                        İlanı Görüntüle
+                      <button @click.stop="sendMessage(application)" class="px-4 py-2 border-2 border-corporate-blue text-corporate-blue rounded-lg hover:bg-corporate-blue hover:text-white transition-all text-sm font-bold flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                        Mesaj Gönder
                       </button>
-                      <button v-else-if="application.status === 'pending'" class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg text-sm font-bold cursor-not-allowed">
-                        Yanıt Bekleniyor
+                      <button @click.stop="viewProperty(application.propertyId)" class="px-4 py-2 bg-corporate-blue text-white rounded-lg hover:bg-corporate-navy transition-colors text-sm font-bold flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                        İlanı Görüntüle
                       </button>
                     </div>
                   </div>
                 </div>
+
                 
-                <div v-if="applications.length === 0" class="text-center py-12 text-gray-500">
+                <div v-if="filteredApplications.length === 0" class="text-center py-12 text-gray-500">
                   <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
-                  <p class="font-semibold">Henüz talip olduğunuz ilan yok</p>
-                  <p class="text-sm mt-2">Kullanıcı ilanlarına talip olarak portföyünüzü genişletebilirsiniz</p>
+                  <p class="font-semibold">Bu kategoride başvuru bulunamadı</p>
+                  <p class="text-sm mt-2">Farklı bir filtre seçerek diğer başvurularınızı görüntüleyebilirsiniz</p>
                 </div>
               </div>
             </div>
@@ -370,6 +420,7 @@ import { useAuthStore } from '~/stores/auth'
 const authStore = useAuthStore()
 const isUpdating = ref(false)
 const activeTab = ref('profile')
+const applicationFilter = ref('pending')
 const showAddSlotModal = ref(false)
 
 // Company name for display
@@ -400,7 +451,9 @@ const applications = ref([
     location: 'Etiler, Beşiktaş, İstanbul',
     price: '₺3,200,000',
     status: 'pending', // 'pending' | 'accepted' | 'rejected'
-    appliedDate: '10 Ekim 2024'
+    appliedDate: '10 Ekim 2024',
+    ownerName: 'Ahmet Yılmaz',
+    ownerPhone: '+90 532 123 45 67'
   },
   {
     id: 2,
@@ -409,7 +462,9 @@ const applications = ref([
     location: 'Fenerbahçe, Kadıköy, İstanbul',
     price: '₺2,800,000',
     status: 'accepted',
-    appliedDate: '8 Ekim 2024'
+    appliedDate: '8 Ekim 2024',
+    ownerName: 'Ayşe Demir',
+    ownerPhone: '+90 533 234 56 78'
   },
   {
     id: 3,
@@ -418,7 +473,9 @@ const applications = ref([
     location: 'Mecidiyeköy, Şişli, İstanbul',
     price: '₺2,300,000',
     status: 'pending',
-    appliedDate: '12 Ekim 2024'
+    appliedDate: '12 Ekim 2024',
+    ownerName: 'Mehmet Kaya',
+    ownerPhone: '+90 534 345 67 89'
   },
   {
     id: 4,
@@ -427,7 +484,9 @@ const applications = ref([
     location: 'Ataşehir, İstanbul',
     price: '₺2,100,000',
     status: 'rejected',
-    appliedDate: '5 Ekim 2024'
+    appliedDate: '5 Ekim 2024',
+    ownerName: 'Ayşe Şahin',
+    ownerPhone: '+90 535 456 78 90'
   },
   {
     id: 5,
@@ -436,12 +495,24 @@ const applications = ref([
     location: 'Göktürk, İstanbul',
     price: '₺8,500,000',
     status: 'pending',
-    appliedDate: '14 Ekim 2024'
+    appliedDate: '14 Ekim 2024',
+    ownerName: 'Ali Öztürk',
+    ownerPhone: '+90 536 567 89 01'
   }
 ])
 
+// Filter applications based on selected filter
+const filteredApplications = computed(() => {
+  return applications.value.filter(app => app.status === applicationFilter.value)
+})
+
 const viewProperty = (propertyId) => {
   navigateTo(`/property/${propertyId}`)
+}
+
+const sendMessage = (application) => {
+  // Navigate to messaging or open message modal
+  alert(`${application.ownerName} ile mesajlaşma özelliği yakında eklenecek!\n\nİletişim: ${application.ownerPhone}`)
 }
 
 // Agenda functionality
