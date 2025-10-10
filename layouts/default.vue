@@ -84,7 +84,7 @@
                     <p class="text-xs text-gray-500 mt-1">{{ unreadMessages }} okunmamış mesaj</p>
                   </div>
                   <div class="max-h-96 overflow-y-auto">
-                    <div v-for="message in recentMessages.slice(0, 3)" :key="message.id" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !message.read }">
+                    <div v-for="message in recentMessages.slice(0, 3)" :key="message.id" @click="goToMessages" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !message.read }">
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
                           {{ message.initials }}
@@ -101,9 +101,9 @@
                     </div>
                   </div>
                   <div class="p-3 border-t border-gray-200 text-center">
-                    <button class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors">
+                    <NuxtLink to="/messages" @click="showMessagesMenu = false" class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors inline-block">
                       Tüm Mesajları Görüntüle
-                    </button>
+                    </NuxtLink>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@
                     <p class="text-xs text-gray-500 mt-1">{{ unreadNotifications }} okunmamış bildirim</p>
                   </div>
                   <div class="max-h-96 overflow-y-auto">
-                    <div v-for="notification in recentNotifications.slice(0, 3)" :key="notification.id" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !notification.read }">
+                    <div v-for="notification in recentNotifications.slice(0, 3)" :key="notification.id" @click="goToNotifications" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !notification.read }">
                       <div class="flex items-start gap-3">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                           :class="{
@@ -164,9 +164,9 @@
                     </div>
                   </div>
                   <div class="p-3 border-t border-gray-200 text-center">
-                    <button class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors">
+                    <NuxtLink to="/notifications" @click="showNotificationsMenu = false" class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors inline-block">
                       Tüm Bildirimleri Görüntüle
-                    </button>
+                    </NuxtLink>
                   </div>
                 </div>
               </div>
@@ -442,6 +442,16 @@ const toggleNotifications = () => {
   showNotificationsMenu.value = !showNotificationsMenu.value
   showProfileMenu.value = false
   showMessagesMenu.value = false
+}
+
+const goToMessages = () => {
+  showMessagesMenu.value = false
+  navigateTo('/messages')
+}
+
+const goToNotifications = () => {
+  showNotificationsMenu.value = false
+  navigateTo('/notifications')
 }
 
 const logout = () => {
