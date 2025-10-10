@@ -65,27 +65,111 @@
             
             <!-- Logged In -->
             <template v-else>
-              <!-- Messages Button -->
-              <button @click="openMessages" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                </svg>
-                <!-- Unread Messages Badge -->
-                <span v-if="unreadMessages > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
-                  {{ unreadMessages > 9 ? '9+' : unreadMessages }}
-                </span>
-              </button>
+              <!-- Messages Dropdown -->
+              <div class="relative">
+                <button @click="toggleMessages" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                  <!-- Unread Messages Badge -->
+                  <span v-if="unreadMessages > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {{ unreadMessages > 9 ? '9+' : unreadMessages }}
+                  </span>
+                </button>
 
-              <!-- Notifications Button -->
-              <button @click="openNotifications" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                </svg>
-                <!-- Unread Notifications Badge -->
-                <span v-if="unreadNotifications > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
-                  {{ unreadNotifications > 9 ? '9+' : unreadNotifications }}
-                </span>
-              </button>
+                <!-- Messages Dropdown -->
+                <div v-if="showMessagesMenu" class="absolute right-0 mt-2 w-96 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
+                  <div class="p-4 border-b border-gray-200">
+                    <h3 class="text-lg font-bold text-corporate-navy font-heading">Mesajlar</h3>
+                    <p class="text-xs text-gray-500 mt-1">{{ unreadMessages }} okunmamış mesaj</p>
+                  </div>
+                  <div class="max-h-96 overflow-y-auto">
+                    <div v-for="message in recentMessages.slice(0, 3)" :key="message.id" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !message.read }">
+                      <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                          {{ message.initials }}
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex items-center justify-between mb-1">
+                            <p class="text-sm font-bold text-corporate-navy">{{ message.sender }}</p>
+                            <span class="text-xs text-gray-500">{{ message.time }}</span>
+                          </div>
+                          <p class="text-sm text-gray-600 truncate">{{ message.preview }}</p>
+                          <span v-if="!message.read" class="inline-block mt-1 text-xs font-bold text-blue-600">Yeni</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 border-t border-gray-200 text-center">
+                    <button class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors">
+                      Tüm Mesajları Görüntüle
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notifications Dropdown -->
+              <div class="relative">
+                <button @click="toggleNotifications" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                  </svg>
+                  <!-- Unread Notifications Badge -->
+                  <span v-if="unreadNotifications > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {{ unreadNotifications > 9 ? '9+' : unreadNotifications }}
+                  </span>
+                </button>
+
+                <!-- Notifications Dropdown -->
+                <div v-if="showNotificationsMenu" class="absolute right-0 mt-2 w-96 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
+                  <div class="p-4 border-b border-gray-200">
+                    <h3 class="text-lg font-bold text-corporate-navy font-heading">Bildirimler</h3>
+                    <p class="text-xs text-gray-500 mt-1">{{ unreadNotifications }} okunmamış bildirim</p>
+                  </div>
+                  <div class="max-h-96 overflow-y-auto">
+                    <div v-for="notification in recentNotifications.slice(0, 3)" :key="notification.id" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !notification.read }">
+                      <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                          :class="{
+                            'bg-green-100': notification.type === 'success',
+                            'bg-blue-100': notification.type === 'info',
+                            'bg-yellow-100': notification.type === 'warning',
+                            'bg-red-100': notification.type === 'error'
+                          }"
+                        >
+                          <svg class="w-5 h-5" 
+                            :class="{
+                              'text-green-600': notification.type === 'success',
+                              'text-blue-600': notification.type === 'info',
+                              'text-yellow-600': notification.type === 'warning',
+                              'text-red-600': notification.type === 'error'
+                            }"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                          >
+                            <path v-if="notification.type === 'success'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path v-else-if="notification.type === 'info'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path v-else-if="notification.type === 'warning'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <p class="text-sm font-semibold text-corporate-navy mb-1">{{ notification.title }}</p>
+                          <p class="text-sm text-gray-600">{{ notification.message }}</p>
+                          <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">{{ notification.time }}</span>
+                            <span v-if="!notification.read" class="text-xs font-bold text-blue-600">Yeni</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 border-t border-gray-200 text-center">
+                    <button class="text-sm font-semibold text-corporate-blue hover:text-corporate-navy transition-colors">
+                      Tüm Bildirimleri Görüntüle
+                    </button>
+                  </div>
+                </div>
+              </div>
 
               <div class="relative group">
                 <button @click="toggleProfileMenu" class="flex items-center space-x-2 text-corporate-navy hover:text-corporate-blue transition-colors font-semibold">
@@ -247,25 +331,117 @@ import { useAuthStore } from '~/stores/auth'
 
 const authStore = useAuthStore()
 const showProfileMenu = ref(false)
+const showMessagesMenu = ref(false)
+const showNotificationsMenu = ref(false)
 
 // Mock unread counts - in real app, these would come from API
-const unreadMessages = ref(3)
-const unreadNotifications = ref(5)
+const unreadMessages = computed(() => recentMessages.value.filter(m => !m.read).length)
+const unreadNotifications = computed(() => recentNotifications.value.filter(n => !n.read).length)
+
+// Mock messages data
+const recentMessages = ref([
+  {
+    id: 1,
+    sender: 'Ahmet Yılmaz',
+    initials: 'AY',
+    preview: 'İlanınızla ilgili görüşmek istiyorum. Müsait olduğunuz bir...',
+    time: '5 dk',
+    read: false
+  },
+  {
+    id: 2,
+    sender: 'Ayşe Demir',
+    initials: 'AD',
+    preview: 'Fiyat konusunda teklifte bulunmak istiyorum.',
+    time: '1 saat',
+    read: false
+  },
+  {
+    id: 3,
+    sender: 'Mehmet Kaya',
+    initials: 'MK',
+    preview: 'Görüşme randevusu için uygun musunuz?',
+    time: '2 saat',
+    read: false
+  },
+  {
+    id: 4,
+    sender: 'Fatma Şahin',
+    initials: 'FŞ',
+    preview: 'Teşekkür ederim, çok yardımcı oldunuz.',
+    time: '1 gün',
+    read: true
+  }
+])
+
+// Mock notifications data
+const recentNotifications = ref([
+  {
+    id: 1,
+    type: 'success',
+    title: 'Yeni Başvuru',
+    message: 'Veli Yılmaz 3+1 Daire ilanınıza talip oldu.',
+    time: '10 dk',
+    read: false
+  },
+  {
+    id: 2,
+    type: 'info',
+    title: 'Randevu Hatırlatması',
+    message: 'Yarın saat 14:00\'te Kadıköy\'de randevunuz var.',
+    time: '30 dk',
+    read: false
+  },
+  {
+    id: 3,
+    type: 'success',
+    title: 'Başvurunuz Kabul Edildi',
+    message: 'Etiler 2+1 Daire için başvurunuz kabul edildi!',
+    time: '2 saat',
+    read: false
+  },
+  {
+    id: 4,
+    type: 'warning',
+    title: 'İlan Süresi Doluyor',
+    message: 'Beşiktaş 3+1 Daire ilanınızın süresi 3 gün sonra dolacak.',
+    time: '5 saat',
+    read: false
+  },
+  {
+    id: 5,
+    type: 'info',
+    title: 'Yeni Mesaj',
+    message: 'Ahmet Yılmaz size bir mesaj gönderdi.',
+    time: '1 gün',
+    read: false
+  },
+  {
+    id: 6,
+    type: 'success',
+    title: 'İlan Yayında',
+    message: 'Kadıköy 3+1 Daire ilanınız başarıyla yayına alındı.',
+    time: '2 gün',
+    read: true
+  }
+])
 
 const toggleProfileMenu = () => {
   showProfileMenu.value = !showProfileMenu.value
+  showMessagesMenu.value = false
+  showNotificationsMenu.value = false
 }
 
-const openMessages = () => {
-  // Navigate to messages page
-  alert('Mesajlar sayfası yakında eklenecek!\n\n3 okunmamış mesajınız var.')
-  // navigateTo('/messages')
+const toggleMessages = () => {
+  showMessagesMenu.value = !showMessagesMenu.value
+  showProfileMenu.value = false
+  showNotificationsMenu.value = false
 }
 
-const openNotifications = () => {
-  // Navigate to notifications page or open notification panel
-  alert('Bildirimler sayfası yakında eklenecek!\n\n5 okunmamış bildiriminiz var.')
-  // navigateTo('/notifications')
+const toggleNotifications = () => {
+  showNotificationsMenu.value = !showNotificationsMenu.value
+  showProfileMenu.value = false
+  showMessagesMenu.value = false
 }
 
 const logout = () => {
@@ -274,11 +450,14 @@ const logout = () => {
   navigateTo('/')
 }
 
-// Close profile menu when clicking outside
+// Close menus when clicking outside
 onMounted(() => {
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.group')) {
+    const isClickInsideDropdown = e.target.closest('.relative')
+    if (!isClickInsideDropdown) {
       showProfileMenu.value = false
+      showMessagesMenu.value = false
+      showNotificationsMenu.value = false
     }
   })
 })
