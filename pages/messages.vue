@@ -3,10 +3,7 @@
     <div class="min-h-screen bg-corporate-gray-light py-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Page Header -->
-        <div class="mb-8">
-          <h1 class="text-4xl font-bold text-corporate-navy font-heading">Mesajlar</h1>
-          <p class="text-gray-600 mt-2 text-lg font-body">Tüm mesajlaşmalarınızı görüntüleyin ve yönetin</p>
-        </div>
+
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <!-- Conversations List -->
