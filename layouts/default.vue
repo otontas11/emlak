@@ -65,6 +65,28 @@
             
             <!-- Logged In -->
             <template v-else>
+              <!-- Messages Button -->
+              <button @click="openMessages" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+                <!-- Unread Messages Badge -->
+                <span v-if="unreadMessages > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {{ unreadMessages > 9 ? '9+' : unreadMessages }}
+                </span>
+              </button>
+
+              <!-- Notifications Button -->
+              <button @click="openNotifications" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                </svg>
+                <!-- Unread Notifications Badge -->
+                <span v-if="unreadNotifications > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {{ unreadNotifications > 9 ? '9+' : unreadNotifications }}
+                </span>
+              </button>
+
               <div class="relative group">
                 <button @click="toggleProfileMenu" class="flex items-center space-x-2 text-corporate-navy hover:text-corporate-blue transition-colors font-semibold">
                   <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-sm font-bold relative shadow-corporate">
@@ -226,8 +248,24 @@ import { useAuthStore } from '~/stores/auth'
 const authStore = useAuthStore()
 const showProfileMenu = ref(false)
 
+// Mock unread counts - in real app, these would come from API
+const unreadMessages = ref(3)
+const unreadNotifications = ref(5)
+
 const toggleProfileMenu = () => {
   showProfileMenu.value = !showProfileMenu.value
+}
+
+const openMessages = () => {
+  // Navigate to messages page
+  alert('Mesajlar sayfası yakında eklenecek!\n\n3 okunmamış mesajınız var.')
+  // navigateTo('/messages')
+}
+
+const openNotifications = () => {
+  // Navigate to notifications page or open notification panel
+  alert('Bildirimler sayfası yakında eklenecek!\n\n5 okunmamış bildiriminiz var.')
+  // navigateTo('/notifications')
 }
 
 const logout = () => {
