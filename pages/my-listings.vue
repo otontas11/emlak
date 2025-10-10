@@ -8,90 +8,121 @@
           <p class="text-gray-600 mt-2 text-lg font-body">Gayrimenkul ilanlarınızı yönetin ve hareketleri takip edin</p>
         </div>
 
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div class="bg-white rounded-xl shadow-corporate p-6 border border-corporate-gray">
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-corporate-blue/10 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg>
-              </div>
-              <div class="ml-4">
-                <p class="text-sm font-medium text-gray-600 font-body">Toplam İlan</p>
-                <p class="text-2xl font-bold text-corporate-navy">6</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-corporate p-6 border border-corporate-gray">
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <div class="ml-4">
-                <p class="text-sm font-medium text-gray-600 font-body">Aktif İlan</p>
-                <p class="text-2xl font-bold text-corporate-navy">5</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-corporate p-6 border border-corporate-gray">
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-corporate-navy/10 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <div class="ml-4">
-                <p class="text-sm font-medium text-gray-600 font-body">Satılan İlan</p>
-                <p class="text-2xl font-bold text-corporate-navy">1</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Left Column - Property Listings -->
-          <div class="lg:col-span-2">
+        <div class="max-w-5xl mx-auto">
+          <!-- Property Listings -->
+          <div>
             <div class="bg-white rounded-xl shadow-corporate-lg border border-corporate-gray">
               <div class="p-6 border-b border-gray-200">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center mb-6">
                   <h2 class="text-2xl font-bold text-corporate-navy font-heading">İşlemdeki Gayrimenkuller</h2>
                   <button @click="addNewProperty" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 py-3 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold shadow-corporate">
                     + Yeni İlan Ekle
                   </button>
                 </div>
+                
+                <!-- Tabs -->
+                <v-tabs 
+                  v-model="activeTab" 
+                  color="corporate-blue"
+                  align-tabs="start"
+                  class="property-tabs"
+                >
+                  <v-tab value="all" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    Tüm İlanlar ({{ properties.length }})
+                  </v-tab>
+                  <v-tab value="active" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Aktif ({{ properties.filter(p => p.status === 'active').length }})
+                  </v-tab>
+                  <v-tab value="pending" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Beklemede ({{ properties.filter(p => p.status === 'pending').length }})
+                  </v-tab>
+                  <v-tab value="sold" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Satıldı ({{ properties.filter(p => p.status === 'sold').length }})
+                  </v-tab>
+                </v-tabs>
               </div>
 
               <div class="divide-y divide-gray-200">
-                <!-- Property 1 - Active -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
+                <!-- Dynamic Property List -->
+                <div 
+                  v-for="property in filteredProperties" 
+                  :key="property.id" 
+                  class="p-6 hover:bg-gray-50 transition-colors"
+                  :class="{ 'bg-green-50/50': property.status === 'sold' }"
+                >
                   <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('1')">
-                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div 
+                      class="w-24 h-24 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" 
+                      :class="property.status === 'sold' 
+                        ? 'bg-gradient-to-br from-green-200 to-green-300' 
+                        : 'bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30'"
+                      @click="viewProperty(property.id)"
+                    >
+                      <svg 
+                        v-if="property.status === 'sold'" 
+                        class="w-8 h-8 text-green-600" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <svg 
+                        v-else
+                        class="w-8 h-8 text-corporate-blue" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                       </svg>
                     </div>
                     <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('1')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">3+1 Daire, Kadıköy</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
-                          Aktif
+                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty(property.id)">
+                        <h3 class="text-xl font-bold text-corporate-navy font-heading">{{ property.title }}</h3>
+                        <span 
+                          class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold"
+                          :class="{
+                            'bg-green-100 text-green-800': property.status === 'active',
+                            'bg-yellow-100 text-yellow-800': property.status === 'pending',
+                            'bg-green-100 text-green-800 border-2 border-green-300': property.status === 'sold'
+                          }"
+                        >
+                          <span v-if="property.status === 'active'">Aktif</span>
+                          <span v-else-if="property.status === 'pending'">Beklemede</span>
+                          <span v-else-if="property.status === 'sold'">✓ Satıldı</span>
                         </span>
                       </div>
-                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺2,450,000</p>
+                      <p 
+                        class="text-2xl font-bold mt-1"
+                        :class="property.status === 'sold' ? 'text-green-600' : 'text-corporate-blue'"
+                      >
+                        ₺{{ property.price.toLocaleString('tr-TR') }}
+                      </p>
                       <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">3 Yatak</span>
-                        <span class="mr-4">1 Banyo</span>
-                        <span class="mr-4">120 m²</span>
-                        <span>Kadıköy, İstanbul</span>
+                        <span class="mr-4">{{ property.bedrooms }} Yatak</span>
+                        <span class="mr-4">{{ property.bathrooms }} Banyo</span>
+                        <span class="mr-4">{{ property.area }} m²</span>
+                        <span>{{ property.location }}</span>
                       </div>
                       
                       <!-- Realtor Applicants -->
-                      <div class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20">
+                      <div 
+                        v-if="property.hasApplicants && !property.selectedRealtor"
+                        class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20"
+                      >
                         <div class="flex items-center justify-between mb-3">
                           <div class="flex items-center">
                             <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mr-3 shadow-corporate">
@@ -101,11 +132,11 @@
                             </div>
                             <div>
                               <p class="text-xs font-medium text-corporate-navy font-body">Talip Olan Emlakçılar</p>
-                              <p class="text-sm font-bold text-corporate-navy">3 Emlakçı talip oldu</p>
+                              <p class="text-sm font-bold text-corporate-navy">{{ property.applicantsCount }} Emlakçı talip oldu</p>
                               <p class="text-xs text-corporate-blue mt-0.5">Aralarından birini seçebilirsiniz</p>
                             </div>
                           </div>
-                          <button @click.stop="showApplicants('1')" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate flex items-center">
+                          <button @click.stop="showApplicants(property.id)" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate flex items-center">
                             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                             </svg>
@@ -114,41 +145,11 @@
                         </div>
                       </div>
 
-                      <div class="flex items-center justify-between mt-4">
-                        <div class="flex space-x-3">
-                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
-                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property 2 - Pending -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
-                  <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('2')">
-                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('2')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">2+1 Daire, Beşiktaş</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800">
-                          Beklemede
-                        </span>
-                      </div>
-                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺1,850,000</p>
-                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">2 Yatak</span>
-                        <span class="mr-4">1 Banyo</span>
-                        <span class="mr-4">95 m²</span>
-                        <span>Beşiktaş, İstanbul</span>
-                      </div>
-                      
                       <!-- No Realtor Yet -->
-                      <div class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200">
+                      <div 
+                        v-else-if="!property.hasApplicants && !property.selectedRealtor && property.status !== 'sold'"
+                        class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200"
+                      >
                         <div class="flex items-center justify-between">
                           <div class="flex items-center">
                             <div class="w-10 h-10 bg-yellow-200 rounded-full flex items-center justify-center mr-3">
@@ -171,104 +172,15 @@
                         </div>
                       </div>
 
-                      <div class="flex items-center justify-between mt-4">
-                        <div class="flex space-x-3">
-                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
-                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property 3 - Sold -->
-                <div class="p-6 bg-green-50/50 transition-colors">
-                  <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-green-200 to-green-300 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('3')">
-                      <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('3')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">Villa, Şişli</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 border-2 border-green-300">
-                          ✓ Satıldı
-                        </span>
-                      </div>
-                      <p class="text-2xl font-bold text-green-600 mt-1">₺4,200,000</p>
-                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">4 Yatak</span>
-                        <span class="mr-4">3 Banyo</span>
-                        <span class="mr-4">280 m²</span>
-                        <span>Şişli, İstanbul</span>
-                      </div>
-                      
-                      <!-- Realtor Info - Sold -->
-                      <div class="mt-4 p-4 bg-green-100 rounded-xl border-2 border-green-300">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                              </svg>
-                            </div>
-                            <div>
-                              <p class="text-xs font-medium text-green-800 font-body">Satışı Gerçekleştiren Emlakçı</p>
-                              <p class="text-sm font-bold text-green-900">Mehmet Kaya</p>
-                              <p class="text-xs text-green-700 mt-0.5">İlanınızı başarıyla sattı</p>
-                            </div>
-                          </div>
-                          <button @click.stop="viewConsultant('mehmet-kaya')" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                            </svg>
-                            Profil
-                          </button>
-                        </div>
-                      </div>
-
-
-                      <div class="flex items-center justify-between mt-4">
-                        <div class="flex space-x-3">
-                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Düzenle</button>
-                          <button class="text-gray-400 text-sm font-semibold cursor-not-allowed">Sil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property 4 - Active with Selected Realtor -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
-                  <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('4')">
-                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('4')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">1+1 Stüdyo Daire, Üsküdar</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
-                          Aktif
-                        </span>
-                      </div>
-                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺1,650,000</p>
-                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">1 Yatak</span>
-                        <span class="mr-4">1 Banyo</span>
-                        <span class="mr-4">55 m²</span>
-                        <span>Üsküdar, İstanbul</span>
-                      </div>
-                      
                       <!-- Selected Realtor -->
-                      <div class="mt-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border-2 border-green-300">
+                      <div 
+                        v-else-if="property.selectedRealtor && property.status !== 'sold'"
+                        class="mt-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border-2 border-green-300"
+                      >
                         <div class="flex items-center justify-between">
                           <div class="flex items-center">
                             <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                              <span class="text-white text-xs font-bold">AD</span>
+                              <span class="text-white text-xs font-bold">{{ property.selectedRealtor.name.split(' ').map(n => n[0]).join('') }}</span>
                             </div>
                             <div>
                               <p class="text-xs font-medium text-green-800 font-body flex items-center gap-1">
@@ -277,19 +189,19 @@
                                 </svg>
                                 Seçilen Emlakçı
                               </p>
-                              <p class="text-sm font-bold text-green-900">Ayşe Demir</p>
+                              <p class="text-sm font-bold text-green-900">{{ property.selectedRealtor.name }}</p>
                               <p class="text-xs text-green-700 mt-0.5">İlanınızı yönetiyor</p>
                             </div>
                           </div>
                           <div class="flex space-x-2">
-                            <button @click.stop="viewConsultant('ayse-demir')" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
+                            <button @click.stop="viewConsultant(property.selectedRealtor.slug)" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
                               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                               </svg>
                               Profil
                             </button>
-                            <button @click.stop="contactRealtor('ayse-demir')" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg text-sm font-semibold flex items-center transition-all">
+                            <button @click.stop="contactRealtor(property.selectedRealtor.slug)" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg text-sm font-semibold flex items-center transition-all">
                               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                               </svg>
@@ -299,179 +211,62 @@
                         </div>
                       </div>
 
-                      <div class="flex items-center justify-between mt-4">
-                        <div class="flex space-x-3">
-                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
-                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property 5 - Active with Multiple Applicants -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
-                  <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('5')">
-                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('5')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">3+1 Daire, Maltepe</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
-                          Aktif
-                        </span>
-                      </div>
-                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺3,200,000</p>
-                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">3 Yatak</span>
-                        <span class="mr-4">2 Banyo</span>
-                        <span class="mr-4">135 m²</span>
-                        <span>Maltepe, İstanbul</span>
-                      </div>
-                      
-                      <!-- Realtor Applicants -->
-                      <div class="mt-4 p-4 bg-corporate-blue/5 rounded-xl border-2 border-corporate-blue/20">
-                        <div class="flex items-center justify-between mb-3">
-                          <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center mr-3 shadow-corporate">
-                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                              </svg>
-                            </div>
-                            <div>
-                              <p class="text-xs font-medium text-corporate-navy font-body">Talip Olan Emlakçılar</p>
-                              <p class="text-sm font-bold text-corporate-navy">2 Emlakçı talip oldu</p>
-                              <p class="text-xs text-corporate-blue mt-0.5">Aralarından birini seçebilirsiniz</p>
-                            </div>
-                          </div>
-                          <button @click.stop="showApplicants('5')" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-4 py-2 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all font-bold text-sm shadow-corporate flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                            </svg>
-                            Talip Olanları Gör
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="flex items-center justify-between mt-4">
-                        <div class="flex space-x-3">
-                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
-                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property 6 - Active with No Applicants -->
-                <div class="p-6 hover:bg-gray-50 transition-colors">
-                  <div class="flex items-start space-x-4">
-                    <div class="w-24 h-24 bg-gradient-to-br from-corporate-blue/20 to-corporate-blue/30 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer" @click="viewProperty('6')">
-                      <svg class="w-8 h-8 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between cursor-pointer" @click="viewProperty('6')">
-                        <h3 class="text-xl font-bold text-corporate-navy font-heading">2+1 Daire, Ataşehir</h3>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
-                          Aktif
-                        </span>
-                      </div>
-                      <p class="text-2xl font-bold text-corporate-blue mt-1">₺2,100,000</p>
-                      <div class="flex items-center text-gray-600 text-sm mt-2 font-body">
-                        <span class="mr-4">2 Yatak</span>
-                        <span class="mr-4">1 Banyo</span>
-                        <span class="mr-4">90 m²</span>
-                        <span>Ataşehir, İstanbul</span>
-                      </div>
-                      
-                      <!-- No Realtor Yet -->
-                      <div class="mt-4 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200">
+                      <!-- Realtor Info - Sold -->
+                      <div 
+                        v-else-if="property.selectedRealtor && property.status === 'sold'"
+                        class="mt-4 p-4 bg-green-100 rounded-xl border-2 border-green-300"
+                      >
                         <div class="flex items-center justify-between">
                           <div class="flex items-center">
-                            <div class="w-10 h-10 bg-yellow-200 rounded-full flex items-center justify-center mr-3">
-                              <svg class="w-5 h-5 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mr-3 shadow-corporate">
+                              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                               </svg>
                             </div>
                             <div>
-                              <p class="text-xs font-medium text-yellow-700 font-body">Emlakçı Bekleniyor</p>
-                              <p class="text-sm font-bold text-yellow-900">Henüz talip olan emlakçı yok</p>
-                              <p class="text-xs text-yellow-600 mt-0.5">İlanınız emlakçılar tarafından görüntülenebilir</p>
+                              <p class="text-xs font-medium text-green-800 font-body">Satışı Gerçekleştiren Emlakçı</p>
+                              <p class="text-sm font-bold text-green-900">{{ property.selectedRealtor.name }}</p>
+                              <p class="text-xs text-green-700 mt-0.5">İlanınızı başarıyla sattı</p>
                             </div>
                           </div>
-                          <button class="text-yellow-700 hover:text-yellow-800 text-sm font-semibold flex items-center">
+                          <button @click.stop="viewConsultant(property.selectedRealtor.slug)" class="text-green-700 hover:text-green-800 text-sm font-semibold flex items-center">
                             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                             </svg>
-                            Detay
+                            Profil
                           </button>
                         </div>
                       </div>
 
                       <div class="flex items-center justify-between mt-4">
                         <div class="flex space-x-3">
-                          <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">Düzenle</button>
-                          <button class="text-red-600 hover:text-red-700 text-sm font-semibold">Sil</button>
+                          <button 
+                            class="text-sm font-semibold"
+                            :class="property.status === 'sold' ? 'text-gray-400 cursor-not-allowed' : 'text-corporate-blue hover:text-corporate-navy'"
+                            :disabled="property.status === 'sold'"
+                          >
+                            Düzenle
+                          </button>
+                          <button 
+                            class="text-sm font-semibold"
+                            :class="property.status === 'sold' ? 'text-gray-400 cursor-not-allowed' : 'text-red-600 hover:text-red-700'"
+                            :disabled="property.status === 'sold'"
+                          >
+                            Sil
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column - Activity Feed -->
-          <div class="lg:col-span-1">
-            <div class="bg-white rounded-xl shadow-corporate-lg border border-corporate-gray">
-              <div class="p-6 border-b border-gray-200">
-                <h2 class="text-2xl font-bold text-corporate-navy font-heading">Son Hareketler</h2>
-                <p class="text-sm text-gray-600 mt-1 font-body">Aktiviteler ve bildirimler</p>
-              </div>
-
-              <div class="p-6">
-                <div class="space-y-4">
-                  <!-- Activity 1 -->
-                  <div class="flex items-start space-x-3 p-3 bg-corporate-blue/5 rounded-lg">
-                    <div class="w-8 h-8 bg-corporate-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="text-sm text-corporate-navy font-body">
-                        <span class="font-bold">Ahmet Yılmaz</span> 3+1 Daire için atandı
-                      </p>
-                      <p class="text-xs text-gray-500 mt-1">2 saat önce</p>
-                    </div>
-                  </div>
-
-                  <!-- Activity 2 -->
-                  <div class="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
-                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="text-sm text-corporate-navy font-body">
-                        <span class="font-bold">Villa, Şişli</span> başarıyla satıldı
-                      </p>
-                      <p class="text-xs text-gray-500 mt-1">3 gün önce</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Load More Button -->
-                <div class="mt-6 text-center">
-                  <button class="text-corporate-blue hover:text-corporate-navy text-sm font-semibold">
-                    Daha Fazla Göster
-                  </button>
+                
+                <!-- Empty State -->
+                <div v-if="filteredProperties.length === 0" class="p-12 text-center">
+                  <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                  </svg>
+                  <p class="text-gray-600 text-lg font-body">Bu kategoride ilan bulunamadı.</p>
                 </div>
               </div>
             </div>
@@ -656,6 +451,121 @@ const changeReason = ref('')
 const rating = ref(0)
 const ratingComment = ref('')
 
+// Tab state
+const activeTab = ref('all')
+
+// Mock properties data
+const properties = ref([
+  {
+    id: '1',
+    title: '3+1 Daire, Kadıköy',
+    price: 2450000,
+    type: 'sale', // sale or rent
+    status: 'active', // active, pending, sold
+    bedrooms: 3,
+    bathrooms: 1,
+    area: 120,
+    location: 'Kadıköy, İstanbul',
+    applicantsCount: 3,
+    hasApplicants: true,
+    selectedRealtor: null
+  },
+  {
+    id: '2',
+    title: '2+1 Daire, Beşiktaş',
+    price: 1850000,
+    type: 'sale',
+    status: 'pending',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 95,
+    location: 'Beşiktaş, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: null
+  },
+  {
+    id: '3',
+    title: 'Villa, Şişli',
+    price: 4200000,
+    type: 'sale',
+    status: 'sold',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 280,
+    location: 'Şişli, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: { name: 'Mehmet Kaya', slug: 'mehmet-kaya' }
+  },
+  {
+    id: '4',
+    title: '1+1 Stüdyo Daire, Üsküdar',
+    price: 15000,
+    type: 'rent',
+    status: 'active',
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 55,
+    location: 'Üsküdar, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: { name: 'Ayşe Demir', slug: 'ayse-demir' }
+  },
+  {
+    id: '5',
+    title: '3+1 Daire, Maltepe',
+    price: 25000,
+    type: 'rent',
+    status: 'active',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 135,
+    location: 'Maltepe, İstanbul',
+    applicantsCount: 2,
+    hasApplicants: true,
+    selectedRealtor: null
+  },
+  {
+    id: '6',
+    title: '2+1 Daire, Ataşehir',
+    price: 18000,
+    type: 'rent',
+    status: 'active',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 90,
+    location: 'Ataşehir, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: null
+  }
+])
+
+// Filter properties based on active tab
+const filteredProperties = computed(() => {
+  if (activeTab.value === 'all') {
+    return properties.value
+  } else if (activeTab.value === 'active') {
+    return properties.value.filter(p => p.status === 'active')
+  } else if (activeTab.value === 'pending') {
+    return properties.value.filter(p => p.status === 'pending')
+  } else if (activeTab.value === 'sold') {
+    return properties.value.filter(p => p.status === 'sold')
+  }
+  return properties.value
+})
+
+// Calculate stats based on active tab
+const stats = computed(() => {
+  const props = filteredProperties.value
+  return {
+    total: props.length,
+    active: props.filter(p => p.status === 'active').length,
+    sold: props.filter(p => p.status === 'sold').length
+  }
+})
+
 // Mock applicants data
 const applicants = ref([
   {
@@ -797,3 +707,4 @@ const contactRealtor = (realtorSlug) => {
   alert('İletişim özelliği yakında eklenecek!')
 }
 </script>
+
