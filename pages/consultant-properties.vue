@@ -35,6 +35,12 @@
                       </svg>
                       Aktif ({{ properties.filter(p => p.status === 'active').length }})
                     </v-tab>
+                    <v-tab value="passive" class="font-semibold">
+                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                      </svg>
+                      Pasif ({{ properties.filter(p => p.status === 'passive').length }})
+                    </v-tab>
                     <v-tab value="sold" class="font-semibold">
                       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -53,12 +59,6 @@
                     align-tabs="start"
                     class="property-tabs"
                   >
-                    <v-tab value="all" class="font-semibold">
-                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                      </svg>
-                      Tümü ({{ properties.length }})
-                    </v-tab>
                     <v-tab value="own" class="font-semibold">
                       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -145,10 +145,12 @@
                           class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold"
                           :class="{
                             'bg-green-100 text-green-800': property.status === 'active',
+                            'bg-gray-100 text-gray-800': property.status === 'passive',
                             'bg-green-100 text-green-800 border-2 border-green-300': property.status === 'sold'
                           }"
                         >
                           <span v-if="property.status === 'active'">Aktif</span>
+                          <span v-else-if="property.status === 'passive'">Pasif</span>
                           <span v-else-if="property.status === 'sold'">✓ Satıldı</span>
                         </span>
                       </div>
@@ -247,13 +249,15 @@
                         <div class="flex space-x-3">
                           <button 
                             v-if="property.status !== 'sold'"
-                            @click.stop="updateStatus(property.id)" 
-                            class="text-sm font-semibold text-yellow-700 hover:text-yellow-800 flex items-center gap-1"
+                            @click.stop="togglePassiveStatus(property.id)" 
+                            class="text-sm font-semibold flex items-center gap-1"
+                            :class="property.status === 'passive' ? 'text-green-600 hover:text-green-700' : 'text-orange-600 hover:text-orange-700'"
                           >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                              <path v-if="property.status === 'passive'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                             </svg>
-                            Durum Güncelle
+                            {{ property.status === 'passive' ? 'Aktife Al' : 'Pasife Al' }}
                           </button>
                           <button 
                             @click.stop="viewProperty(property.id)" 
@@ -412,6 +416,22 @@ const properties = ref([
     receivedFromUser: null,
     receivedFromRealtor: 'Premium Emlak', // Başka emlakçıdan alınan portföy
     sharingEnabled: null
+  },
+  {
+    id: '8',
+    title: '2+1 Daire, Bostancı',
+    price: 1950000,
+    status: 'passive',
+    source: 'own',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 95,
+    location: 'Bostancı, İstanbul',
+    addedDate: '2 hafta önce pasife alındı',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop',
+    receivedFromUser: null,
+    receivedFromRealtor: null,
+    sharingEnabled: false
   }
 ])
 
@@ -440,14 +460,21 @@ const addNewProperty = () => {
   alert('Yeni ilan ekleme özelliği yakında eklenecek!')
 }
 
-const updateStatus = (propertyId) => {
+const togglePassiveStatus = (propertyId) => {
   const property = properties.value.find(p => p.id === propertyId)
   if (!property) return
   
-  if (property.status === 'active') {
-    if (confirm('Bu ilanı satıldı olarak işaretlemek istiyor musunuz?')) {
-      property.status = 'sold'
-      alert('İlan durumu "Satıldı" olarak güncellendi.')
+  if (property.status === 'passive') {
+    // Pasiften aktife alma
+    if (confirm('Bu ilanı tekrar aktif hale getirmek istiyor musunuz?')) {
+      property.status = 'active'
+      alert('İlan başarıyla aktif hale getirildi.')
+    }
+  } else if (property.status === 'active') {
+    // Aktiften pasife alma
+    if (confirm('Bu ilanı pasif duruma almak istiyor musunuz?\n\nİlan yayından kaldırılacak ancak bilgileri korunacak.')) {
+      property.status = 'passive'
+      alert('İlan pasif duruma alındı. İstediğiniz zaman tekrar aktif edebilirsiniz.')
     }
   }
 }
