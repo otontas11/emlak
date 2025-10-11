@@ -244,48 +244,48 @@
                   <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
                 </div>
               </div>
-              <div class="p-8">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-3xl font-bold text-corporate-navy">₺12.750.000</h3>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-2xl font-bold text-corporate-navy">₺12.750.000</h3>
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <span class="text-lg text-gray-600 font-semibold">4.9</span>
+                    <span class="text-base text-gray-600 font-semibold">4.9</span>
                   </div>
                 </div>
-                <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">4+1 Villa - Şişli</h4>
-                <div class="flex items-center justify-between text-gray-600 mb-6">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">4+1 Villa - Şişli</h4>
+                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
                     </svg>
-                    <span class="font-medium">220 m²</span>
+                    <span>220 m²</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
-                    <span class="font-medium">4+1</span>
+                    <span>4+1</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
-                    <span class="font-medium">2019</span>
+                    <span>2019</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between pt-6 border-t border-gray-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
-                      <span class="text-white text-sm font-bold">MK</span>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
+                      <span class="text-white text-xs font-bold">MK</span>
                     </div>
                     <div>
-                      <p class="text-gray-600 font-medium">Mehmet Kaya</p>
-                      <p class="text-sm text-gray-500">Emlakçı</p>
+                      <p class="text-sm text-gray-600 font-medium">Mehmet Kaya</p>
+                      <p class="text-xs text-gray-500">Emlakçı</p>
                     </div>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-lg transition-colors">Detaylar →</button>
+                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
                 </div>
               </div>
             </div>
@@ -495,39 +495,44 @@
 
 
     <!-- How It Works Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-corporate-navy mb-4 text-center font-heading">
-          Nasıl Çalışır?
-        </h2>
-        <p class="text-center text-gray-600 mb-12 text-base font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
+            Nasıl Çalışır?
+          </h2>
+          <p class="text-base text-gray-600 font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
+        </div>
         
-        <div class="grid md:grid-cols-3 gap-12 relative">
-          <!-- Connecting Lines -->
-          <div class="hidden md:block absolute top-10 left-1/6 right-1/6 h-1 bg-gradient-to-r from-corporate-blue via-corporate-light-blue to-corporate-blue"></div>
-          
-          <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
-              <span class="text-3xl font-bold text-white">1</span>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg transition-all duration-300 hover:shadow-corporate-xl group">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-corporate-blue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-corporate-blue/20 transition-all">
+                <span class="text-2xl font-bold text-corporate-blue">1</span>
+              </div>
+              <h3 class="text-lg font-bold text-corporate-navy mb-2 font-heading">Kayıt Olun</h3>
+              <p class="text-sm text-gray-600 font-body leading-relaxed">Emlakçı veya ev sahibi olarak platforma ücretsiz kayıt olun</p>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Kayıt Olun</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Emlakçı veya ev sahibi olarak platforma ücretsiz kayıt olun</p>
           </div>
           
-          <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
-              <span class="text-3xl font-bold text-white">2</span>
+          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg transition-all duration-300 hover:shadow-corporate-xl group">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-corporate-blue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-corporate-blue/20 transition-all">
+                <span class="text-2xl font-bold text-corporate-blue">2</span>
+              </div>
+              <h3 class="text-lg font-bold text-corporate-navy mb-2 font-heading">Portföy/İlan Ekleyin</h3>
+              <p class="text-sm text-gray-600 font-body leading-relaxed">Emlakçılar portföy paylaşır, ev sahipleri ilan ekler</p>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">Portföy/İlan Ekleyin</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Emlakçılar portföy paylaşır, ev sahipleri ilan ekler</p>
           </div>
           
-          <div class="text-center relative">
-            <div class="w-20 h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-corporate-lg relative z-10">
-              <span class="text-3xl font-bold text-white">3</span>
+          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg transition-all duration-300 hover:shadow-corporate-xl group">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 bg-corporate-blue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-corporate-blue/20 transition-all">
+                <span class="text-2xl font-bold text-corporate-blue">3</span>
+              </div>
+              <h3 class="text-lg font-bold text-corporate-navy mb-2 font-heading">İşbirliği Yapın</h3>
+              <p class="text-sm text-gray-600 font-body leading-relaxed">Emlakçılar birbirleriyle işbirliği yapar, ev sahipleri emlakçılarla buluşur</p>
             </div>
-            <h3 class="text-2xl font-semibold text-corporate-navy mb-3 font-heading">İşbirliği Yapın</h3>
-            <p class="text-gray-600 font-body leading-relaxed">Emlakçılar birbirleriyle işbirliği yapar, ev sahipleri emlakçılarla buluşur</p>
           </div>
         </div>
       </div>
