@@ -108,7 +108,7 @@
             <h2 class="text-5xl font-bold text-corporate-navy mb-6 font-heading">
               Öne Çıkan İlanlar
             </h2>
-           
+
           </div>
 
           <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
@@ -139,7 +139,6 @@
                   </div>
                 </div>
                 <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">3+1 Lüks Daire - Kadıköy</h4>
-                <p class="text-gray-600 mb-6 leading-relaxed">Kadıköy, Moda - Deniz manzaralı, yeni yapı, asansörlü</p>
                 <div class="flex items-center justify-between text-gray-600 mb-6">
                   <div class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +196,6 @@
                   <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">Yeni</span>
                 </div>
                 <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">2+1 Modern Daire - Beşiktaş</h4>
-                <p class="text-gray-600 mb-6 leading-relaxed">Beşiktaş, Levent - Metro yakını, eşyalı, balkonlu</p>
                 <div class="flex items-center justify-between text-gray-600 mb-6">
                   <div class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,7 +260,6 @@
                   </div>
                 </div>
                 <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">4+1 Villa - Şişli</h4>
-                <p class="text-gray-600 mb-6 leading-relaxed">Şişli, Nişantaşı - Bahçeli, müstakil, havuzlu</p>
                 <div class="flex items-center justify-between text-gray-600 mb-6">
                   <div class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
