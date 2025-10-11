@@ -123,48 +123,48 @@
                   <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
                 </div>
               </div>
-              <div class="p-8">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-3xl font-bold text-corporate-navy">₺8.500.000</h3>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-2xl font-bold text-corporate-navy">₺8.500.000</h3>
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <span class="text-lg text-gray-600 font-semibold">4.8</span>
+                    <span class="text-base text-gray-600 font-semibold">4.8</span>
                   </div>
                 </div>
-                <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">3+1 Lüks Daire - Kadıköy</h4>
-                <div class="flex items-center justify-between text-gray-600 mb-6">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">3+1 Lüks Daire - Kadıköy</h4>
+                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
                     </svg>
-                    <span class="font-medium">150 m²</span>
+                    <span>150 m²</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
-                    <span class="font-medium">3+1</span>
+                    <span>3+1</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
-                    <span class="font-medium">2020</span>
+                    <span>2020</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between pt-6 border-t border-gray-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
-                      <span class="text-white text-sm font-bold">AY</span>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
+                      <span class="text-white text-xs font-bold">AY</span>
                     </div>
                     <div>
-                      <p class="text-gray-600 font-medium">Ahmet Yılmaz</p>
-                      <p class="text-sm text-gray-500">Emlakçı</p>
+                      <p class="text-sm text-gray-600 font-medium">Ahmet Yılmaz</p>
+                      <p class="text-xs text-gray-500">Emlakçı</p>
                     </div>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-lg transition-colors">Detaylar →</button>
+                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
                 </div>
               </div>
             </div>
@@ -185,45 +185,45 @@
                   <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Kiralık</span>
                 </div>
               </div>
-              <div class="p-8">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-3xl font-bold text-corporate-navy">₺35.000/ay</h3>
-                  <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">Yeni</span>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-2xl font-bold text-corporate-navy">₺35.000/ay</h3>
+                  <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-semibold">Yeni</span>
                 </div>
-                <h4 class="text-xl font-bold text-corporate-navy mb-3 group-hover:text-corporate-blue transition-colors">2+1 Modern Daire - Beşiktaş</h4>
-                <div class="flex items-center justify-between text-gray-600 mb-6">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">2+1 Modern Daire - Beşiktaş</h4>
+                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
                     </svg>
-                    <span class="font-medium">110 m²</span>
+                    <span>110 m²</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
-                    <span class="font-medium">2+1</span>
+                    <span>2+1</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
-                    <span class="font-medium">2018</span>
+                    <span>2018</span>
                   </div>
                 </div>
-                <div class="flex items-center justify-between pt-6 border-t border-gray-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
                     </div>
                     <div>
-                      <p class="text-gray-600 font-medium">Zeynep K.</p>
-                      <p class="text-sm text-gray-500">Ev Sahibi</p>
+                      <p class="text-sm text-gray-600 font-medium">Zeynep K.</p>
+                      <p class="text-xs text-gray-500">Ev Sahibi</p>
                     </div>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-lg transition-colors">Detaylar →</button>
+                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
                 </div>
               </div>
             </div>
@@ -312,69 +312,69 @@
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           <!-- Realtor Portfolios -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-blue/10 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-blue/20 transition-all">
-              <svg class="w-14 h-14 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-blue/10 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Emlakçı Portföyleri</h3>
-            <p class="text-corporate-blue font-bold text-2xl">842</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Emlakçı Portföyleri</h3>
+            <p class="text-corporate-blue font-bold text-xl">842</p>
           </div>
 
           <!-- User Listings -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-navy/10 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-navy/20 transition-all">
-              <svg class="w-14 h-14 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-navy/10 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Kullanıcı İlanları</h3>
-            <p class="text-corporate-blue font-bold text-2xl">1,247</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Kullanıcı İlanları</h3>
+            <p class="text-corporate-blue font-bold text-xl">1,247</p>
           </div>
 
           <!-- Shared Portfolios -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-light-blue/20 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-light-blue/30 transition-all">
-              <svg class="w-14 h-14 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-light-blue/20 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Paylaşılan Portföy</h3>
-            <p class="text-corporate-blue font-bold text-2xl">542</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Paylaşılan Portföy</h3>
+            <p class="text-corporate-blue font-bold text-xl">542</p>
           </div>
 
           <!-- Active Realtors -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-blue/10 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-blue/20 transition-all">
-              <svg class="w-14 h-14 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-blue/10 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Aktif Emlakçı</h3>
-            <p class="text-corporate-blue font-bold text-2xl">328</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Aktif Emlakçı</h3>
+            <p class="text-corporate-blue font-bold text-xl">328</p>
           </div>
 
           <!-- Collaborations -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-navy/10 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-navy/20 transition-all">
-              <svg class="w-14 h-14 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-navy/10 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Başarılı İşbirliği</h3>
-            <p class="text-corporate-blue font-bold text-2xl">156</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Başarılı İşbirliği</h3>
+            <p class="text-corporate-blue font-bold text-xl">156</p>
           </div>
 
           <!-- For Sale -->
-          <div class="bg-white rounded-3xl p-6 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue transform hover:-translate-y-2">
-            <div class="w-full h-28 bg-corporate-light-blue/20 rounded-2xl mb-5 flex items-center justify-center group-hover:bg-corporate-light-blue/30 transition-all">
-              <svg class="w-14 h-14 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-3xl p-5 shadow-corporate-lg transition-all duration-200 cursor-pointer group border-2 border-corporate-gray hover:border-corporate-blue">
+            <div class="w-full h-24 bg-corporate-light-blue/20 rounded-2xl mb-4 flex items-center justify-center transition-all">
+              <svg class="w-12 h-12 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-corporate-navy text-base mb-2">Satılık İlan</h3>
-            <p class="text-corporate-blue font-bold text-2xl">1,589</p>
+            <h3 class="font-bold text-corporate-navy text-sm mb-1">Satılık İlan</h3>
+            <p class="text-corporate-blue font-bold text-xl">1,589</p>
           </div>
         </div>
       </div>
