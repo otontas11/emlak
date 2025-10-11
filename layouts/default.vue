@@ -58,7 +58,7 @@
             <!-- Not Logged In -->
             <template v-if="!authStore.isLoggedIn">
               <NuxtLink to="/auth" class="hidden sm:inline-block text-corporate-navy hover:text-corporate-blue transition-colors font-semibold font-body text-sm md:text-base">Giriş Yap</NuxtLink>
-              <NuxtLink to="/auth" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all duration-300 font-bold shadow-corporate hover:shadow-corporate-lg font-body text-xs sm:text-base">
+              <NuxtLink to="/auth" class="hidden sm:inline-block bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 py-2.5 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all duration-300 font-bold shadow-corporate hover:shadow-corporate-lg font-body">
                 Kayıt Ol
               </NuxtLink>
             </template>
@@ -67,7 +67,18 @@
             <template v-else>
               <!-- Messages Dropdown -->
               <div class="relative">
-                <button @click="toggleMessages" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                <!-- Mobile: Direct link, Desktop: Dropdown button -->
+                <NuxtLink to="/messages" class="lg:hidden relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors block">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                  <!-- Unread Messages Badge -->
+                  <span v-if="unreadMessages > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {{ unreadMessages > 9 ? '9+' : unreadMessages }}
+                  </span>
+                </NuxtLink>
+                
+                <button @click="toggleMessages" class="hidden lg:block relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                   </svg>
@@ -77,22 +88,22 @@
                   </span>
                 </button>
 
-                <!-- Messages Dropdown -->
-                <div v-if="showMessagesMenu" class="absolute right-0 mt-2 w-96 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
+                <!-- Messages Dropdown (Desktop Only) -->
+                <div v-if="showMessagesMenu" class="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
                   <div class="p-4 border-b border-gray-200">
                     <h3 class="text-lg font-bold text-corporate-navy font-heading">Mesajlar</h3>
                     <p class="text-xs text-gray-500 mt-1">{{ unreadMessages }} okunmamış mesaj</p>
                   </div>
-                  <div class="max-h-96 overflow-y-auto">
-                    <div v-for="message in recentMessages.slice(0, 3)" :key="message.id" @click="goToMessages" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !message.read }">
-                      <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                  <div class="max-h-80 overflow-y-auto">
+                    <div v-for="message in recentMessages.slice(0, 3)" :key="message.id" @click="goToMessages" class="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !message.read }">
+                      <div class="flex items-start gap-2">
+                        <div class="w-9 h-9 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
                           {{ message.initials }}
                         </div>
                         <div class="flex-1 min-w-0">
                           <div class="flex items-center justify-between mb-1">
-                            <p class="text-sm font-bold text-corporate-navy">{{ message.sender }}</p>
-                            <span class="text-xs text-gray-500">{{ message.time }}</span>
+                            <p class="text-sm font-bold text-corporate-navy truncate">{{ message.sender }}</p>
+                            <span class="text-xs text-gray-500 flex-shrink-0 ml-2">{{ message.time }}</span>
                           </div>
                           <p class="text-sm text-gray-600 truncate">{{ message.preview }}</p>
                           <span v-if="!message.read" class="inline-block mt-1 text-xs font-bold text-blue-600">Yeni</span>
@@ -110,7 +121,18 @@
 
               <!-- Notifications Dropdown -->
               <div class="relative">
-                <button @click="toggleNotifications" class="relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
+                <!-- Mobile: Direct link, Desktop: Dropdown button -->
+                <NuxtLink to="/notifications" class="lg:hidden relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors block">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                  </svg>
+                  <!-- Unread Notifications Badge -->
+                  <span v-if="unreadNotifications > 0" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {{ unreadNotifications > 9 ? '9+' : unreadNotifications }}
+                  </span>
+                </NuxtLink>
+                
+                <button @click="toggleNotifications" class="hidden lg:block relative p-2 text-corporate-navy hover:text-corporate-blue transition-colors">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                   </svg>
@@ -120,16 +142,16 @@
                   </span>
                 </button>
 
-                <!-- Notifications Dropdown -->
-                <div v-if="showNotificationsMenu" class="absolute right-0 mt-2 w-96 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
+                <!-- Notifications Dropdown (Desktop Only) -->
+                <div v-if="showNotificationsMenu" class="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-corporate-lg border-2 border-corporate-gray z-50">
                   <div class="p-4 border-b border-gray-200">
                     <h3 class="text-lg font-bold text-corporate-navy font-heading">Bildirimler</h3>
                     <p class="text-xs text-gray-500 mt-1">{{ unreadNotifications }} okunmamış bildirim</p>
                   </div>
-                  <div class="max-h-96 overflow-y-auto">
-                    <div v-for="notification in recentNotifications.slice(0, 3)" :key="notification.id" @click="goToNotifications" class="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !notification.read }">
-                      <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                  <div class="max-h-80 overflow-y-auto">
+                    <div v-for="notification in recentNotifications.slice(0, 3)" :key="notification.id" @click="goToNotifications" class="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 transition-colors" :class="{ 'bg-blue-50': !notification.read }">
+                      <div class="flex items-start gap-2">
+                        <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
                           :class="{
                             'bg-green-100': notification.type === 'success',
                             'bg-blue-100': notification.type === 'info',
@@ -153,8 +175,8 @@
                           </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm font-semibold text-corporate-navy mb-1">{{ notification.title }}</p>
-                          <p class="text-sm text-gray-600">{{ notification.message }}</p>
+                          <p class="text-xs sm:text-sm font-semibold text-corporate-navy mb-1">{{ notification.title }}</p>
+                          <p class="text-xs sm:text-sm text-gray-600 line-clamp-2">{{ notification.message }}</p>
                           <div class="flex items-center justify-between mt-2">
                             <span class="text-xs text-gray-500">{{ notification.time }}</span>
                             <span v-if="!notification.read" class="text-xs font-bold text-blue-600">Yeni</span>
@@ -171,7 +193,7 @@
                 </div>
               </div>
 
-              <div class="relative group">
+              <div class="relative group hidden lg:block">
                 <button @click="toggleProfileMenu" class="flex items-center space-x-2 text-corporate-navy hover:text-corporate-blue transition-colors font-semibold">
                   <div class="w-10 h-10 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-sm font-bold relative shadow-corporate">
                     {{ authStore.userInitials }}
@@ -240,7 +262,7 @@
           </div>
           
           <!-- Mobile Menu Button -->
-          <button @click="toggleMobileMenu" class="lg:hidden text-corporate-navy hover:text-corporate-blue p-2 relative">
+          <button @click="toggleMobileMenu" data-mobile-button class="lg:hidden text-corporate-navy hover:text-corporate-blue p-2 relative">
             <svg v-if="!showMobileMenu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -262,6 +284,7 @@
 
     <!-- Mobile Menu Sidebar -->
     <div 
+      data-mobile-menu
       class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden transform transition-transform duration-300"
       :class="showMobileMenu ? 'translate-x-0' : 'translate-x-full'"
     >
@@ -285,6 +308,26 @@
       <!-- Menu Content -->
       <div class="overflow-y-auto h-[calc(100%-88px)] p-6">
         <div class="space-y-2">
+          <!-- User Profile Info (If Logged In) -->
+          <div v-if="authStore.isLoggedIn" class="mb-6 pb-6 border-b border-gray-200">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-full flex items-center justify-center text-white text-lg font-bold relative shadow-lg">
+                {{ authStore.userInitials }}
+                <!-- Consultant Badge -->
+                <div v-if="authStore.user?.isConsultant" class="absolute -bottom-1 -right-1 w-6 h-6 bg-corporate-blue rounded-full flex items-center justify-center border-2 border-white">
+                  <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="font-bold text-corporate-navy text-base">{{ authStore.fullName }}</p>
+                <p v-if="authStore.user?.isConsultant" class="text-sm text-corporate-blue font-semibold">Emlak Danışmanı</p>
+                <p v-else class="text-sm text-gray-600">Kullanıcı</p>
+              </div>
+            </div>
+          </div>
+
           <!-- Navigation Links -->
           <div class="mb-6">
             <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Navigasyon</p>
@@ -371,6 +414,28 @@
                   İlanlarım
                 </NuxtLink>
               </template>
+              
+              <!-- Messages & Notifications (Mobile Only) -->
+              <NuxtLink to="/messages" @click="showMobileMenu = false" class="block px-4 py-3 mt-2 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors flex items-center gap-3 relative">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+                <span>Mesajlar</span>
+                <span v-if="unreadMessages > 0" class="ml-auto w-6 h-6 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {{ unreadMessages > 9 ? '9+' : unreadMessages }}
+                </span>
+              </NuxtLink>
+              
+              <NuxtLink to="/notifications" @click="showMobileMenu = false" class="block px-4 py-3 mt-2 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors flex items-center gap-3 relative">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                </svg>
+                <span>Bildirimler</span>
+                <span v-if="unreadNotifications > 0" class="ml-auto w-6 h-6 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {{ unreadNotifications > 9 ? '9+' : unreadNotifications }}
+                </span>
+              </NuxtLink>
+
               <button @click="logout" class="block w-full text-left px-4 py-3 mt-4 rounded-lg text-red-600 hover:bg-red-50 transition-colors font-semibold flex items-center gap-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
@@ -604,12 +669,16 @@ const logout = () => {
 // Close menus when clicking outside
 onMounted(() => {
   document.addEventListener('click', (e) => {
+    // Don't close if clicking the mobile menu button or inside the mobile menu
+    if (e.target.closest('[data-mobile-menu]') || e.target.closest('[data-mobile-button]')) {
+      return
+    }
+    
     const isClickInsideDropdown = e.target.closest('.relative')
     if (!isClickInsideDropdown) {
       showProfileMenu.value = false
       showMessagesMenu.value = false
       showNotificationsMenu.value = false
-      showMobileMenu.value = false
     }
   })
 })
