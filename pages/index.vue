@@ -2,60 +2,60 @@
   <NuxtLayout name="default">
     <div>
     <!-- Hero Section -->
-    <section class="relative min-h-[60vh] flex">
+    <section class="relative min-h-[50vh] md:min-h-[60vh] flex flex-col md:flex-row">
       <!-- Left Side - Corporate Blue Background with Content -->
-      <div class="w-full md:w-2/5 bg-gradient-to-br from-corporate-navy to-corporate-blue text-white flex flex-col justify-center px-8 py-12">
+      <div class="w-full md:w-2/5 bg-gradient-to-br from-corporate-navy to-corporate-blue text-white flex flex-col justify-center px-4 sm:px-8 py-8 sm:py-12">
 
         <!-- Main Title -->
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
           Portföy Paylaşım<br />
           <span class="text-white">Platformu</span>
-        </h1>
-        
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-3 mb-8">
-          <button class="bg-white text-corporate-navy px-6 py-3 rounded-lg font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          </h1>
+
+          <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 sm:mb-8">
+          <button class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
             </svg>
             Portföy Paylaş
           </button>
-          <button class="bg-white text-corporate-navy px-6 py-3 rounded-lg font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-            </svg>
+          <button class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
             Emlakçı Ol
-          </button>
+            </button>
         </div>
         
         <!-- Search/Filter -->
-        <div class="bg-white rounded-lg p-4 mb-6">
-          <div class="flex flex-col sm:flex-row gap-3">
-            <select class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+        <div class="bg-white rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <select class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
               <option>Türkiye</option>
             </select>
-            <select class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            <select class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
               <option value="">İl Seçin</option>
               <option>İstanbul</option>
               <option>Ankara</option>
               <option>İzmir</option>
             </select>
-            <button class="bg-corporate-blue text-white px-6 py-3 rounded-lg hover:bg-corporate-navy transition-all">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button class="bg-corporate-blue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-corporate-navy transition-all flex items-center justify-center">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </button>
           </div>
-        </div>
-        
+          </div>
+          
         <!-- Feature Highlight -->
-        <div class="flex items-center gap-3 mb-6">
-          <span class="bg-white text-corporate-blue px-3 py-1 rounded-full text-xs font-bold">Yeni</span>
-          <span class="text-sm text-white/90">Portföy paylaşımı ve emlakçı işbirliği platformu</span>
-        </div>
+        <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <span class="bg-white text-corporate-blue px-2 sm:px-3 py-1 rounded-full text-xs font-bold">Yeni</span>
+          <span class="text-xs sm:text-sm text-white/90">Portföy paylaşımı ve emlakçı işbirliği platformu</span>
+              </div>
         
         <!-- Testimonial -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 hidden sm:block">
           <div class="flex items-center gap-1 mb-2">
             <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -72,11 +72,11 @@
             <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
             </svg>
-          </div>
+              </div>
           <p class="text-white text-sm mb-1">"portföy paylaşımı sayesinde daha fazla müşteriye ulaştım"</p>
           <p class="text-white/70 text-xs">Mehmet K. - Perşembe, 9 Ekim 2024 11:33</p>
-        </div>
-      </div>
+              </div>
+            </div>
       
       <!-- Right Side - Istanbul Image -->
       <div class="hidden md:block w-3/5 relative">
@@ -97,188 +97,188 @@
     </section>
 
       <!-- Featured Properties Section -->
-      <section class="py-16 bg-gray-50">
+      <section class="py-8 sm:py-12 md:py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
+          <div class="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-corporate-navy mb-3 sm:mb-4 font-heading">
               Öne Çıkan İlanlar
             </h2>
 
           </div>
-
-          <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            <!-- Property 1 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
-              <div class="relative h-64 overflow-hidden">
+        
+          <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          <!-- Property 1 -->
+            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+              <div class="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
                     alt="Modern Apartment"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div class="absolute top-4 left-4">
+              <div class="absolute top-4 left-4">
                   <span class="bg-corporate-blue text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">Emlakçı Portföyü</span>
-                </div>
-                <div class="absolute top-4 right-4">
-                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
-                </div>
               </div>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-3">
-                  <h3 class="text-2xl font-bold text-corporate-navy">₺8.500.000</h3>
+              <div class="absolute top-4 right-4">
+                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
+              </div>
+            </div>
+              <div class="p-4 sm:p-5 md:p-6">
+                <div class="flex items-center justify-between mb-2 sm:mb-3">
+                  <h3 class="text-xl sm:text-2xl font-bold text-corporate-navy">₺8.500.000</h3>
                   <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <span class="text-base text-gray-600 font-semibold">4.8</span>
+                    <span class="text-sm sm:text-base text-gray-600 font-semibold">4.8</span>
                   </div>
                 </div>
-                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">3+1 Lüks Daire - Kadıköy</h4>
-                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
-                  <div class="flex items-center gap-1">
+                <h4 class="text-base sm:text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">3+1 Lüks Daire - Kadıköy</h4>
+                <div class="flex items-center justify-between text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-                    </svg>
-                    <span>150 m²</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <span>3+1</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>2020</span>
-                  </div>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                  </svg>
+                  <span>150 m²</span>
                 </div>
-                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  <span>3+1</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  <span>2020</span>
+                </div>
+                </div>
+                <div class="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-200">
                   <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
                       <span class="text-white text-xs font-bold">AY</span>
                     </div>
                     <div>
-                      <p class="text-sm text-gray-600 font-medium">Ahmet Yılmaz</p>
+                      <p class="text-xs sm:text-sm text-gray-600 font-medium">Ahmet Yılmaz</p>
                       <p class="text-xs text-gray-500">Emlakçı</p>
                     </div>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
+                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-xs sm:text-sm transition-colors">Detaylar →</button>
                 </div>
-              </div>
             </div>
+          </div>
 
-            <!-- Property 2 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
-              <div class="relative h-64 overflow-hidden">
+          <!-- Property 2 -->
+            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+              <div class="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
                     alt="Modern Apartment Interior"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div class="absolute top-4 left-4">
+              <div class="absolute top-4 left-4">
                   <span class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">Kullanıcı İlanı</span>
-                </div>
-                <div class="absolute top-4 right-4">
-                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Kiralık</span>
-                </div>
               </div>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-3">
-                  <h3 class="text-2xl font-bold text-corporate-navy">₺35.000/ay</h3>
+              <div class="absolute top-4 right-4">
+                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Kiralık</span>
+              </div>
+            </div>
+              <div class="p-4 sm:p-5 md:p-6">
+                <div class="flex items-center justify-between mb-2 sm:mb-3">
+                  <h3 class="text-xl sm:text-2xl font-bold text-corporate-navy">₺35.000/ay</h3>
                   <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-semibold">Yeni</span>
                 </div>
-                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">2+1 Modern Daire - Beşiktaş</h4>
-                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
-                  <div class="flex items-center gap-1">
+                <h4 class="text-base sm:text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">2+1 Modern Daire - Beşiktaş</h4>
+                <div class="flex items-center justify-between text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-                    </svg>
-                    <span>110 m²</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <span>2+1</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>2018</span>
-                  </div>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                  </svg>
+                  <span>110 m²</span>
                 </div>
-                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  <span>2+1</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  <span>2018</span>
+                </div>
+                </div>
+                <div class="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-200">
                   <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
+                      <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
                     </div>
                     <div>
-                      <p class="text-sm text-gray-600 font-medium">Zeynep K.</p>
+                      <p class="text-xs sm:text-sm text-gray-600 font-medium">Zeynep K.</p>
                       <p class="text-xs text-gray-500">Ev Sahibi</p>
                     </div>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
+                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-xs sm:text-sm transition-colors">Detaylar →</button>
                 </div>
-              </div>
             </div>
+          </div>
 
-            <!-- Property 3 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
-              <div class="relative h-64 overflow-hidden">
+          <!-- Property 3 -->
+            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+              <div class="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                     alt="Luxury Villa"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div class="absolute top-4 left-4">
+              <div class="absolute top-4 left-4">
                   <span class="bg-corporate-blue text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">Emlakçı Portföyü</span>
-                </div>
-                <div class="absolute top-4 right-4">
-                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
-                </div>
               </div>
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-3">
-                  <h3 class="text-2xl font-bold text-corporate-navy">₺12.750.000</h3>
+              <div class="absolute top-4 right-4">
+                  <span class="bg-white/95 text-corporate-navy px-4 py-2 rounded-full text-sm font-bold shadow-lg">Satılık</span>
+              </div>
+            </div>
+              <div class="p-4 sm:p-5 md:p-6">
+                <div class="flex items-center justify-between mb-2 sm:mb-3">
+                  <h3 class="text-xl sm:text-2xl font-bold text-corporate-navy">₺12.750.000</h3>
                   <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-corporate-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <span class="text-base text-gray-600 font-semibold">4.9</span>
+                    <span class="text-sm sm:text-base text-gray-600 font-semibold">4.9</span>
                   </div>
                 </div>
-                <h4 class="text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">4+1 Villa - Şişli</h4>
-                <div class="flex items-center justify-between text-gray-600 text-sm mb-4">
-                  <div class="flex items-center gap-1">
+                <h4 class="text-base sm:text-lg font-bold text-corporate-navy mb-2 group-hover:text-corporate-blue transition-colors">4+1 Villa - Şişli</h4>
+                <div class="flex items-center justify-between text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                <div class="flex items-center gap-1">
                     <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-                    </svg>
-                    <span>220 m²</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <span>4+1</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>2019</span>
-                  </div>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                  </svg>
+                  <span>220 m²</span>
                 </div>
-                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
-                  <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  <span>4+1</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  <span>2019</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                <div class="flex items-center gap-2">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-corporate-blue to-corporate-light-blue flex items-center justify-center shadow-lg">
-                      <span class="text-white text-xs font-bold">MK</span>
+                    <span class="text-white text-xs font-bold">MK</span>
                     </div>
                     <div>
                       <p class="text-sm text-gray-600 font-medium">Mehmet Kaya</p>
@@ -286,25 +286,25 @@
                     </div>
                   </div>
                   <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-sm transition-colors">Detaylar →</button>
-                </div>
               </div>
             </div>
           </div>
-
-          <div class="text-center mt-12">
-            <button class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-8 py-4 rounded-xl font-bold hover:from-corporate-blue hover:to-corporate-light-blue transition-all shadow-corporate-lg hover:shadow-corporate-xl">
-              Tüm İlanları Görüntüle
-            </button>
-          </div>
         </div>
-      </section>
+
+        <div class="text-center mt-12">
+          <button class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-8 py-4 rounded-xl font-bold hover:from-corporate-blue hover:to-corporate-light-blue transition-all shadow-corporate-lg hover:shadow-corporate-xl">
+            Tüm İlanları Görüntüle
+          </button>
+        </div>
+      </div>
+    </section>
     <!-- Platform Categories Section -->
     <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
-            Platformda Neler Var?
-          </h2>
+          Platformda Neler Var?
+        </h2>
           <p class="text-lg text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
             Emlakçı portföyleri, kullanıcı ilanları ve işbirliği fırsatları
           </p>
@@ -499,8 +499,8 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
-            Nasıl Çalışır?
-          </h2>
+          Nasıl Çalışır?
+        </h2>
           <p class="text-base text-gray-600 font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
         </div>
         
@@ -514,7 +514,7 @@
               <p class="text-sm text-gray-600 font-body leading-relaxed">Emlakçı veya ev sahibi olarak platforma ücretsiz kayıt olun</p>
             </div>
           </div>
-          
+
           <div class="bg-white rounded-3xl p-6 shadow-corporate-lg transition-all duration-300 hover:shadow-corporate-xl group">
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 bg-corporate-blue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-corporate-blue/20 transition-all">
@@ -524,7 +524,7 @@
               <p class="text-sm text-gray-600 font-body leading-relaxed">Emlakçılar portföy paylaşır, ev sahipleri ilan ekler</p>
             </div>
           </div>
-          
+
           <div class="bg-white rounded-3xl p-6 shadow-corporate-lg transition-all duration-300 hover:shadow-corporate-xl group">
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 bg-corporate-blue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-corporate-blue/20 transition-all">
@@ -544,7 +544,7 @@
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
             En Başarılı Emlakçılar
-          </h2>
+        </h2>
           <p class="text-lg text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
             Portföy paylaşan ve işbirliği yapan profesyonel emlakçılarımız
           </p>

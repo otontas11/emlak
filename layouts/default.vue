@@ -11,21 +11,21 @@
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
               <!-- Left Side: Logo + Navigation -->
-              <div class="flex items-center space-x-8">
+              <div class="flex items-center space-x-4 md:space-x-8">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                   <NuxtLink to="/" class="flex items-center hover:opacity-80 transition-opacity">
-                    <div class="w-12 h-12 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-lg flex items-center justify-center mr-3 shadow-corporate">
-                      <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-corporate-navy to-corporate-blue rounded-lg flex items-center justify-center mr-2 sm:mr-3 shadow-corporate">
+                      <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                       </svg>
                     </div>
-                    <span class="text-2xl font-bold text-corporate-navy font-heading">Estate<span class="text-corporate-blue">90</span></span>
+                    <span class="text-lg sm:text-2xl font-bold text-corporate-navy font-heading">Estate<span class="text-corporate-blue">90</span></span>
                   </NuxtLink>
                 </div>
                 
                 <!-- Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-6">
+                <nav class="hidden lg:flex items-center space-x-6">
                   <NuxtLink 
                     to="/buy" 
                     class="transition-colors font-semibold font-body"
@@ -54,11 +54,11 @@
               </div>
               
               <!-- Right Side: User Actions -->
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2 sm:space-x-4">
             <!-- Not Logged In -->
             <template v-if="!authStore.isLoggedIn">
-              <NuxtLink to="/auth" class="text-corporate-navy hover:text-corporate-blue transition-colors font-semibold font-body">Giriş Yap</NuxtLink>
-              <NuxtLink to="/auth" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 py-2.5 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all duration-300 font-bold shadow-corporate hover:shadow-corporate-lg font-body">
+              <NuxtLink to="/auth" class="hidden sm:inline-block text-corporate-navy hover:text-corporate-blue transition-colors font-semibold font-body text-sm md:text-base">Giriş Yap</NuxtLink>
+              <NuxtLink to="/auth" class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-lg hover:from-corporate-blue hover:to-corporate-light-blue transition-all duration-300 font-bold shadow-corporate hover:shadow-corporate-lg font-body text-xs sm:text-base">
                 Kayıt Ol
               </NuxtLink>
             </template>
@@ -240,14 +240,148 @@
           </div>
           
           <!-- Mobile Menu Button -->
-          <button class="md:hidden text-gray-700 hover:text-blue-600 p-2">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button @click="toggleMobileMenu" class="lg:hidden text-corporate-navy hover:text-corporate-blue p-2 relative">
+            <svg v-if="!showMobileMenu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
       </div>
+
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div 
+      v-if="showMobileMenu" 
+      @click="showMobileMenu = false"
+      class="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity"
+    ></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div 
+      class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden transform transition-transform duration-300"
+      :class="showMobileMenu ? 'translate-x-0' : 'translate-x-full'"
+    >
+      <!-- Menu Header -->
+      <div class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white p-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <span class="text-xl font-bold">Menü</span>
+        </div>
+        <button @click="showMobileMenu = false" class="text-white hover:text-gray-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Content -->
+      <div class="overflow-y-auto h-[calc(100%-88px)] p-6">
+        <div class="space-y-2">
+          <!-- Navigation Links -->
+          <div class="mb-6">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Navigasyon</p>
+            <NuxtLink 
+              to="/buy" 
+              @click="showMobileMenu = false"
+              class="block px-4 py-3 rounded-lg transition-colors font-semibold flex items-center gap-3"
+              :class="$route.path === '/buy' ? 'bg-corporate-blue text-white' : 'text-corporate-navy hover:bg-gray-100'"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Satın Al
+            </NuxtLink>
+            <NuxtLink 
+              to="/portfolios" 
+              @click="showMobileMenu = false"
+              class="block px-4 py-3 rounded-lg transition-colors font-semibold flex items-center gap-3 mt-2"
+              :class="$route.path === '/portfolios' ? 'bg-corporate-blue text-white' : 'text-corporate-navy hover:bg-gray-100'"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+              Portföy Paylaşımı
+            </NuxtLink>
+            <NuxtLink 
+              to="/add-property" 
+              @click="showMobileMenu = false"
+              class="block px-4 py-3 rounded-lg transition-colors font-bold flex items-center gap-3 mt-2"
+              :class="$route.path === '/add-property' ? 'bg-corporate-blue text-white' : 'text-corporate-navy hover:bg-gray-100'"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              İlan Ver
+            </NuxtLink>
+          </div>
+
+          <!-- Auth Links for non-logged in users -->
+          <template v-if="!authStore.isLoggedIn">
+            <div class="border-t border-gray-200 pt-6">
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Hesap</p>
+              <NuxtLink to="/auth" @click="showMobileMenu = false" class="block px-4 py-3 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors font-semibold flex items-center gap-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                </svg>
+                Giriş Yap
+              </NuxtLink>
+              <NuxtLink to="/auth" @click="showMobileMenu = false" class="block px-4 py-3 mt-2 rounded-lg bg-gradient-to-r from-corporate-navy to-corporate-blue text-white font-bold text-center shadow-lg">
+                Kayıt Ol
+              </NuxtLink>
+            </div>
+          </template>
+
+          <!-- User Menu for logged in users -->
+          <template v-else>
+            <div class="border-t border-gray-200 pt-6">
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Hesabım</p>
+              <template v-if="authStore.isConsultant">
+                <NuxtLink to="/consultant-profile" @click="showMobileMenu = false" class="block px-4 py-3 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors font-semibold flex items-center gap-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  Danışman Profilim
+                </NuxtLink>
+                <NuxtLink to="/consultant-properties" @click="showMobileMenu = false" class="block px-4 py-3 mt-2 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors flex items-center gap-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  Atanan İlanlarım
+                </NuxtLink>
+              </template>
+              <template v-else>
+                <NuxtLink to="/profile" @click="showMobileMenu = false" class="block px-4 py-3 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors font-semibold flex items-center gap-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  Profilim
+                </NuxtLink>
+                <NuxtLink to="/my-listings" @click="showMobileMenu = false" class="block px-4 py-3 mt-2 rounded-lg text-corporate-navy hover:bg-gray-100 transition-colors flex items-center gap-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  İlanlarım
+                </NuxtLink>
+              </template>
+              <button @click="logout" class="block w-full text-left px-4 py-3 mt-4 rounded-lg text-red-600 hover:bg-red-50 transition-colors font-semibold flex items-center gap-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                </svg>
+                Çıkış Yap
+              </button>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Content -->
     <main>
@@ -333,6 +467,7 @@ const authStore = useAuthStore()
 const showProfileMenu = ref(false)
 const showMessagesMenu = ref(false)
 const showNotificationsMenu = ref(false)
+const showMobileMenu = ref(false)
 
 // Mock unread counts - in real app, these would come from API
 const unreadMessages = computed(() => recentMessages.value.filter(m => !m.read).length)
@@ -426,22 +561,32 @@ const recentNotifications = ref([
   }
 ])
 
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value
+  showProfileMenu.value = false
+  showMessagesMenu.value = false
+  showNotificationsMenu.value = false
+}
+
 const toggleProfileMenu = () => {
   showProfileMenu.value = !showProfileMenu.value
   showMessagesMenu.value = false
   showNotificationsMenu.value = false
+  showMobileMenu.value = false
 }
 
 const toggleMessages = () => {
   showMessagesMenu.value = !showMessagesMenu.value
   showProfileMenu.value = false
   showNotificationsMenu.value = false
+  showMobileMenu.value = false
 }
 
 const toggleNotifications = () => {
   showNotificationsMenu.value = !showNotificationsMenu.value
   showProfileMenu.value = false
   showMessagesMenu.value = false
+  showMobileMenu.value = false
 }
 
 const goToMessages = () => {
@@ -468,6 +613,7 @@ onMounted(() => {
       showProfileMenu.value = false
       showMessagesMenu.value = false
       showNotificationsMenu.value = false
+      showMobileMenu.value = false
     }
   })
 })
