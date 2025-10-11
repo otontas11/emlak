@@ -99,12 +99,12 @@
                 <!-- Listing Type Badge - Only show if it's available in portfolio too -->
                 <span 
                   v-if="property.listingType === 'both'"
-                  class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-corporate flex items-center gap-1"
+                  class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-corporate flex items-center gap-1"
                 >
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                   </svg>
-                  Portföy + Satış
+                  {{ property.source === 'user' ? 'Portföy Paylaşımında' : 'Portföy + Satış' }}
                 </span>
               </div>
               
@@ -196,8 +196,18 @@
 </template>
 
 <script setup>
-// All properties with listing type classification
-// listingType: 'sale-only' | 'portfolio-only' | 'both'
+// İlan Tipleri:
+// 'sale-only': Sadece satış/kiralama için, portföy paylaşımı yok
+// 'portfolio-only': Sadece portföy paylaşımında, direkt satış/kiralık değil
+// 'both': Hem satış/kiralama için hem de portföy paylaşımında
+//
+// Kullanıcı İlanları (source: 'user'):
+// - 'sale-only': Kullanıcı sadece kendi satıyor, emlakçı portföyüne açmamış
+// - 'both': Kullanıcı hem kendisi satıyor hem de emlakçılara portföy olarak açmış
+//
+// Emlakçı İlanları (source: 'realtor'):
+// - 'both': Emlakçı ilanı hem müşterilerine sunuyor hem portföy paylaşımında
+// - 'sale-only': Emlakçı sadece kendi müşterilerine satıyor, paylaşmıyor
 const properties = ref([
   {
     id: 1,
@@ -225,7 +235,7 @@ const properties = ref([
     bathrooms: 1,
     area: 95,
     status: 'Satılık',
-    listingType: 'sale-only', // Only for sale
+    listingType: 'both', // Kullanıcı hem kendisi satıyor hem emlakçı portföyüne açmış
     source: 'user',
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
     consultant: 'Zeynep Kılıç',
@@ -258,7 +268,7 @@ const properties = ref([
     bathrooms: 2,
     area: 135,
     status: 'Satılık',
-    listingType: 'sale-only', // Only for sale
+    listingType: 'both', // Kullanıcı hem kendisi satıyor hem emlakçılara portföy olarak açmış
     source: 'user',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop',
     consultant: 'Mehmet Özkan',
@@ -291,7 +301,7 @@ const properties = ref([
     bathrooms: 2,
     area: 110,
     status: 'Satılık',
-    listingType: 'sale-only', // Only for sale
+    listingType: 'sale-only', // Kullanıcı sadece kendi satıyor, portföy paylaşımı yapmamış
     source: 'user',
     image: 'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop',
     consultant: 'Elif Yıldız',
