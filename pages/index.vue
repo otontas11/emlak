@@ -2,76 +2,109 @@
   <NuxtLayout name="default">
     <div>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-corporate-navy via-corporate-blue to-corporate-light-blue text-white overflow-hidden">
-      <!-- Background Pattern -->
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 20%, rgba(0, 116, 183, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 59, 115, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(0, 153, 216, 0.15) 0%, transparent 50%);"></div>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-      
-      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="text-center">
-          <div class="inline-block mb-4">
-            <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-              Emlakçılar ve Ev Sahipleri İçin Profesyonel Platform
-            </span>
+    <section class="relative min-h-[70vh] flex">
+      <!-- Left Side - Red Background with Content -->
+      <div class="w-full md:w-2/5 bg-gradient-to-br from-red-600 to-red-700 text-white flex flex-col justify-center px-8 py-12">
+        <!-- Logo/Icon -->
+        <div class="mb-8">
+          <div class="w-16 h-16 bg-blue-400 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
           </div>
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight font-heading">
-            Emlak Dünyasında<br />
-            <span class="text-white">Yeni Bir Dönem</span>
-          </h1>
-          <p class="max-w-3xl mx-auto mb-10 text-lg md:text-xl text-white/90 leading-relaxed font-body">
-            Emlakçılar portföylerini paylaşır, diğer emlakçılarla işbirliği yapar. <br class="hidden md:block"/>
-            Ev sahipleri ilanlarını ekler, profesyonel emlakçılarla buluşur.
-          </p>
-          
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button class="bg-white text-corporate-navy px-8 py-4 rounded-xl font-bold hover:bg-corporate-light-blue hover:text-white transition-all shadow-corporate-xl hover:scale-105 transform flex items-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              Emlakçı Olarak Katıl
-            </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all flex items-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-              </svg>
-              İlan Ekle
-            </button>
-            <button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-corporate-navy transition-all flex items-center gap-2">
+        </div>
+        
+        <!-- Main Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Portföyünüzün<br />
+          <span class="text-white">Değerini Bilin</span>
+        </h1>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+          <button class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            Değerini Öğren
+          </button>
+          <button class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Emlakçı Bul
+          </button>
+        </div>
+        
+        <!-- Search/Filter -->
+        <div class="bg-white rounded-lg p-4 mb-6">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <select class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+              <option>Türkiye</option>
+              <option>İstanbul</option>
+              <option>Ankara</option>
+              <option>İzmir</option>
+            </select>
+            <input type="text" placeholder="Şehir" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <button class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
-              Portföy Ara
             </button>
           </div>
-          
-          <!-- Trust Indicators -->
-          <div class="bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 inline-flex items-center mb-6 border border-white/20 shadow-corporate-xl">
-            <div class="flex items-center space-x-8">
-              <div class="text-center">
-                <div class="text-3xl font-bold text-white">1,200+</div>
-                <div class="text-sm text-white/80 font-medium">Aktif Emlakçı</div>
-              </div>
-              <div class="w-px h-14 bg-white/30"></div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-white">5,800+</div>
-                <div class="text-sm text-white/80 font-medium">Paylaşılan Portföy</div>
-              </div>
-              <div class="w-px h-14 bg-white/30"></div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-white">%95</div>
-                <div class="text-sm text-white/80 font-medium">İşbirliği Başarısı</div>
-              </div>
-            </div>
+        </div>
+        
+        <!-- Feature Highlight -->
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-bold">Yeni</span>
+          <span class="text-sm text-white/90">AI ile portföy değerleme ve işbirliği imkanı</span>
+        </div>
+        
+        <!-- Testimonial -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div class="flex items-center gap-1 mb-2">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
           </div>
+          <p class="text-white text-sm mb-1">"doğru değerleme ve hızlı işlem"</p>
+          <p class="text-white/70 text-xs">Ahmet Y. - Perşembe, 9 Ekim 2024 11:33</p>
         </div>
       </div>
       
-      <!-- Decorative Banner -->
-      <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-corporate-blue via-white to-corporate-light-blue"></div>
+      <!-- Right Side - Istanbul Image -->
+      <div class="hidden md:block w-3/5 relative">
+        <img 
+          src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1920&h=1080&fit=crop&q=80" 
+          alt="Istanbul Panorama" 
+          class="w-full h-full object-cover"
+        />
+        <!-- Interactive Icons -->
+        <div class="absolute bottom-6 right-6 flex gap-3">
+          <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-500 transition-all">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-500 transition-all">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Featured Properties Section -->
