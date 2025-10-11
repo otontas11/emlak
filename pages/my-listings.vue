@@ -27,12 +27,6 @@
                   align-tabs="start"
                   class="property-tabs"
                 >
-                  <v-tab value="all" class="font-semibold">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                    </svg>
-                    Tüm İlanlar ({{ properties.length }})
-                  </v-tab>
                   <v-tab value="active" class="font-semibold">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -50,6 +44,12 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
                     Kendim Yönetiyorum ({{ properties.filter(p => p.selfManaged).length }})
+                  </v-tab>
+                  <v-tab value="passive" class="font-semibold">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                    </svg>
+                    Pasif ({{ properties.filter(p => p.status === 'passive' || p.status === 'cancelled').length }})
                   </v-tab>
                   <v-tab value="sold" class="font-semibold">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,11 +114,15 @@
                           :class="{
                             'bg-green-100 text-green-800': property.status === 'active',
                             'bg-yellow-100 text-yellow-800': property.status === 'pending',
+                            'bg-gray-100 text-gray-800': property.status === 'passive',
+                            'bg-red-100 text-red-800': property.status === 'cancelled',
                             'bg-green-100 text-green-800 border-2 border-green-300': property.status === 'sold'
                           }"
                         >
                           <span v-if="property.status === 'active'">Aktif</span>
                           <span v-else-if="property.status === 'pending'">Beklemede</span>
+                          <span v-else-if="property.status === 'passive'">Pasif</span>
+                          <span v-else-if="property.status === 'cancelled'">İptal Edildi</span>
                           <span v-else-if="property.status === 'sold'">✓ Satıldı</span>
                         </span>
                       </div>
@@ -291,18 +295,20 @@
                       <div class="flex items-center justify-between mt-4">
                         <div class="flex space-x-3">
                           <button 
+                            @click.stop="editProperty(property.id)"
                             class="text-sm font-semibold"
-                            :class="property.status === 'sold' ? 'text-gray-400 cursor-not-allowed' : 'text-corporate-blue hover:text-corporate-navy'"
-                            :disabled="property.status === 'sold'"
+                            :class="property.status === 'sold' || property.status === 'passive' || property.status === 'cancelled' ? 'text-gray-400 cursor-not-allowed' : 'text-corporate-blue hover:text-corporate-navy'"
+                            :disabled="property.status === 'sold' || property.status === 'passive' || property.status === 'cancelled'"
                           >
                             Düzenle
                           </button>
                           <button 
+                            @click.stop="togglePassive(property.id)"
                             class="text-sm font-semibold"
-                            :class="property.status === 'sold' ? 'text-gray-400 cursor-not-allowed' : 'text-red-600 hover:text-red-700'"
+                            :class="property.status === 'sold' ? 'text-gray-400 cursor-not-allowed' : (property.status === 'passive' || property.status === 'cancelled') ? 'text-green-600 hover:text-green-700' : 'text-orange-600 hover:text-orange-700'"
                             :disabled="property.status === 'sold'"
                           >
-                            Sil
+                            {{ (property.status === 'passive' || property.status === 'cancelled') ? 'Aktife Al' : 'Pasife Al' }}
                           </button>
                         </div>
                       </div>
@@ -501,7 +507,7 @@ const rating = ref(0)
 const ratingComment = ref('')
 
 // Tab state
-const activeTab = ref('all')
+const activeTab = ref('active')
 
 // Mock properties data
 const properties = ref([
@@ -609,17 +615,48 @@ const properties = ref([
     hasApplicants: false,
     selectedRealtor: null,
     selfManaged: false
+  },
+  {
+    id: '8',
+    title: '3+1 Daire, Üsküdar',
+    price: 2950000,
+    type: 'sale',
+    status: 'passive',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 130,
+    location: 'Üsküdar, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: null,
+    selfManaged: false
+  },
+  {
+    id: '9',
+    title: '2+1 Daire, Bostancı',
+    price: 1750000,
+    type: 'sale',
+    status: 'cancelled',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 85,
+    location: 'Bostancı, İstanbul',
+    applicantsCount: 0,
+    hasApplicants: false,
+    selectedRealtor: null,
+    selfManaged: false
   }
 ])
 
 // Filter properties based on active tab
 const filteredProperties = computed(() => {
-  if (activeTab.value === 'all') {
-    return properties.value
-  } else if (activeTab.value === 'active') {
+  if (activeTab.value === 'active') {
     return properties.value.filter(p => p.status === 'active')
   } else if (activeTab.value === 'pending') {
     return properties.value.filter(p => p.status === 'pending')
+  } else if (activeTab.value === 'passive') {
+    // Pasif tab'ı hem passive hem de cancelled durumlarını gösterir
+    return properties.value.filter(p => p.status === 'passive' || p.status === 'cancelled')
   } else if (activeTab.value === 'sold') {
     return properties.value.filter(p => p.status === 'sold')
   } else if (activeTab.value === 'self-managed') {
@@ -799,6 +836,31 @@ const toggleSelfManagement = (propertyId) => {
       alert('İlanınız artık sadece sizin tarafınızdan yönetiliyor. Emlakçılar bu ilanı göremeyecek.')
     }
   }
+}
+
+// Toggle passive status
+const togglePassive = (propertyId) => {
+  const property = properties.value.find(p => p.id === propertyId)
+  if (!property) return
+  
+  if (property.status === 'passive' || property.status === 'cancelled') {
+    // Pasiften aktife alma
+    if (confirm('Bu ilanı tekrar aktif hale getirmek istiyor musunuz?')) {
+      property.status = 'active'
+      alert('İlan başarıyla aktif hale getirildi.')
+    }
+  } else {
+    // Pasife alma
+    if (confirm('Bu ilanı pasif duruma almak istiyor musunuz?\n\nİlan yayından kaldırılacak ancak bilgileri korunacak.')) {
+      property.status = 'passive'
+      alert('İlan pasif duruma alındı. İstediğiniz zaman tekrar aktif edebilirsiniz.')
+    }
+  }
+}
+
+// Edit property
+const editProperty = (propertyId) => {
+  alert('İlan düzenleme özelliği yakında eklenecek!')
 }
 </script>
 
