@@ -3,50 +3,42 @@
     <div>
     <!-- Hero Section -->
     <section class="relative min-h-[70vh] flex">
-      <!-- Left Side - Red Background with Content -->
-      <div class="w-full md:w-2/5 bg-gradient-to-br from-red-600 to-red-700 text-white flex flex-col justify-center px-8 py-12">
-        <!-- Logo/Icon -->
-        <div class="mb-8">
-          <div class="w-16 h-16 bg-blue-400 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-            </svg>
-          </div>
-        </div>
-        
+      <!-- Left Side - Corporate Blue Background with Content -->
+      <div class="w-full md:w-2/5 bg-gradient-to-br from-corporate-navy to-corporate-blue text-white flex flex-col justify-center px-8 py-12">
+
         <!-- Main Title -->
         <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Portföyünüzün<br />
-          <span class="text-white">Değerini Bilin</span>
+          Portföy Paylaşım<br />
+          <span class="text-white">Platformu</span>
         </h1>
         
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 mb-8">
-          <button class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+          <button class="bg-white text-corporate-navy px-6 py-3 rounded-lg font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
             </svg>
-            Değerini Öğren
+            Portföy Paylaş
           </button>
-          <button class="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+          <button class="bg-white text-corporate-navy px-6 py-3 rounded-lg font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
-            Emlakçı Bul
+            Emlakçı Ol
           </button>
         </div>
         
         <!-- Search/Filter -->
         <div class="bg-white rounded-lg p-4 mb-6">
           <div class="flex flex-col sm:flex-row gap-3">
-            <select class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <select class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
               <option>Türkiye</option>
               <option>İstanbul</option>
               <option>Ankara</option>
               <option>İzmir</option>
             </select>
-            <input type="text" placeholder="Şehir" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500">
-            <button class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all">
+            <input type="text" placeholder="Şehir" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            <button class="bg-corporate-blue text-white px-6 py-3 rounded-lg hover:bg-corporate-navy transition-all">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -56,8 +48,8 @@
         
         <!-- Feature Highlight -->
         <div class="flex items-center gap-3 mb-6">
-          <span class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-bold">Yeni</span>
-          <span class="text-sm text-white/90">AI ile portföy değerleme ve işbirliği imkanı</span>
+          <span class="bg-white text-corporate-blue px-3 py-1 rounded-full text-xs font-bold">Yeni</span>
+          <span class="text-sm text-white/90">Portföy paylaşımı ve emlakçı işbirliği platformu</span>
         </div>
         
         <!-- Testimonial -->
@@ -79,8 +71,8 @@
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
             </svg>
           </div>
-          <p class="text-white text-sm mb-1">"doğru değerleme ve hızlı işlem"</p>
-          <p class="text-white/70 text-xs">Ahmet Y. - Perşembe, 9 Ekim 2024 11:33</p>
+          <p class="text-white text-sm mb-1">"portföy paylaşımı sayesinde daha fazla müşteriye ulaştım"</p>
+          <p class="text-white/70 text-xs">Mehmet K. - Perşembe, 9 Ekim 2024 11:33</p>
         </div>
       </div>
       
