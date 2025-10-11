@@ -2,12 +2,12 @@
   <NuxtLayout name="default">
     <div>
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex">
+    <section class="relative min-h-[60vh] flex">
       <!-- Left Side - Corporate Blue Background with Content -->
       <div class="w-full md:w-2/5 bg-gradient-to-br from-corporate-navy to-corporate-blue text-white flex flex-col justify-center px-8 py-12">
 
         <!-- Main Title -->
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
           Portföy Paylaşım<br />
           <span class="text-white">Platformu</span>
         </h1>
@@ -92,20 +92,15 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
             </svg>
           </div>
-          <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-500 transition-all">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
         </div>
       </div>
     </section>
 
       <!-- Featured Properties Section -->
-      <section class="py-24 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
-            <h2 class="text-5xl font-bold text-corporate-navy mb-6 font-heading">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
               Öne Çıkan İlanlar
             </h2>
 
@@ -304,13 +299,13 @@
         </div>
       </section>
     <!-- Platform Categories Section -->
-    <section class="py-24 bg-white">
+    <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-5xl font-bold text-corporate-navy mb-6 font-heading">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
             Platformda Neler Var?
           </h2>
-          <p class="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
+          <p class="text-lg text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
             Emlakçı portföyleri, kullanıcı ilanları ve işbirliği fırsatları
           </p>
         </div>
@@ -386,12 +381,12 @@
     </section>
 
     <!-- Tools Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-corporate-navy mb-4 text-center font-heading">
           Emlakçılar ve Ev Sahipleri İçin Özellikler
         </h2>
-        <p class="text-center text-gray-600 mb-12 text-lg font-body">Her iki kullanıcı grubu için güçlü araçlar</p>
+        <p class="text-center text-gray-600 mb-10 text-base font-body">Her iki kullanıcı grubu için güçlü araçlar</p>
         
         <div class="grid md:grid-cols-2 gap-8">
           <!-- For Realtors -->
@@ -500,12 +495,12 @@
 
 
     <!-- How It Works Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-corporate-navy mb-4 text-center font-heading">
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-corporate-navy mb-4 text-center font-heading">
           Nasıl Çalışır?
         </h2>
-        <p class="text-center text-gray-600 mb-16 text-lg font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
+        <p class="text-center text-gray-600 mb-12 text-base font-body">Emlakçılar ve ev sahipleri için basit süreç</p>
         
         <div class="grid md:grid-cols-3 gap-12 relative">
           <!-- Connecting Lines -->
@@ -539,13 +534,13 @@
     </section>
 
     <!-- Top Consultants Section -->
-    <section class="py-24 bg-white">
+    <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-5xl font-bold text-corporate-navy mb-6 font-heading">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-corporate-navy mb-4 font-heading">
             En Başarılı Emlakçılar
           </h2>
-          <p class="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
+          <p class="text-lg text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
             Portföy paylaşan ve işbirliği yapan profesyonel emlakçılarımız
           </p>
         </div>
