@@ -14,18 +14,18 @@
 
           <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 sm:mb-8">
-          <button class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
+          <NuxtLink to="/portfolios" class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
             </svg>
             Portföy Paylaş
-          </button>
-          <button class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
+          </NuxtLink>
+          <NuxtLink to="/auth" class="bg-white text-corporate-navy px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-corporate-light-blue hover:text-white transition-all flex items-center justify-center gap-2">
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             Emlakçı Ol
-            </button>
+            </NuxtLink>
         </div>
         
         <!-- Search/Filter -->
@@ -40,11 +40,11 @@
               <option>Ankara</option>
               <option>İzmir</option>
             </select>
-            <button class="bg-corporate-blue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-corporate-navy transition-all flex items-center justify-center">
+            <NuxtLink to="/buy" class="bg-corporate-blue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-corporate-navy transition-all flex items-center justify-center">
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
-            </button>
+            </NuxtLink>
           </div>
           </div>
           
@@ -108,7 +108,7 @@
         
           <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
           <!-- Property 1 -->
-            <div class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+            <NuxtLink to="/property/1" class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2 block">
               <div class="relative h-40 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
@@ -165,13 +165,12 @@
                     </div>
                     <p class="sm:hidden text-xs text-gray-600 font-medium">A. Yılmaz</p>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-xs sm:text-sm transition-colors">Detay →</button>
                 </div>
-            </div>
-          </div>
+              </div>
+            </NuxtLink>
 
           <!-- Property 2 -->
-            <div class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+            <NuxtLink to="/property/2" class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2 block">
               <div class="relative h-40 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
@@ -225,13 +224,12 @@
                     </div>
                     <p class="sm:hidden text-xs text-gray-600 font-medium">Zeynep K.</p>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-xs sm:text-sm transition-colors">Detay →</button>
                 </div>
-            </div>
-          </div>
+              </div>
+            </NuxtLink>
 
           <!-- Property 3 -->
-            <div class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
+            <NuxtLink to="/property/3" class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2 block">
               <div class="relative h-40 sm:h-56 md:h-64 overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
@@ -288,16 +286,15 @@
                     </div>
                     <p class="sm:hidden text-xs text-gray-600 font-medium">M. Kaya</p>
                   </div>
-                  <button class="text-corporate-blue hover:text-corporate-navy font-semibold text-xs sm:text-sm transition-colors">Detay →</button>
                 </div>
-            </div>
-          </div>
+              </div>
+            </NuxtLink>
         </div>
 
-        <div class="text-center mt-12">
-          <button class="bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-8 py-4 rounded-xl font-bold hover:from-corporate-blue hover:to-corporate-light-blue transition-all shadow-corporate-lg hover:shadow-corporate-xl">
-            Tüm İlanları Görüntüle
-          </button>
+        <div class="text-center mt-8 sm:mt-10 md:mt-12">
+            <NuxtLink to="/buy" class="inline-block bg-gradient-to-r from-corporate-navy to-corporate-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold hover:from-corporate-blue hover:to-corporate-light-blue transition-all shadow-corporate-lg hover:shadow-corporate-xl">
+              Tüm İlanları Görüntüle
+            </NuxtLink>
         </div>
       </div>
     </section>
@@ -315,7 +312,7 @@
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
           <!-- Realtor Portfolios -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/portfolios" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-blue/10 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -323,10 +320,10 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Emlakçı Portföyleri</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">842</p>
-          </div>
+          </NuxtLink>
 
           <!-- User Listings -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/buy" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-navy/10 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -334,10 +331,10 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Kullanıcı İlanları</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">1,247</p>
-          </div>
+          </NuxtLink>
 
           <!-- Shared Portfolios -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/portfolios" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-light-blue/20 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
@@ -345,10 +342,10 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Paylaşılan Portföy</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">542</p>
-          </div>
+          </NuxtLink>
 
           <!-- Active Realtors -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/buy" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-blue/10 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -356,10 +353,10 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Aktif Emlakçı</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">328</p>
-          </div>
+          </NuxtLink>
 
           <!-- Collaborations -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/portfolios" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-navy/10 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -367,10 +364,10 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Başarılı İşbirliği</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">156</p>
-          </div>
+          </NuxtLink>
 
           <!-- For Sale -->
-          <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue">
+          <NuxtLink to="/buy" class="bg-white rounded-2xl p-3 sm:p-4 shadow-corporate transition-all duration-200 cursor-pointer group border border-corporate-gray hover:border-corporate-blue block">
             <div class="w-full h-16 sm:h-20 bg-corporate-light-blue/20 rounded-xl mb-2 sm:mb-3 flex items-center justify-center transition-all">
               <svg class="w-8 h-8 sm:w-10 sm:h-10 text-corporate-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -378,7 +375,7 @@
             </div>
             <h3 class="font-bold text-corporate-navy text-xs sm:text-sm mb-1">Satılık İlan</h3>
             <p class="text-corporate-blue font-bold text-lg sm:text-xl">1,589</p>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -554,7 +551,7 @@
         </div>
         
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-          <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2">
+          <NuxtLink to="/consultant/ahmet-yilmaz" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2 block">
             <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <span class="text-white text-lg sm:text-xl md:text-2xl font-bold">AY</span>
             </div>
@@ -575,9 +572,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
           
-          <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2">
+          <NuxtLink to="/consultant/ayse-demir" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2 block">
             <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <span class="text-white text-lg sm:text-xl md:text-2xl font-bold">AD</span>
             </div>
@@ -598,9 +595,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
           
-          <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2">
+          <NuxtLink to="/consultant/mehmet-kaya" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2 block">
             <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <span class="text-white text-lg sm:text-xl md:text-2xl font-bold">MK</span>
             </div>
@@ -621,9 +618,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
 
-          <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2">
+          <NuxtLink to="/consultant/nur-ozkan" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300 border border-corporate-gray hover:border-corporate-blue group transform hover:-translate-y-2 block">
             <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-corporate-blue to-corporate-light-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <span class="text-white text-lg sm:text-xl md:text-2xl font-bold">FÖ</span>
             </div>
@@ -644,7 +641,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
