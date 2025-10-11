@@ -175,8 +175,8 @@
                           </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-xs sm:text-sm font-semibold text-corporate-navy mb-1">{{ notification.title }}</p>
-                          <p class="text-xs sm:text-sm text-gray-600 line-clamp-2">{{ notification.message }}</p>
+                          <p class="text-sm font-semibold text-corporate-navy mb-1">{{ notification.title }}</p>
+                          <p class="text-sm text-gray-600 line-clamp-2">{{ notification.message }}</p>
                           <div class="flex items-center justify-between mt-2">
                             <span class="text-xs text-gray-500">{{ notification.time }}</span>
                             <span v-if="!notification.read" class="text-xs font-bold text-blue-600">Yeni</span>
