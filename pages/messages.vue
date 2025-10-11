@@ -167,7 +167,7 @@ const conversations = ref([
   },
   {
     id: 4,
-    name: 'Fatma Şahin',
+    name: 'Nur Şahin',
     initials: 'FŞ',
     lastMessage: 'Teşekkür ederim, çok yardımcı oldunuz.',
     time: '1 gün',

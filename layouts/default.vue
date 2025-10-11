@@ -366,7 +366,7 @@ const recentMessages = ref([
   },
   {
     id: 4,
-    sender: 'Fatma Şahin',
+    sender: 'Nur Şahin',
     initials: 'FŞ',
     preview: 'Teşekkür ederim, çok yardımcı oldunuz.',
     time: '1 gün',
