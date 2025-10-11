@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <div class="min-h-screen bg-gray-50 py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Page Header -->
         <div class="mb-8">
           <h1 class="text-4xl font-bold text-corporate-navy font-heading">Portföy Paylaşımı</h1>

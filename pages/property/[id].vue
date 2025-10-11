@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <div class="min-h-screen bg-gray-50 py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Property Header -->
         <div class="bg-white rounded-xl shadow-corporate-lg p-8 mb-8 border border-corporate-gray">
           <div class="flex flex-col lg:flex-row gap-8">
